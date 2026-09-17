@@ -28,33 +28,60 @@
 
   <div class="account-card">
     <h3>Your program</h3>
-    <p>This is a placeholder for whatever you want clients to see here — their current plan, check-in form, uploaded PDFs, or a link straight into Kahunas. Tell Claude what should live on this page and it gets built in.</p>
+    <div id="program-box"><p class="muted">Loading…</p></div>
   </div>
 
   <div class="account-card">
     <h3>Next check-in</h3>
-    <p>No check-in scheduled yet.</p>
+    <div id="next-checkin-box"><p class="muted">Loading…</p></div>
+  </div>
+
+  <div class="account-card">
+    <h3>Weekly check-in</h3>
+    <div id="checkin-list" class="checkin-list"><p class="muted">Loading…</p></div>
+    <form id="form-checkin" class="checkin-form">
+      <div class="field">
+        <label for="ci-weight">Weight (kg)</label>
+        <input type="number" step="0.1" id="ci-weight" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="ci-energy">Energy this week</label>
+        <select id="ci-energy">
+          <option value="">—</option>
+          <option value="1">1 — Rough</option>
+          <option value="2">2</option>
+          <option value="3">3 — Okay</option>
+          <option value="4">4</option>
+          <option value="5">5 — Great</option>
+        </select>
+      </div>
+      <div class="field field-notes">
+        <label for="ci-notes">Notes for your coach</label>
+        <textarea id="ci-notes" rows="3"></textarea>
+      </div>
+      <div id="checkin-msg" class="auth-msg" style="grid-column:1/-1;"></div>
+      <button class="btn btn-primary" type="submit">Submit check-in</button>
+    </form>
+  </div>
+
+  <div class="account-card">
+    <h3>Your documents</h3>
+    <div id="documents-list" class="documents-list"><p class="muted">Loading…</p></div>
+  </div>
+
+  <div class="account-card">
+    <h3>Progress photos</h3>
+    <div id="photos-grid" class="photos-grid"><p class="muted">Loading…</p></div>
+    <div class="upload-row">
+      <input type="file" id="photo-input" accept="image/*">
+      <span id="photo-msg"></span>
+    </div>
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/config.js"></script>
 <script src="js/supabase-client.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", async () => {
-    if (!supabaseClient) return;
-    const { data } = await supabaseClient.auth.getSession();
-    if (!data.session) {
-      window.location.href = "auth.html";
-      return;
-    }
-    document.getElementById("account-email").textContent = data.session.user.email;
-
-    document.getElementById("btn-signout").addEventListener("click", async () => {
-      await supabaseClient.auth.signOut();
-      window.location.href = "auth.html";
-    });
-  });
-</script>
+<script src="js/account.js"></script>
 </body>
 </html>
