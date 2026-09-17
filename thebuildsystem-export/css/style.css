@@ -56,6 +56,17 @@ section{ padding-block:96px; }
 .btn-solid-white{ background:var(--paper); color:var(--ink); border-color:var(--paper); }
 .btn-solid-white:hover{ opacity:0.85; }
 .btn:disabled{ opacity:0.5; cursor:not-allowed; }
+.btn-solid-white:hover{ opacity:0.85; }
+.btn-kahunas{ background:var(--paper); color:var(--ink); border-color:var(--line-strong); }
+.btn-kahunas:hover{ border-color:var(--ink); }
+.kahunas-logo{ height:20px; width:auto; display:block; }
+.account-head-info{ display:flex; align-items:center; gap:16px; }
+.avatar-wrap{ position:relative; width:72px; height:72px; flex-shrink:0; }
+.avatar-img{ width:72px; height:72px; border-radius:50%; object-fit:cover; border:1px solid var(--line); }
+.avatar-placeholder{ width:72px; height:72px; border-radius:50%; background:var(--paper-dim); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; color:var(--muted); }
+.avatar-placeholder svg{ width:32px; height:32px; }
+.avatar-edit-btn{ position:absolute; bottom:-2px; right:-2px; width:26px; height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:flex; align-items:center; justify-content:center; cursor:pointer; border:2px solid var(--paper); }
+.avatar-edit-btn svg{ width:14px; height:14px; }
 
 /* ---------- NAV ---------- */
 header.site{
