@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Login — thebuildsystem</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="wordmark">the<b>build</b>system</a>
+    <nav class="links"></nav>
+    <div class="nav-right"></div>
+  </div>
+</header>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <h1>Client area</h1>
+    <p class="sub">Sign in or create an account to access your program.</p>
+
+    <div class="tabs">
+      <button class="tab active" id="tab-signin" type="button">Sign In</button>
+      <button class="tab" id="tab-signup" type="button">Create Account</button>
+    </div>
+
+    <div id="auth-msg" class="auth-msg"></div>
+
+    <div class="auth-panel active" id="panel-signin">
+      <form id="form-signin">
+        <div class="field">
+          <label for="signin-email">Email</label>
+          <input type="email" id="signin-email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="signin-password">Password</label>
+          <input type="password" id="signin-password" required autocomplete="current-password">
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Sign In</button>
+      </form>
+    </div>
+
+    <div class="auth-panel" id="panel-signup">
+      <form id="form-signup">
+        <div class="field">
+          <label for="signup-name">Full name</label>
+          <input type="text" id="signup-name" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" required minlength="6" autocomplete="new-password">
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Create Account</button>
+      </form>
+    </div>
+
+    <a class="back-link" href="index.html">← Back to thebuildsystem</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

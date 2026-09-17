@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>thebuildsystem — Physique &amp; Mindset Coaching</title>
+<meta name="description" content="Coaching for anyone done drifting. Training, nutrition and mindset, run as one system.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="#top" class="wordmark">the<b>build</b>system</a>
+    <nav class="links">
+      <a href="#method" data-i18n="nav.method">Method</a>
+      <a href="#story" data-i18n="nav.story">Story</a>
+      <a href="#programs" data-i18n="nav.programs">Programs</a>
+      <a href="#results" data-i18n="nav.results">Results</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">ES</button>
+      <a class="login-link" href="auth.html" title="Client login" aria-label="Client login">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.2-4 4.2-6 7.5-6s6.3 2 7.5 6"/></svg>
+        <span class="login-text" data-i18n="nav.login">Client Login</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-media">
+      <video class="hero-video" autoplay muted loop playsinline poster="media/hero-poster.jpg">
+        <source src="media/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="wrap hero-content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Coaching for anyone done drifting</p>
+        <h1 data-i18n-html="hero.h1">You don't drift<br>into shape. <em>You build it.</em></h1>
+        <p class="lede" data-i18n="hero.lede">thebuildsystem is a physique &amp; mindset coaching system built by a guy who rebuilt himself first — from a mental low in 2020 to a remote valley in Australia to Hyrox. Training, food and head-space, run as one system, for anyone in their mid-20s who's done coasting.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid-white" href="#programs" data-i18n="hero.cta1">Apply for 1:1 Coaching</a>
+          <a class="btn btn-outline-white" href="#programs" data-i18n="hero.cta2">Get the Solo Program — $50</a>
+        </div>
+        <div class="trust-row">
+          <span data-i18n="hero.trust1">80K on TikTok &amp; Instagram</span>
+          <span data-i18n="hero.trust2">3 years training in Australia</span>
+          <span data-i18n="hero.trust3">Hyrox Finisher</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="method.eyebrow">The method</p>
+        <h2 data-i18n="method.h2">Three systems. Run together.</h2>
+        <p data-i18n="method.p">Most programs hand you a PDF and disappear. thebuildsystem runs training, nutrition and mindset as one loop — because a routine that ignores your head and your plate doesn't hold past week three.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-photo"><img src="media/pillar-training.jpg" alt="Training — cable machine"></div>
+          <div class="pillar-body">
+          <p class="num">01</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8v8M2 10v4M22 10v4M20 8v8M7 12h10M7 9v6M17 9v6"/></svg>
+          <h3 data-i18n="pillar.training.h3">Training</h3>
+          <p data-i18n="pillar.training.p">Progressive strength and conditioning blocks, built around your equipment and schedule — not a generic 12-week template.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-photo"><img src="media/pillar-nutrition.jpg" alt="Nutrition — the physique it builds"></div>
+          <div class="pillar-body">
+          <p class="num">02</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 9c-4.5 0-7 3.1-7 6.8C5 19.5 7.8 22 10.3 22c.7 0 1.2-.3 1.7-.3s1 .3 1.7.3c2.5 0 5.3-2.5 5.3-6.2C19 12.1 16.5 9 12 9Z"/><path d="M12 6.5c-.7-1.3-2.2-2-3.7-1.6M12 6.5c.7-1.3 2.2-2 3.7-1.6M12 6.5V9"/></svg>
+          <h3 data-i18n="pillar.nutrition.h3">Nutrition</h3>
+          <p data-i18n="pillar.nutrition.p">Meal-by-meal calorie targets across three intensity levels, sport-nutrition style — with one guilt-free meal built in every weekend.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-photo"><img src="media/pillar-mind.jpg" alt="Mind — focus"></div>
+          <div class="pillar-body">
+          <p class="num">03</p>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4c-2 0-3.5 1.2-4 2.8-1.7.3-3 1.8-3 3.6 0 .9.3 1.7.9 2.3-.6.6-.9 1.4-.9 2.3 0 2 1.6 3.6 3.6 3.6.3 0 .6 0 .9-.1.5 1.2 1.7 2 3.1 2h.4"/><path d="M12 4c2 0 3.5 1.2 4 2.8 1.7.3 3 1.8 3 3.6 0 .9-.3 1.7-.9 2.3.6.6.9 1.4.9 2.3 0 2-1.6 3.6-3.6 3.6-.3 0-.6 0-.9-.1-.5 1.2-1.7 2-3.1 2h-.4"/><path d="M12 4v16.5"/></svg>
+          <h3 data-i18n="pillar.mind.h3">Mind</h3>
+          <p data-i18n="pillar.mind.p">The part most coaches skip. Daily structure, journaling and check-ins for the fear-of-failure and no-motivation days — the ones that actually decide the outcome.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="wrap">
+      <div class="story-head-grid">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="story.eyebrow">The founder</p>
+          <h2 data-i18n="story.h2">From a low point to the Hyrox start line</h2>
+          <p data-i18n="story.p">I started training in 2020 to climb out of a mental low point — not to build a brand. Everything since has been the same system, applied to myself first.</p>
+        </div>
+        <div class="founder-photo"><img src="media/founder.jpg" alt="Tomi running"></div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat"><p class="n">2020</p><p class="l" data-i18n="stat.1.l">Started training</p></div>
+        <div class="stat"><p class="n">3 yrs</p><p class="l" data-i18n="stat.2.l">Living &amp; working in Australia</p></div>
+        <div class="stat"><p class="n">18 days</p><p class="l" data-i18n="stat.3.l">First in-person training camp</p></div>
+        <div class="stat"><p class="n">80K</p><p class="l" data-i18n="stat.4.l">Followers built from the process</p></div>
+      </div>
+
+      <div class="timeline">
+        <div class="t-item">
+          <p class="t-year">2020</p>
+          <div><h3 data-i18n="t1.h3">Training as a way out</h3>
+          <p data-i18n="t1.p">Picked up training to get out of a mental low — no plan, no coach, just consistency and paying attention to what actually worked.</p></div>
+        </div>
+        <div class="t-item">
+          <p class="t-year">2023</p>
+          <div><h3 data-i18n="t2.h3">Moved to Australia</h3>
+          <p data-i18n="t2.p">Three years of physical work — bar work, moving houses, gardening, framing, hotel maintenance, events — while training kept running underneath it all, based out of Manly.</p></div>
+        </div>
+        <div class="t-item">
+          <p class="t-year">2024</p>
+          <div><h3 data-i18n="t3.h3">The sharpest transformation</h3>
+          <p data-i18n="t3.p">A stretch of time in an isolated valley, working with horses, journaling daily and training almost every day produced the biggest physical and mental shift of the whole process — and became the blueprint for the system.</p></div>
+        </div>
+        <div class="t-item">
+          <p class="t-year">2026</p>
+          <div><h3 data-i18n="t4.h3">Hyrox, then home</h3>
+          <p data-i18n="t4.p">Closed the Australia chapter by racing Hyrox, then moved back to Argentina to build thebuildsystem full-time — turning the process into a system other people could actually run.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="programs.eyebrow">Programs</p>
+        <h2 data-i18n="programs.h2">Pick your build</h2>
+        <p data-i18n="programs.p">Three ways in — from a single custom routine to a full 1:1 system with weekly check-ins. All prices in USD. Coaching plans are billed monthly through PayPal; the button below pays the first month, and I'll set up the recurring charge with you directly.</p>
+      </div>
+      <div class="programs-grid">
+        <div class="plan">
+          <p class="p-name" data-i18n="plan1.name">Solo Program</p>
+          <p class="p-price">$50<sup data-i18n="plan1.sup">/ one-time</sup></p>
+          <p class="p-desc" data-i18n="plan1.desc">A single, fully custom training routine — for people who just need the plan and can run it themselves.</p>
+          <ul class="p-features">
+            <li data-i18n="plan1.f1">One custom routine, built around your goal</li>
+            <li data-i18n="plan1.f2">Written progression, no guesswork</li>
+            <li data-i18n="plan1.f3">Self-guided from there</li>
+          </ul>
+          <a class="btn btn-outline" href="https://www.paypal.com/ncp/payment/PLB-25WLU4M5TDAQ" target="_blank" rel="noopener" data-i18n="plan1.btn">Pay with PayPal</a>
+        </div>
+        <div class="plan featured">
+          <span class="badge" data-i18n="plan2.badge">Most committed</span>
+          <p class="p-name" data-i18n="plan2.name">1:1 Coaching · 12 months</p>
+          <p class="p-price">$115<sup data-i18n="plan2.sup">/mo</sup></p>
+          <p class="p-desc" data-i18n="plan2.desc">The full system, for a year. Training, nutrition and mindset run together with direct access to me.</p>
+          <ul class="p-features">
+            <li data-i18n="plan2.f1">Training + nutrition + mindset, as one plan</li>
+            <li data-i18n="plan2.f2">Weekly check-ins and adjustments</li>
+            <li data-i18n="plan2.f3">Direct access between sessions</li>
+            <li data-i18n="plan2.f4">Lowest monthly rate of the three plans</li>
+          </ul>
+          <a class="btn btn-accent" href="https://www.paypal.com/ncp/payment/PLB-MJPHUA2E9KX8" target="_blank" rel="noopener" data-i18n="plan2.btn">Pay first month</a>
+          <p class="plan-note" data-i18n="plan.note">Recurring months arranged directly after your first payment.</p>
+        </div>
+        <div class="plan">
+          <p class="p-name" data-i18n="plan3.name">1:1 Coaching · 6 months</p>
+          <p class="p-price">$140<sup data-i18n="plan3.sup">/mo</sup></p>
+          <p class="p-desc" data-i18n="plan3.desc">The full system on a shorter commitment — same training, nutrition and mindset coaching.</p>
+          <ul class="p-features">
+            <li data-i18n="plan3.f1">Training + nutrition + mindset, as one plan</li>
+            <li data-i18n="plan3.f2">Weekly check-ins and adjustments</li>
+            <li data-i18n="plan3.f3">Direct access between sessions</li>
+          </ul>
+          <a class="btn btn-outline" href="https://www.paypal.com/ncp/payment/PLB-7LZW34SXQWZ3" target="_blank" rel="noopener" data-i18n="plan3.btn">Pay first month</a>
+          <p class="plan-note" data-i18n="plan.note">Recurring months arranged directly after your first payment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="results.eyebrow">Client spotlight</p>
+        <h2 data-i18n="results.h2">Coached, not just sold a plan</h2>
+      </div>
+      <div class="results-card">
+        <div class="photo-slot">
+          <img src="media/yesenia-camp.jpg" alt="Yesenia training in Bali" style="width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block;">
+        </div>
+        <div class="results-body">
+          <p class="eyebrow" data-i18n="results.tag">Yesenia · 1:1 client</p>
+          <h3 data-i18n="results.h3">An 18-day in-person camp in Bali, built into a 6-week program</h3>
+          <p data-i18n="results.p">Yesenia brought the idea herself: instead of a remote plan, hire a personal trainer for a dedicated block. So we built an 18-day in-person camp in Bali — three phases of strength, cardio and recovery, planned day by day — as the opening stretch of a 6-week program built around her goal.</p>
+          <div class="results-stats">
+            <div><p class="n">18</p><p class="l" data-i18n="results.stat1">Days in Bali</p></div>
+            <div><p class="n">3</p><p class="l" data-i18n="results.stat2">Training phases</p></div>
+            <div><p class="n">−30kg</p><p class="l" data-i18n="results.stat3">Program goal</p></div>
+            <div><p class="n">−7kg</p><p class="l" data-i18n="results.stat4">Lost in the first 3 weeks</p></div>
+          </div>
+          <p class="note" data-i18n="results.note">Case study in progress — quote and after photos to be added once the program wraps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" id="contact">
+    <div class="wrap final-grid">
+      <div>
+        <h2 data-i18n="final.h2">Ready to build?</h2>
+        <p data-i18n="final.p">Tell me where you're starting from and what you're training for. I'll reply myself — no team, no bots.</p>
+      </div>
+      <div class="hero-ctas" style="margin:0;">
+        <a class="btn btn-solid-white" href="mailto:info.tomasmartinez@gmail.com">Email info.tomasmartinez@gmail.com</a>
+        <a class="btn btn-outline-white" href="https://www.tiktok.com/@tomasmarttinez" target="_blank" rel="noopener">@tomasmarttinez</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <a href="#top" class="wordmark">the<b>build</b>system</a>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/tomasmarttinez" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@tomasmarttinez" target="_blank" rel="noopener">TikTok</a>
+      <a href="auth.html" data-i18n="nav.login">Client Login</a>
+      <a href="mailto:info.tomasmartinez@gmail.com">Email</a>
+    </div>
+    <span>© 2026 thebuildsystem</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ES = {
+    'nav.method':'Método','nav.story':'Historia','nav.programs':'Programas','nav.results':'Resultados',
+    'nav.contact':'Contacto','nav.login':'Acceso Clientes',
+    'hero.eyebrow':'Coaching para quienes ya no quieren ir a la deriva',
+    'hero.lede':'thebuildsystem es un sistema de coaching físico y mental creado por alguien que primero se reconstruyó a sí mismo — desde un momento bajo en 2020 hasta un valle remoto en Australia y Hyrox. Entrenamiento, alimentación y cabeza, como un solo sistema, para cualquiera que ronde los 25 y esté cansado de ir en piloto automático.',
+    'hero.cta1':'Aplicá al coaching 1:1',
+    'hero.cta2':'Conseguí el Programa Solo — $50',
+    'hero.trust1':'80K en TikTok e Instagram',
+    'hero.trust2':'3 años entrenando en Australia',
+    'hero.trust3':'Finisher de Hyrox',
+    'method.eyebrow':'El método',
+    'method.h2':'Tres sistemas. Un solo engranaje.',
+    'method.p':'La mayoría de los programas te dan un PDF y desaparecen. thebuildsystem une entrenamiento, alimentación y mentalidad en un solo ciclo — porque una rutina que ignora tu cabeza y tu plato no aguanta más de tres semanas.',
+    'pillar.training.h3':'Entrenamiento',
+    'pillar.training.p':'Bloques de fuerza y acondicionamiento progresivos, armados según tu equipo y tu agenda — no una plantilla genérica de 12 semanas.',
+    'pillar.nutrition.h3':'Alimentación',
+    'pillar.nutrition.p':'Objetivos calóricos comida por comida en tres niveles de intensidad, estilo nutrición deportiva — con una comida libre cada fin de semana.',
+    'pillar.mind.h3':'Mente',
+    'pillar.mind.p':'La parte que la mayoría de los coaches se salta. Estructura diaria, journaling y check-ins para los días de miedo al fracaso y cero motivación — los que realmente definen el resultado.',
+    'story.eyebrow':'El fundador',
+    'story.h2':'De un momento bajo a la largada de Hyrox',
+    'story.p':'Empecé a entrenar en 2020 para salir de un pozo mental — no para armar una marca. Desde entonces es el mismo sistema, aplicado primero en mí.',
+    'stat.1.l':'Empezó a entrenar',
+    'stat.2.l':'Viviendo y trabajando en Australia',
+    'stat.3.l':'Primer training camp presencial',
+    'stat.4.l':'Seguidores construidos en el proceso',
+    't1.h3':'Entrenar como salida',
+    't1.p':'Empecé a entrenar para salir de un pozo mental — sin plan, sin coach, solo constancia y prestar atención a lo que realmente funcionaba.',
+    't2.h3':'Me mudé a Australia',
+    't2.p':'Tres años de trabajo físico — bar, mudanzas, jardinería, framing, mantenimiento de hotel, eventos — mientras el entrenamiento seguía corriendo por debajo de todo, viviendo en Manly.',
+    't3.h3':'La transformación más fuerte',
+    't3.p':'Un tiempo en un valle aislado, trabajando con caballos, escribiendo todos los días y entrenando casi a diario produjo el cambio físico y mental más grande de todo el proceso — y se convirtió en el modelo del sistema.',
+    't4.h3':'Hyrox, y de vuelta a casa',
+    't4.p':'Cerré el capítulo de Australia corriendo Hyrox, y volví a Argentina a construir thebuildsystem a tiempo completo — convirtiendo el proceso en un sistema que otros pudieran seguir.',
+    'programs.eyebrow':'Programas',
+    'programs.h2':'Elegí tu plan',
+    'programs.p':'Tres formas de empezar — desde una rutina personalizada hasta un sistema 1:1 completo con seguimiento semanal. Precios en USD. Los planes de coaching se cobran mensualmente por PayPal; el botón paga el primer mes, y el cobro recurrente lo coordinamos directo.',
+    'plan1.name':'Programa Solo','plan1.sup':'/ pago único',
+    'plan1.desc':'Una rutina de entrenamiento totalmente personalizada — para quienes solo necesitan el plan y pueden seguirlo por su cuenta.',
+    'plan1.f1':'Una rutina personalizada, armada según tu objetivo',
+    'plan1.f2':'Progresión escrita, sin adivinar',
+    'plan1.f3':'De ahí en más, por tu cuenta',
+    'plan1.btn':'Pagar con PayPal',
+    'plan2.badge':'El más elegido','plan2.name':'Coaching 1:1 · 12 meses','plan2.sup':'/mes',
+    'plan2.desc':'El sistema completo, por un año. Entrenamiento, alimentación y mentalidad juntos, con acceso directo a mí.',
+    'plan2.f1':'Entrenamiento + alimentación + mentalidad, en un solo plan',
+    'plan2.f2':'Check-ins semanales y ajustes',
+    'plan2.f3':'Acceso directo entre sesiones',
+    'plan2.f4':'La cuota mensual más baja de los tres planes',
+    'plan2.btn':'Pagar el primer mes',
+    'plan.note':'Los meses siguientes se coordinan directo después de tu primer pago.',
+    'plan3.name':'Coaching 1:1 · 6 meses','plan3.sup':'/mes',
+    'plan3.desc':'El sistema completo con un compromiso más corto — mismo coaching de entrenamiento, alimentación y mentalidad.',
+    'plan3.f1':'Entrenamiento + alimentación + mentalidad, en un solo plan',
+    'plan3.f2':'Check-ins semanales y ajustes',
+    'plan3.f3':'Acceso directo entre sesiones',
+    'plan3.btn':'Pagar el primer mes',
+    'results.eyebrow':'Cliente destacada',
+    'results.h2':'Acompañada, no solo vendida un plan',
+    'results.tag':'Yesenia · clienta 1:1',
+    'results.h3':'Un camp presencial de 18 días en Bali, dentro de un programa de 6 semanas',
+    'results.p':'La idea fue de Yesenia: en vez de un plan a distancia, contratar un entrenador personal para un bloque dedicado. Así armamos un camp presencial de 18 días en Bali — tres fases de fuerza, cardio y recuperación, planificadas día por día — como el tramo inicial de un programa de 6 semanas armado según su objetivo.',
+    'results.stat1':'Días en Bali','results.stat2':'Fases de entrenamiento','results.stat3':'Objetivo del programa','results.stat4':'Perdidos en las primeras 3 semanas',
+    'results.note':'Caso en progreso — testimonio y fotos del después se suman cuando termine el programa.',
+    'final.h2':'¿Empezamos a construir?',
+    'final.p':'Contame de dónde partís y para qué estás entrenando. Te respondo yo mismo — sin equipo, sin bots.'
+  };
+  var ES_HTML = { 'hero.h1': "El cuerpo no se logra<br>a la deriva. <em>Se construye.</em>" };
+
+  var current = 'en';
+
+  var textEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+  var htmlEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-html]'));
+  var origText = textEls.map(function(el){ return el.textContent; });
+  var origHtml = htmlEls.map(function(el){ return el.innerHTML; });
+
+  function apply(lang){
+    textEls.forEach(function(el, i){
+      var k = el.getAttribute('data-i18n');
+      el.textContent = (lang === 'en') ? origText[i] : (ES[k] || origText[i]);
+    });
+    htmlEls.forEach(function(el, i){
+      var k = el.getAttribute('data-i18n-html');
+      el.innerHTML = (lang === 'en') ? origHtml[i] : (ES_HTML[k] || origHtml[i]);
+    });
+    current = lang;
+    var btn = document.getElementById('lang-toggle');
+    if(btn) btn.textContent = (lang === 'en') ? 'ES' : 'EN';
+    try{ document.documentElement.lang = lang; }catch(e){}
+    try{ localStorage.setItem('tbs-lang', lang); }catch(e){}
+  }
+
+  var startLang = 'en';
+  try{ var saved = localStorage.getItem('tbs-lang'); if(saved === 'es') startLang = 'es'; }catch(e){}
+  if(startLang !== 'en') apply(startLang);
+
+  var toggleBtn = document.getElementById('lang-toggle');
+  if(toggleBtn){
+    toggleBtn.addEventListener('click', function(){
+      apply(current === 'en' ? 'es' : 'en');
+    });
+  }
+})();
+</script>
+</body>
+</html>

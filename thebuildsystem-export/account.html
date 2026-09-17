@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account — thebuildsystem</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="wordmark">the<b>build</b>system</a>
+    <nav class="links"></nav>
+    <div class="nav-right">
+      <button class="btn btn-outline" id="btn-signout" type="button" style="padding:9px 18px;font-size:12px;">Sign Out</button>
+    </div>
+  </div>
+</header>
+
+<div class="account-wrap">
+  <div class="account-head">
+    <div>
+      <h1>Welcome back</h1>
+      <p id="account-email">Loading your account…</p>
+    </div>
+  </div>
+
+  <div class="account-card">
+    <h3>Your program</h3>
+    <p>This is a placeholder for whatever you want clients to see here — their current plan, check-in form, uploaded PDFs, or a link straight into Kahunas. Tell Claude what should live on this page and it gets built in.</p>
+  </div>
+
+  <div class="account-card">
+    <h3>Next check-in</h3>
+    <p>No check-in scheduled yet.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    if (!supabaseClient) return;
+    const { data } = await supabaseClient.auth.getSession();
+    if (!data.session) {
+      window.location.href = "auth.html";
+      return;
+    }
+    document.getElementById("account-email").textContent = data.session.user.email;
+
+    document.getElementById("btn-signout").addEventListener("click", async () => {
+      await supabaseClient.auth.signOut();
+      window.location.href = "auth.html";
+    });
+  });
+</script>
+</body>
+</html>
