@@ -1,7 +1,8 @@
-// Logic for account.html — program summary, check-ins, documents and
-// progress photos. Requires config.js + supabase-client.js loaded first.
+// Logic for account.html — program summary, check-ins, documents,
+// progress photos and profile photo. Requires config.js + supabase-client.js loaded first.
 
 const BUCKET = "client-files";
+const AVATAR_FOLDER = "avatar";
 
 function escapeHtml(str) {
   const div = document.createElement("div");
@@ -30,6 +31,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.location.href = "auth.html";
   });
 
+  loadAvatar(user.id);
+  wireAvatarUpload(user.id);
   loadProgram(user.id);
   loadCheckins(user.id);
   wireCheckinForm(user.id);
@@ -37,6 +40,60 @@ document.addEventListener("DOMContentLoaded", async () => {
   loadPhotos(user.id);
   wirePhotoUpload(user.id);
 });
+
+// ---------- Profile photo ----------
+async function loadAvatar(uid) {
+  const img = document.getElementById("avatar-img");
+  const placeholder = document.getElementById("avatar-placeholder");
+  const { data, error } = await supabaseClient.storage
+    .from(BUCKET)
+    .list(`${uid}/${AVATAR_FOLDER}`, { limit: 5, sortBy: { column: "created_at", order: "desc" } });
+
+  const files = (data || []).filter((f) => f.name && f.id);
+  if (error || !files.length) {
+    img.style.display = "none";
+    placeholder.style.display = "flex";
+    return;
+  }
+  const path = `${uid}/${AVATAR_FOLDER}/${files[0].name}`;
+  const { data: signed } = await supabaseClient.storage.from(BUCKET).createSignedUrl(path, 3600);
+  if (signed) {
+    img.src = signed.signedUrl;
+    img.style.display = "block";
+    placeholder.style.display = "none";
+  }
+}
+
+function wireAvatarUpload(uid) {
+  const input = document.getElementById("avatar-input");
+  const msg = document.getElementById("avatar-msg");
+  input.addEventListener("change", async () => {
+    const file = input.files[0];
+    if (!file) return;
+    msg.textContent = "Uploading…";
+
+    const { data: existing } = await supabaseClient.storage
+      .from(BUCKET)
+      .list(`${uid}/${AVATAR_FOLDER}`, { limit: 10 });
+    const oldPaths = (existing || [])
+      .filter((f) => f.name && f.id)
+      .map((f) => `${uid}/${AVATAR_FOLDER}/${f.name}`);
+    if (oldPaths.length) {
+      await supabaseClient.storage.from(BUCKET).remove(oldPaths);
+    }
+
+    const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_");
+    const path = `${uid}/${AVATAR_FOLDER}/${Date.now()}-${safeName}`;
+    const { error } = await supabaseClient.storage.from(BUCKET).upload(path, file);
+    input.value = "";
+    if (error) {
+      msg.textContent = error.message;
+      return;
+    }
+    msg.textContent = "Photo updated.";
+    loadAvatar(uid);
+  });
+}
 
 // ---------- Program + next check-in ----------
 async function loadProgram(uid) {
@@ -55,7 +112,10 @@ async function loadProgram(uid) {
       (data.program_name ? `<p class="program-name">${escapeHtml(data.program_name)}</p>` : "") +
       (data.program_note ? `<p class="program-note">${escapeHtml(data.program_note)}</p>` : "") +
       (data.kahunas_link
-        ? `<a class="btn btn-primary" href="${escapeHtml(data.kahunas_link)}" target="_blank" rel="noopener">Open in Kahunas</a>`
+        ? `<a class="btn btn-kahunas" href="${escapeHtml(data.kahunas_link)}" target="_blank" rel="noopener">
+            <img src="https://files.kahunas.io/assets/kahunas_home/imgs/logo.svg" alt="" class="kahunas-logo">
+            Open in Kahunas
+          </a>`
         : "");
   }
 
