@@ -3,6 +3,21 @@
 
 const BUCKET = "client-files";
 const AVATAR_FOLDER = "avatar";
+const PHOTO_SLOTS = [
+  { key: "day1", label: "Day 1" },
+  { key: "month1", label: "Month 1" },
+  { key: "month2", label: "Month 2" },
+  { key: "month3", label: "Month 3" },
+  { key: "month4", label: "Month 4" },
+  { key: "month5", label: "Month 5" },
+  { key: "month6", label: "Month 6" },
+  { key: "month7", label: "Month 7" },
+  { key: "month8", label: "Month 8" },
+  { key: "month9", label: "Month 9" },
+  { key: "month10", label: "Month 10" },
+  { key: "month11", label: "Month 11" },
+  { key: "month12", label: "Month 12" },
+];
 
 function escapeHtml(str) {
   const div = document.createElement("div");
@@ -26,6 +41,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const user = sessionData.session.user;
   document.getElementById("account-email").textContent = user.email;
 
+  const fullName = (user.user_metadata && user.user_metadata.full_name) || "";
+  const firstName = fullName.trim().split(/\s+/)[0];
+  document.getElementById("account-name").textContent = firstName
+    ? "Welcome back, " + firstName
+    : "Welcome back";
+
   document.getElementById("btn-signout").addEventListener("click", async () => {
     await supabaseClient.auth.signOut();
     window.location.href = "auth.html";
@@ -38,7 +59,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   wireCheckinForm(user.id);
   loadDocuments(user.id);
   loadPhotos(user.id);
-  wirePhotoUpload(user.id);
 });
 
 // ---------- Profile photo ----------
@@ -113,8 +133,8 @@ async function loadProgram(uid) {
       (data.program_note ? `<p class="program-note">${escapeHtml(data.program_note)}</p>` : "") +
       (data.kahunas_link
         ? `<a class="btn btn-kahunas" href="${escapeHtml(data.kahunas_link)}" target="_blank" rel="noopener">
-            <img src="https://files.kahunas.io/assets/kahunas_home/imgs/logo.svg" alt="" class="kahunas-logo">
-            Open in Kahunas
+            <span class="kahunas-logo-wrap"><img src="https://files.kahunas.io/assets/kahunas_home/imgs/logo.svg" alt=""></span>
+            Open Kahunas
           </a>`
         : "");
   }
@@ -130,6 +150,7 @@ async function loadProgram(uid) {
 // ---------- Check-ins ----------
 async function loadCheckins(uid) {
   const list = document.getElementById("checkin-list");
+  const statBox = document.getElementById("checkin-stat");
   const { data, error } = await supabaseClient
     .from("checkins")
     .select("*")
@@ -139,111 +160,16 @@ async function loadCheckins(uid) {
 
   if (error || !data || !data.length) {
     list.innerHTML = '<p class="muted">No check-ins yet — submit your first one below.</p>';
+    if (statBox) statBox.style.display = "none";
     return;
   }
-  list.innerHTML = data
-    .map((c) => {
-      const energy = c.energy || 0;
-      return `<div class="checkin-row">
-        <span class="ci-date">${new Date(c.created_at).toLocaleDateString()}</span>
-        <span class="ci-weight">${c.weight != null ? c.weight + " kg" : "—"}</span>
-        <span class="ci-energy">${"●".repeat(energy)}${"○".repeat(5 - energy)}</span>
-        <span class="ci-notes">${escapeHtml(c.notes || "")}</span>
-      </div>`;
-    })
-    .join("");
-}
 
-function wireCheckinForm(uid) {
-  const form = document.getElementById("form-checkin");
-  const msg = document.getElementById("checkin-msg");
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const weight = document.getElementById("ci-weight").value;
-    const energy = document.getElementById("ci-energy").value;
-    const notes = document.getElementById("ci-notes").value.trim();
-    const btn = form.querySelector("button");
-    btn.disabled = true;
-    const { error } = await supabaseClient.from("checkins").insert({
-      user_id: uid,
-      weight: weight ? parseFloat(weight) : null,
-      energy: energy ? parseInt(energy, 10) : null,
-      notes: notes || null,
-    });
-    btn.disabled = false;
-    if (error) {
-      showMsg(msg, error.message, "error");
-      return;
-    }
-    form.reset();
-    showMsg(msg, "Check-in submitted.", "ok");
-    loadCheckins(uid);
-  });
-}
-
-// ---------- Documents (uploaded by the coach) ----------
-async function loadDocuments(uid) {
-  const box = document.getElementById("documents-list");
-  const { data, error } = await supabaseClient.storage
-    .from(BUCKET)
-    .list(`${uid}/documents`, { limit: 50, sortBy: { column: "created_at", order: "desc" } });
-
-  const files = (data || []).filter((f) => f.name && f.id);
-  if (error || !files.length) {
-    box.innerHTML = '<p class="muted">Your coach hasn\'t uploaded anything yet.</p>';
-    return;
-  }
-  const rows = await Promise.all(
-    files.map(async (f) => {
-      const path = `${uid}/documents/${f.name}`;
-      const { data: signed } = await supabaseClient.storage.from(BUCKET).createSignedUrl(path, 3600);
-      return `<a class="doc-row" href="${signed ? signed.signedUrl : "#"}" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></svg>
-        ${escapeHtml(f.name)}
-      </a>`;
-    })
-  );
-  box.innerHTML = rows.join("");
-}
-
-// ---------- Progress photos (uploaded by the client) ----------
-async function loadPhotos(uid) {
-  const grid = document.getElementById("photos-grid");
-  const { data, error } = await supabaseClient.storage
-    .from(BUCKET)
-    .list(`${uid}/progress-photos`, { limit: 60, sortBy: { column: "created_at", order: "desc" } });
-
-  const files = (data || []).filter((f) => f.name && f.id);
-  if (error || !files.length) {
-    grid.innerHTML = '<p class="muted">No photos yet — upload your first one below.</p>';
-    return;
-  }
-  const cells = await Promise.all(
-    files.map(async (f) => {
-      const path = `${uid}/progress-photos/${f.name}`;
-      const { data: signed } = await supabaseClient.storage.from(BUCKET).createSignedUrl(path, 3600);
-      return `<div class="photo-cell"><img src="${signed ? signed.signedUrl : ""}" alt="Progress photo" loading="lazy"></div>`;
-    })
-  );
-  grid.innerHTML = cells.join("");
-}
-
-function wirePhotoUpload(uid) {
-  const input = document.getElementById("photo-input");
-  const msg = document.getElementById("photo-msg");
-  input.addEventListener("change", async () => {
-    const file = input.files[0];
-    if (!file) return;
-    const safeName = file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_");
-    const path = `${uid}/progress-photos/${Date.now()}-${safeName}`;
-    msg.textContent = "Uploading…";
-    const { error } = await supabaseClient.storage.from(BUCKET).upload(path, file);
-    input.value = "";
-    if (error) {
-      msg.textContent = error.message;
-      return;
-    }
-    msg.textContent = "Photo uploaded.";
-    loadPhotos(uid);
-  });
-}
+  if (statBox) {
+    const latest = data[0];
+    const prev = data.find((c, i) => i > 0 && c.weight != null);
+    if (latest.weight != null) {
+      let deltaHtml = "";
+      if (prev) {
+        const delta = Math.round((latest.weight - prev.weight) * 10) / 10;
+        const sign = delta > 0 ? "+" : "";
+        const cls = delta < 0
