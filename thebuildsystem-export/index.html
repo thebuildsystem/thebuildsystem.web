@@ -1,635 +1,700 @@
-:root{
-  --ink:#292929;
-  --ink-soft:#4a4a48;
-  --muted:#7a7975;
-  --paper:#FDFDFC;
-  --paper-dim:#F4F3F0;
-  --line:rgba(41,41,41,0.14);
-  --line-strong:rgba(41,41,41,0.28);
-  --accent:#C3D82E;
-  --accent-deep:#9FB122;
-  --font:'Helvetica Neue', Helvetica, Arial, 'Segoe UI', sans-serif;
-  --header-h:77px;
-}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>thebuildsystem — Physique &amp; Mindset Coaching</title>
+<meta name="description" content="Coaching for anyone done drifting. Training, nutrition and mindset, run as one system.">
+<link rel="stylesheet" href="css/style.css">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K87QC9CB');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K87QC9CB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-*{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--font);
-  font-size:16px;
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-}
-img{max-width:100%;display:block;}
-a{color:inherit;}
-h1,h2,h3{
-  font-family:var(--font);
-  font-weight:700;
-  letter-spacing:-0.01em;
-  margin:0;
-}
-p{margin:0;}
-.wrap{ max-width:1120px; margin-inline:auto; padding-inline:24px; }
-section{ padding-block:52px; }
-@media (max-width:640px){ section{ padding-block:40px; } }
+<header class="site">
+  <div class="nav">
+    <a href="#top" class="wordmark">the<b>build</b>system</a>
+    <nav class="links">
+      <a href="#method" data-i18n="nav.method">Method</a>
+      <a href="#story" data-i18n="nav.story">Story</a>
+      <a href="#running" data-i18n="nav.running">Running</a>
+      <a href="#programs" data-i18n="nav.programs">Programs</a>
+      <a href="#apply" data-i18n="nav.application">Application</a>
+      <a href="#results" data-i18n="nav.results">Results</a>
+      <a href="#camp" data-i18n="nav.camp">Camp</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">ES</button>
+      <a class="login-link" href="auth.html" title="Client login" aria-label="Client login">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20c1.2-4 4.2-6 7.5-6s6.3 2 7.5 6"/></svg>
+        <span class="login-text" data-i18n="nav.login">Client Login</span>
+      </a>
+    </div>
+  </div>
+</header>
 
-/* Clearance so a section's heading never lands under the sticky header
-   when jumped to via wheel-nav, the dots, or a top-nav anchor link. */
-.hero, #camp, #method, #story, #running, #programs, #apply, #results, .final{
-  scroll-margin-top:var(--header-h);
-}
+<main id="top">
 
-/* These sections are sized to roughly one screen; center their content
-   in the space below the header instead of pinning it to the top, so
-   each one reads as balanced rather than top-heavy. */
-#camp, #method, #story, #running, #programs, #apply, #results{
-  display:flex; flex-direction:column; justify-content:center;
-  min-height:calc(100vh - var(--header-h));
-  padding-block:16px;
-}
-@media (max-width:760px){
-  #camp, #method, #story, #running, #programs, #apply, #results{ min-height:0; padding-block:40px; }
-}
+  <section class="hero">
+    <div class="hero-media">
+      <video class="hero-video" autoplay muted loop playsinline poster="media/hero-poster.jpg">
+        <source src="media/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="wrap hero-content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Coaching for anyone done drifting</p>
+        <h1 data-i18n-html="hero.h1">You don't drift<br>into shape. <em>You build it.</em></h1>
+        <p class="lede" data-i18n="hero.lede">thebuildsystem is a physique &amp; mindset coaching system built by a guy who rebuilt himself first — from a mental low in 2020 to a remote valley in Australia to Hyrox. Training, food and head-space, run as one system, for anyone in their mid-20s who's done coasting.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid-white" href="apply.html" data-i18n="hero.cta1">Apply for 1:1 Coaching</a>
+          <a class="btn btn-outline-white" href="#programs" data-i18n="hero.cta2">Get the Solo Program</a>
+          <a class="btn btn-outline-white" href="#apply" data-i18n="hero.cta3">Let's start</a>
+        </div>
+        <div class="trust-row">
+          <span data-i18n="hero.trust1">80K on TikTok &amp; Instagram</span>
+          <span data-i18n="hero.trust2">3 years training in Australia</span>
+          <span data-i18n="hero.trust3">Hyrox Finisher</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* ---------- SECTION DOTS ---------- */
-.section-dots{
-  position:fixed; left:26px; top:50%; transform:translateY(-50%); z-index:60;
-  display:flex; flex-direction:column; align-items:center; gap:16px;
-}
-.section-dots a{
-  width:8px; height:8px; border-radius:50%; background:rgba(41,41,41,0.28);
-  display:block; transition:background-color .25s ease, transform .25s ease;
-}
-.section-dots a:hover{ background:rgba(41,41,41,0.6); }
-.section-dots a.active{ background:var(--ink); transform:scale(1.5); }
-.section-dots.on-dark a{ background:rgba(253,253,252,0.32); }
-.section-dots.on-dark a:hover{ background:rgba(253,253,252,0.7); }
-.section-dots.on-dark a.active{ background:var(--paper); }
-@media (max-width:900px){ .section-dots{ display:none; } }
+  <section id="camp">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="camp.eyebrow">Camp</p>
+        <h2 data-i18n="camp.h2">Some training happens somewhere else</h2>
+        <p data-i18n="camp.p">A few times a year I take this on the road — pick a place, block off real time, and run intensive in-person sessions there. Same system, built into a fixed block, somewhere else for a while.</p>
+      </div>
 
-.eyebrow{
-  font-weight:700; font-size:12px; letter-spacing:0.18em;
-  text-transform:uppercase; color:var(--muted);
-}
+      <div class="camp-grid">
+        <div class="camp-map-wrap">
+          <svg class="camp-map" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map with a travel route from Buenos Aires to Bali to Sydney">
+            <path class="camp-map-land" d="M 95.0,70.0 C 105.0,63.3 124.2,56.7 140.0,55.0 C 155.8,53.3 175.0,56.7 190.0,60.0 C 205.0,63.3 220.8,69.2 230.0,75.0 C 239.2,80.8 245.0,89.2 245.0,95.0 C 245.0,100.8 230.0,104.2 230.0,110.0 C 230.0,115.8 245.0,123.3 245.0,130.0 C 245.0,136.7 237.5,142.5 230.0,150.0 C 222.5,157.5 209.2,167.5 200.0,175.0 C 190.8,182.5 183.3,190.0 175.0,195.0 C 166.7,200.0 157.5,205.8 150.0,205.0 C 142.5,204.2 135.0,196.7 130.0,190.0 C 125.0,183.3 125.0,171.7 120.0,165.0 C 115.0,158.3 105.8,157.5 100.0,150.0 C 94.2,142.5 88.3,129.2 85.0,120.0 C 81.7,110.8 78.3,103.3 80.0,95.0 C 81.7,86.7 85.0,76.7 95.0,70.0 Z" /><path class="camp-map-land" d="M 195.0,215.0 C 200.8,210.8 211.7,208.3 220.0,210.0 C 228.3,211.7 239.2,218.3 245.0,225.0 C 250.8,231.7 254.2,240.8 255.0,250.0 C 255.8,259.2 252.5,270.0 250.0,280.0 C 247.5,290.0 244.2,300.8 240.0,310.0 C 235.8,319.2 230.0,330.0 225.0,335.0 C 220.0,340.0 214.2,342.5 210.0,340.0 C 205.8,337.5 202.5,328.3 200.0,320.0 C 197.5,311.7 197.5,300.0 195.0,290.0 C 192.5,280.0 186.7,269.2 185.0,260.0 C 183.3,250.8 183.3,242.5 185.0,235.0 C 186.7,227.5 189.2,219.2 195.0,215.0 Z" /><path class="camp-map-land" d="M 390.0,60.0 C 395.8,56.3 410.0,50.8 420.0,50.0 C 430.0,49.2 442.5,51.7 450.0,55.0 C 457.5,58.3 464.2,64.2 465.0,70.0 C 465.8,75.8 460.8,85.0 455.0,90.0 C 449.2,95.0 437.5,99.2 430.0,100.0 C 422.5,100.8 415.8,97.5 410.0,95.0 C 404.2,92.5 399.2,88.8 395.0,85.0 C 390.8,81.2 385.8,76.2 385.0,72.0 C 384.2,67.8 384.2,63.7 390.0,60.0 Z" /><path class="camp-map-land" d="M 400.0,125.0 C 406.3,119.2 420.8,114.2 430.0,115.0 C 439.2,115.8 448.7,122.5 455.0,130.0 C 461.3,137.5 466.3,149.2 468.0,160.0 C 469.7,170.8 467.2,183.3 465.0,195.0 C 462.8,206.7 459.2,218.3 455.0,230.0 C 450.8,241.7 445.0,255.0 440.0,265.0 C 435.0,275.0 430.0,286.7 425.0,290.0 C 420.0,293.3 414.2,290.8 410.0,285.0 C 405.8,279.2 403.0,265.8 400.0,255.0 C 397.0,244.2 393.7,232.5 392.0,220.0 C 390.3,207.5 390.0,191.7 390.0,180.0 C 390.0,168.3 390.3,159.2 392.0,150.0 C 393.7,140.8 393.7,130.8 400.0,125.0 Z" /><path class="camp-map-land" d="M 470.0,55.0 C 478.0,46.7 501.7,43.3 520.0,40.0 C 538.3,36.7 560.0,34.2 580.0,35.0 C 600.0,35.8 621.7,40.0 640.0,45.0 C 658.3,50.0 677.5,57.5 690.0,65.0 C 702.5,72.5 712.5,81.7 715.0,90.0 C 717.5,98.3 712.5,110.0 705.0,115.0 C 697.5,120.0 679.2,115.8 670.0,120.0 C 660.8,124.2 659.2,135.0 650.0,140.0 C 640.8,145.0 625.0,144.2 615.0,150.0 C 605.0,155.8 599.2,170.0 590.0,175.0 C 580.8,180.0 570.0,181.7 560.0,180.0 C 550.0,178.3 539.2,170.8 530.0,165.0 C 520.8,159.2 512.5,152.5 505.0,145.0 C 497.5,137.5 490.5,129.2 485.0,120.0 C 479.5,110.8 474.5,100.8 472.0,90.0 C 469.5,79.2 462.0,63.3 470.0,55.0 Z" /><path class="camp-map-land" d="M 630.0,275.0 C 635.0,270.0 653.3,265.8 665.0,265.0 C 676.7,264.2 690.8,266.7 700.0,270.0 C 709.2,273.3 717.5,279.2 720.0,285.0 C 722.5,290.8 720.0,300.0 715.0,305.0 C 710.0,310.0 699.2,314.2 690.0,315.0 C 680.8,315.8 669.2,313.3 660.0,310.0 C 650.8,306.7 640.0,300.8 635.0,295.0 C 630.0,289.2 625.0,280.0 630.0,275.0 Z" />
+            <path class="camp-map-route" d="M 213,300 L 590,190 L 705,288" fill="none" />
+            <circle class="camp-map-dot" cx="213" cy="300" r="6"><title>Buenos Aires</title></circle><circle class="camp-map-dot" cx="590" cy="190" r="6"><title>Bali</title></circle><circle class="camp-map-dot" cx="705" cy="288" r="6"><title>Sydney</title></circle>
+          </svg>
+          <div class="camp-map-caption">
+            <span data-i18n="camp.map1">Buenos Aires</span>
+            <span data-i18n="camp.map2">Bali</span>
+            <span data-i18n="camp.map3">Sydney</span>
+          </div>
+        </div>
 
-.btn{
-  display:inline-flex; align-items:center; gap:8px;
-  font-weight:700; font-size:14px; letter-spacing:0.02em;
-  text-transform:uppercase; padding:15px 28px; border-radius:1px;
-  text-decoration:none; border:1.5px solid var(--ink); cursor:pointer;
-  transition:opacity .15s ease, background-color .15s ease, color .15s ease;
-}
-.btn-primary{ background:var(--ink); color:var(--paper); }
-.btn-primary:hover{ opacity:0.8; }
-.btn-outline{ background:transparent; color:var(--ink); }
-.btn-outline:hover{ background:var(--ink); color:var(--paper); }
-.btn-outline-white{ background:transparent; color:var(--paper); border-color:rgba(253,253,252,0.6); }
-.btn-outline-white:hover{ background:var(--paper); color:var(--ink); }
-.btn-solid-white{ background:var(--paper); color:var(--ink); border-color:var(--paper); }
-.btn-solid-white:hover{ opacity:0.85; }
-.btn-kahunas{ background:var(--paper); color:var(--ink); border-color:var(--line-strong); gap:11px; }
-.btn-kahunas:hover{ border-color:var(--ink); }
-.kahunas-logo-wrap{ position:relative; width:19px; height:19px; overflow:hidden; flex-shrink:0; display:inline-block; }
-.kahunas-logo-wrap img{ position:absolute; left:0; top:50%; transform:translateY(-50%); height:31px; width:auto; max-width:none; }
-.avatar-wrap{ position:relative; width:84px; height:84px; flex-shrink:0; }
-.avatar-img{ width:84px; height:84px; border-radius:50%; object-fit:cover; border:2px solid rgba(253,253,252,0.18); }
-.avatar-placeholder{ width:84px; height:84px; border-radius:50%; background:rgba(253,253,252,0.08); border:2px solid rgba(253,253,252,0.18); display:flex; align-items:center; justify-content:center; color:rgba(253,253,252,0.55); }
-.avatar-placeholder svg{ width:34px; height:34px; }
-.avatar-edit-btn{ position:absolute; bottom:-2px; right:-2px; width:28px; height:28px; border-radius:50%; background:var(--accent); color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; border:2px solid var(--ink); }
-.avatar-edit-btn svg{ width:14px; height:14px; }
+        <div class="camp-contact-card">
+          <p class="eyebrow" data-i18n="camp.contact.tag">Contact me</p>
+          <h3 data-i18n="camp.contact.h3">Where do you want to train?</h3>
+          <p data-i18n="camp.contact.p">Tell me the place and roughly when — I'll get back to you to see if a camp there makes sense.</p>
 
-.apply-wrap{ max-width:640px; margin:0 auto; padding:60px 24px 100px; }
-.apply-head{ margin-bottom:36px; border-bottom:1px solid var(--line); padding-bottom:28px; }
-.apply-head h1{ font-size:32px; margin-top:8px; }
-.apply-lede{ color:var(--ink-soft); font-size:15px; margin-top:10px; }
-.apply-section-title{ font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); margin-bottom:18px; }
-.apply-form .field{ margin-bottom:22px; }
-.pill-group{ display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
-.pill{ position:relative; display:inline-flex; align-items:center; gap:8px; border:1.5px solid var(--line-strong); padding:10px 16px; border-radius:999px; font-size:14px; cursor:pointer; transition:border-color .15s ease, background-color .15s ease, color .15s ease; }
-.pill input{ position:absolute; opacity:0; width:0; height:0; }
-.pill:has(input:checked){ border-color:var(--ink); background:var(--ink); color:var(--paper); }
-.apply-form button[type="submit"]{ margin-top:8px; }
-.apply-success{ text-align:center; padding:60px 20px; border:1px solid var(--line); }
-.apply-success h3{ font-size:22px; margin-bottom:10px; }
-.apply-success p{ color:var(--ink-soft); }
-.btn:disabled{ opacity:0.5; cursor:not-allowed; }
+          <form id="form-camp-contact" class="camp-form" novalidate>
+            <div class="field">
+              <label for="camp-name" data-i18n="camp.contact.name">Name</label>
+              <input type="text" id="camp-name" autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="camp-email" data-i18n="camp.contact.email">Email</label>
+              <input type="email" id="camp-email" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="camp-message" data-i18n="camp.contact.message">Where (and when)?</label>
+              <textarea id="camp-message" rows="2" data-i18n="camp.contact.placeholder" placeholder="e.g. Bali, 2 weeks, sometime in March"></textarea>
+            </div>
+            <div class="field" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+              <label for="camp-website">Leave this field empty</label>
+              <input type="text" id="camp-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div id="camp-contact-error" class="auth-msg" style="margin-top:0;"></div>
+            <button class="btn btn-accent" type="submit" data-i18n="camp.contact.btn">Contact me</button>
+          </form>
 
-/* Application form embedded in the landing page: elevated card + compact 2-col fields */
-#apply .section-head{ margin-bottom:14px; }
-#apply .section-head .eyebrow{
-  display:inline-flex; align-items:center;
-  background:var(--accent); color:var(--ink);
-  padding:6px 14px; border-radius:999px;
-  font-size:10.5px; letter-spacing:0.07em;
-}
-#apply .apply-wrap{
-  position:relative; isolation:isolate; overflow:hidden;
-  background:linear-gradient(180deg, #F4F3EF 0%, #E9E7E0 100%);
-  border:1px solid var(--line-strong);
-  border-radius:20px;
-  padding:22px 32px 22px;
-  box-shadow:0 26px 50px -30px rgba(41,41,41,0.4), 0 2px 8px rgba(41,41,41,0.06);
-}
-#apply .apply-wrap::before{
-  content:""; position:absolute; top:-90px; left:50%; transform:translateX(-50%);
-  width:340px; height:200px; border-radius:50%;
-  background:radial-gradient(circle, rgba(255,255,255,0.95), rgba(255,255,255,0) 70%);
-  filter:blur(4px); pointer-events:none; z-index:0;
-}
-#apply .apply-wrap::after{
-  content:""; position:absolute; inset:0; opacity:.045; mix-blend-mode:multiply; pointer-events:none; z-index:0;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
-#apply .apply-wrap > *{ position:relative; z-index:1; }
-#apply .apply-form{ display:grid; grid-template-columns:1fr 1fr; gap:0 16px; }
-#apply .apply-form .field{ margin-bottom:8px; }
-#apply .apply-section-title{ grid-column:1/-1; position:relative; margin-bottom:10px; padding-bottom:7px; }
-#apply .apply-section-title::after{ content:""; position:absolute; left:0; bottom:0; width:34px; height:2px; background:var(--accent); }
-#apply .field-wide{ grid-column:1/-1; }
-#apply .field label{ color:var(--ink-soft); }
-#apply .field input{ border-radius:8px; background:var(--paper); padding:10px 12px; transition:border-color .15s ease, box-shadow .15s ease; }
-#apply .field input:focus{ border-color:var(--accent-deep); outline:none; box-shadow:0 0 0 3px rgba(195,216,46,0.35); }
-#apply .pill-group{ gap:6px; margin-top:4px; }
-#apply .pill{ padding:6px 11px; font-size:12px; background:var(--paper); }
-#apply .pill:hover{ border-color:var(--accent-deep); }
-#apply .pill:has(input:checked){ border-color:var(--accent-deep); background:var(--accent); color:var(--ink); }
-#apply #apply-error{ grid-column:1/-1; margin-top:0; margin-bottom:4px; }
-#apply .apply-form button[type="submit"]{
-  grid-column:1/-1; margin-top:4px; justify-content:center;
-  background:var(--accent); color:var(--ink); border-color:var(--accent);
-}
-#apply .apply-form button[type="submit"]:hover{ background:var(--accent-deep); border-color:var(--accent-deep); opacity:1; }
-#apply .apply-success{ border:none; }
-@media (max-width:760px){ #apply .apply-form{ grid-template-columns:1fr; } }
-@media (max-width:560px){ #apply .apply-wrap{ padding:24px 22px 24px; border-radius:16px; } }
+          <div id="camp-contact-success" class="camp-success" style="display:none;">
+            <h3 data-i18n="camp.contact.successh3">Got it</h3>
+            <p data-i18n="camp.contact.successp">I'll get back to you soon to talk it through.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* ---------- NAV ---------- */
-header.site{
-  position:sticky; top:0; z-index:50;
-  background:var(--paper); border-bottom:1px solid var(--line);
-  /* GPU-composite the sticky header so fast programmatic scrolls
-     (the wheel-jump nav) don't tear/flicker it against the section
-     scrolling underneath. */
-  will-change:transform; transform:translateZ(0); backface-visibility:hidden;
-}
-.nav{ display:flex; align-items:center; padding-block:18px; gap:18px; max-width:1120px; margin-inline:auto; padding-inline:24px; }
-.wordmark{ font-weight:800; font-size:18px; letter-spacing:-0.01em; color:var(--ink); text-decoration:none; }
-.wordmark b{ font-weight:400; }
-nav.links{ display:flex; align-items:center; gap:22px; margin-left:18px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
-nav.links a{ color:var(--ink-soft); text-decoration:none; }
-nav.links a:hover{ color:var(--ink); }
-.nav-right{ display:flex; align-items:center; gap:18px; margin-left:auto; flex-shrink:0; }
-.login-link{
-  display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink);
-  font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
-  border:1.5px solid var(--line-strong); border-radius:999px; padding:8px 8px 8px 14px;
-}
-.login-link:hover{ border-color:var(--ink); }
-.login-link svg{ width:19px; height:19px; }
-@media (max-width:560px){ .login-link .login-text{ display:none; } .login-link{ padding:9px; border-radius:50%; } }
-@media (max-width:820px){ nav.links{ display:none; } }
-.lang-toggle{
-  font-family:var(--font); font-weight:700; font-size:12.5px; letter-spacing:0.04em;
-  color:var(--ink); background:transparent; cursor:pointer;
-  border:1.5px solid var(--line-strong); border-radius:999px; padding:8px 13px; line-height:1;
-}
-.lang-toggle:hover{ border-color:var(--ink); }
+  <section id="method">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="method.eyebrow">The method</p>
+        <h2 data-i18n="method.h2">Three systems. Run together.</h2>
+        <p data-i18n="method.p">Most programs hand you a PDF and disappear. thebuildsystem runs training, nutrition and mindset as one loop — because a routine that ignores your head and your plate doesn't hold past week three.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-photo"><img src="media/pillar-training.jpg" alt="Training — cable machine"></div>
+          <div class="pillar-body">
+          <div class="pillar-meta">
+            <span class="num">01</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.8"/><circle cx="19" cy="12" r="2.8"/><line x1="7.8" y1="12" x2="16.2" y2="12"/></svg>
+          </div>
+          <h3 data-i18n="pillar.training.h3">Training</h3>
+          <p data-i18n="pillar.training.p">Progressive strength and conditioning blocks, built around your equipment and schedule — not a generic 12-week template.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-photo"><img src="media/pillar-nutrition.jpg" alt="Nutrition — the physique it builds"></div>
+          <div class="pillar-body">
+          <div class="pillar-meta">
+            <span class="num">02</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5h16"/><path d="M4.5 11.5a7.5 7.5 0 0 0 15 0"/><path d="M12 11V6.2c0-1 .8-1.8 1.8-1.8"/></svg>
+          </div>
+          <h3 data-i18n="pillar.nutrition.h3">Nutrition</h3>
+          <p data-i18n="pillar.nutrition.p">Meal-by-meal calorie targets across three intensity levels, sport-nutrition style — with one guilt-free meal built in every weekend.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-photo"><img src="media/pillar-mind.jpg" alt="Mind — focus"></div>
+          <div class="pillar-body">
+          <div class="pillar-meta">
+            <span class="num">03</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <h3 data-i18n="pillar.mind.h3">Mind</h3>
+          <p data-i18n="pillar.mind.p">The part most coaches skip. Daily structure, journaling and check-ins for the fear-of-failure and no-motivation days — the ones that actually decide the outcome.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* ---------- HERO ---------- */
-.hero{ background:var(--ink); padding-block:0; }
-.hero-media{ position:relative; width:100%; height:clamp(520px, calc(100vh - var(--header-h)), 940px); overflow:hidden; background:var(--ink); }
-.hero-video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 32%; display:block; }
-.hero-overlay{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,20,19,0.05) 0%, rgba(15,15,14,0.9) 82%); pointer-events:none; }
-.hero-content{ position:absolute; left:0; right:0; bottom:0; z-index:2; padding-block:0 44px; }
-.hero .eyebrow{ color:rgba(253,253,252,0.72); }
-.hero h1{ font-size:clamp(38px,6vw,72px); line-height:0.99; margin-block:14px 18px; color:var(--paper); }
-.hero h1 em{ font-style:normal; color:rgba(253,253,252,0.65); }
-.hero p.lede{ font-size:16px; max-width:44ch; color:rgba(253,253,252,0.82); margin-bottom:26px; }
-.hero-ctas{ display:flex; flex-wrap:wrap; gap:14px; margin-bottom:30px; }
-.trust-row{ display:flex; flex-wrap:wrap; gap:10px 22px; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:rgba(253,253,252,0.6); font-weight:700; }
-.trust-row span{ display:flex; align-items:center; gap:8px; }
-.trust-row span::before{ content:""; width:5px; height:5px; background:var(--paper); border-radius:50%; }
-@media (max-width:640px){ .hero-media{ min-height:560px; } .hero-content{ padding-block:0 32px; } }
+  <section id="story">
+    <div class="wrap">
+      <div class="story-head-grid">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="story.eyebrow">The founder</p>
+          <h2 data-i18n="story.h2">From a low point to the Hyrox start line</h2>
+          <p data-i18n="story.p">I started training in 2020 to climb out of a mental low point — not to build a brand. Everything since has been the same system, applied to myself first.</p>
+        </div>
+        <div class="founder-photo-block">
+          <div class="founder-photo">
+            <img src="media/founder.jpg" alt="Tomi running">
+          </div>
+          <span class="founder-photo-tag" data-i18n="story.caption">Tomi — Founder &amp; Coach</span>
+        </div>
+      </div>
 
-/* ---------- METHOD ---------- */
-.section-head{ max-width:640px; margin-bottom:16px; }
-.section-head h2{ font-size:clamp(24px,3.4vw,32px); margin-top:6px; }
-.section-head p{ color:var(--muted); font-size:14px; margin-top:6px; }
+      <div class="stat-row">
+        <div class="stat"><p class="n">2020</p><p class="l" data-i18n="stat.1.l">Started training</p></div>
+        <div class="stat"><p class="n">3 yrs</p><p class="l" data-i18n="stat.2.l">Living &amp; working in Australia</p></div>
+        <div class="stat"><p class="n">18 days</p><p class="l" data-i18n="stat.3.l">First in-person training camp</p></div>
+        <div class="stat"><p class="n">80K</p><p class="l" data-i18n="stat.4.l">Followers built from the process</p></div>
+      </div>
 
-.pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
-@media (max-width:760px){ .pillars{ grid-template-columns:1fr; } }
-.pillar{ background:var(--paper); display:flex; flex-direction:column; }
-.pillar-photo{ aspect-ratio:1/1; overflow:hidden; background:var(--paper-dim); }
-.pillar-photo img{ width:100%; height:100%; object-fit:cover; object-position:50% 50%; display:block; filter:grayscale(1) contrast(1.05); }
-.pillar-body{ position:relative; padding:12px 18px 12px; }
-.pillar-body::before{ content:""; position:absolute; top:0; left:18px; width:26px; height:2px; background:var(--accent); }
-.pillar-meta{ display:flex; align-items:center; justify-content:space-between; margin-bottom:7px; }
-.pillar .num{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:20px; height:20px; border-radius:50%;
-  background:var(--paper-dim); border:1px solid var(--line-strong);
-  font-size:9.5px; font-weight:800; color:var(--ink-soft); letter-spacing:0;
-}
-.pillar .icon{ width:19px; height:19px; color:var(--accent-deep); }
-.pillar h3{ font-weight:700; font-size:15px; margin-bottom:3px; }
-.pillar p{ color:var(--muted); font-size:12.5px; }
+      <div class="timeline">
+        <div class="t-item">
+          <p class="t-year">2020</p>
+          <div><h3 data-i18n="t1.h3">Training as a way out</h3>
+          <p data-i18n="t1.p">Picked up training to get out of a mental low — no plan, no coach, just consistency and paying attention to what actually worked.</p></div>
+        </div>
+        <div class="t-item">
+          <p class="t-year">2023</p>
+          <div><h3 data-i18n="t2.h3">Moved to Australia</h3>
+          <p data-i18n="t2.p">Three years of physical work — bar work, moving houses, gardening, framing, hotel maintenance, events — while training kept running underneath it all, based out of Manly.</p></div>
+        </div>
+        <div class="t-item">
+          <p class="t-year">2024</p>
+          <div><h3 data-i18n="t3.h3">The sharpest transformation</h3>
+          <p data-i18n="t3.p">A stretch of time in an isolated valley, working with horses, journaling daily and training almost every day produced the biggest physical and mental shift of the whole process — and became the blueprint for the system.</p></div>
+        </div>
+        <div class="t-item">
+          <p class="t-year">2026</p>
+          <div><h3 data-i18n="t4.h3">Hyrox, then home</h3>
+          <p data-i18n="t4.p">Closed the Australia chapter by racing Hyrox, then moved back to Argentina to build thebuildsystem full-time — turning the process into a system other people could actually run.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* ---------- STORY / TIMELINE ---------- */
-.stat-row{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:10px; }
-@media (max-width:760px){ .stat-row{ grid-template-columns:1fr 1fr; } }
-.stat{
-  position:relative; overflow:hidden;
-  background:linear-gradient(180deg, #FEFEFD 0%, #F5F4F0 100%);
-  border:1px solid var(--line-strong); border-radius:12px;
-  padding:13px 15px 11px;
-  box-shadow:0 14px 26px -20px rgba(41,41,41,0.32), 0 2px 6px rgba(41,41,41,0.05);
-  transition:transform .3s ease, box-shadow .3s ease;
-}
-.stat::before{ content:""; position:absolute; top:0; left:16px; width:22px; height:3px; border-radius:0 0 3px 3px; background:var(--accent); }
-.stat:hover{ transform:translateY(-3px); box-shadow:0 20px 32px -18px rgba(41,41,41,0.38), 0 6px 14px -8px rgba(41,41,41,0.1); }
-.stat .n{ font-size:26px; font-weight:800; line-height:1; margin-top:7px; }
-.stat .l{ font-size:10.5px; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted); margin-top:6px; font-weight:700; }
+  <section id="running">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="running.eyebrow">Running Club</p>
+        <h2 data-i18n="running.h2">Running clears the head. Then it builds the engine.</h2>
+        <p data-i18n="running.p">Every session starts the same way — legs moving, head quiet. It's the cheapest test of discipline I know, and the aerobic base everything else in training sits on.</p>
+      </div>
 
-.timeline{ display:grid; grid-template-columns:1fr 1fr; gap:0 32px; border-bottom:1px solid var(--line); }
-@media (max-width:760px){ .timeline{ grid-template-columns:1fr; } }
-.t-item{ display:grid; grid-template-columns:56px 1fr; gap:14px; padding-block:8px; border-top:1px solid var(--line); }
-@media (max-width:600px){ .t-item{ grid-template-columns:48px 1fr; gap:12px; } }
-.t-year{ font-size:18px; font-weight:800; color:var(--accent-deep); }
-.t-item h3{ font-weight:700; font-size:14px; margin-bottom:3px; }
-.t-item p{ color:var(--ink-soft); font-size:12.5px; max-width:60ch; }
+      <div class="running-grid">
+        <div class="running-visual">
+          <div class="running-photo">
+            <img src="media/running-club.jpg" alt="Runner mid-stride, close on the feet">
+          </div>
+          <div class="running-points">
+            <div class="running-point">
+              <span class="running-point-dot"></span>
+              <div>
+                <h3 data-i18n="running.mental.h3">Clears the head</h3>
+                <p data-i18n="running.mental.p">No shortcuts, no one to perform for — just pace and whether you hold it.</p>
+              </div>
+            </div>
+            <div class="running-point">
+              <span class="running-point-dot"></span>
+              <div>
+                <h3 data-i18n="running.perf.h3">Builds the engine</h3>
+                <p data-i18n="running.perf.p">A stronger aerobic base means faster recovery and more capacity in every other session.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-/* Same 4-column track + gap as .stat-row below, so the founder photo's
-   column lines up exactly with the last stat card ("80K") beneath it. */
-.story-head-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; align-items:center; margin-bottom:12px; }
-@media (max-width:760px){ .story-head-grid{ grid-template-columns:1fr; } }
-.story-head-grid .section-head{ grid-column:1/4; margin-bottom:0; }
-.story-head-grid .eyebrow{ display:inline-flex; align-items:center; gap:8px; }
-.story-head-grid .eyebrow::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--accent); flex-shrink:0; }
-.founder-photo-block{
-  grid-column:4/5;
-  display:flex; flex-direction:column; align-items:center; gap:10px;
-  justify-self:center; margin-inline:auto;
-}
-@media (max-width:760px){
-  .story-head-grid .section-head, .founder-photo-block{ grid-column:1/-1; }
-}
-.founder-photo{
-  position:relative; isolation:isolate; flex-shrink:0;
-  aspect-ratio:3/4; height:310px; width:auto;
-  overflow:hidden; border-radius:14px; background:var(--paper-dim);
-  box-shadow:0 20px 36px -22px rgba(41,41,41,0.42), 0 3px 8px rgba(41,41,41,0.08);
-}
-.founder-photo img{ width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05); }
-.founder-photo-tag{
-  display:inline-flex; align-items:center; gap:7px;
-  padding:7px 16px; border-radius:999px;
-  background:var(--ink); color:var(--paper);
-  font-size:10px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
-  white-space:nowrap;
-}
-.founder-photo-tag::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; }
-@media (max-width:600px){ .founder-photo{ height:270px; } }
+        <div class="vam-card">
+          <p class="eyebrow" data-i18n="running.calc.tag">Free tool</p>
+          <h3 data-i18n="running.calc.h3">Get your VAM</h3>
+          <p class="vam-intro" data-i18n="running.calc.p">Warm up, then run 5 minutes at the hardest pace you can hold — steady, not a sprint. Enter how far you got and get your number instantly.</p>
 
-/* ---------- CAMP ---------- */
-.camp-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:28px; align-items:center; margin-top:6px; }
-@media (max-width:820px){ .camp-grid{ grid-template-columns:1fr; } }
+          <form id="form-vam" class="vam-form" novalidate>
+            <div class="field">
+              <label for="vam-distance" data-i18n="running.calc.label">Distance in 5 minutes (meters)</label>
+              <input type="number" id="vam-distance" inputmode="numeric" min="0" placeholder="1200">
+            </div>
+            <button class="btn btn-accent" type="submit" data-i18n="running.calc.btn">Calculate my VAM</button>
+          </form>
+          <p class="vam-disclaimer" data-i18n="running.calc.disclaimer">Max-effort test — if you're new to running or have a health condition, check with a doctor first.</p>
 
-.camp-map-wrap{
-  position:relative; isolation:isolate; overflow:hidden;
-  background:var(--paper-dim); border:1px solid var(--line-strong); border-radius:16px;
-  padding:18px;
-}
-.camp-map{ width:100%; height:auto; display:block; }
-.camp-map-land{ fill:#E8E6DF; stroke:var(--line-strong); stroke-width:1; }
-.camp-map-route{ stroke:var(--accent-deep); stroke-width:2; stroke-dasharray:6 6; }
-.camp-map-dot{ fill:var(--accent-deep); stroke:var(--paper-dim); stroke-width:3; animation:camp-pulse 2.4s ease-in-out infinite; }
-@keyframes camp-pulse{ 0%,100%{ r:6; } 50%{ r:7.4; } }
-.camp-map-caption{ display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:12px; font-size:11px; letter-spacing:0.04em; color:var(--muted); font-weight:700; text-transform:uppercase; }
-.camp-map-caption span{ display:flex; align-items:center; gap:6px; }
-.camp-map-caption span::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--accent-deep); }
+          <div id="vam-result" class="vam-result" style="display:none;">
+            <p class="vam-result-label" data-i18n="running.calc.resultlabel">Your VAM</p>
+            <p class="vam-result-value"><span id="vam-value">—</span> <span class="vam-unit">km/h</span></p>
+            <p class="vam-result-tag" id="vam-tag"></p>
+            <a class="btn btn-outline" href="#programs" data-i18n="running.calc.cta">See the Running Program</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.camp-contact-card{
-  position:relative; isolation:isolate; overflow:hidden;
-  background:linear-gradient(180deg,#F4F3EF 0%, #E8E6DF 100%);
-  border:1px solid var(--line-strong); border-radius:16px;
-  padding:22px 24px 20px; display:flex; flex-direction:column;
-  box-shadow:0 22px 40px -26px rgba(41,41,41,0.35), 0 2px 6px rgba(41,41,41,0.06);
-}
-.camp-contact-card .eyebrow{ margin-bottom:2px; }
-.camp-contact-card h3{ font-size:19px; margin-bottom:6px; }
-.camp-contact-card > p{ color:var(--ink-soft); font-size:13px; margin-bottom:14px; }
-.camp-form .field{ margin-bottom:10px; }
-.camp-form .field label{ font-size:11.5px; }
-.camp-form .field input, .camp-form .field textarea{
-  font-family:var(--font); border-radius:8px; background:var(--paper);
-  padding:10px 12px; font-size:14px; border:1px solid var(--line-strong); color:var(--ink);
-  resize:vertical;
-}
-.camp-form .field input:focus, .camp-form .field textarea:focus{
-  border-color:var(--accent-deep); outline:none; box-shadow:0 0 0 3px rgba(195,216,46,0.35);
-}
-.camp-form button[type="submit"]{ width:100%; justify-content:center; margin-top:2px; }
-.camp-success{ text-align:center; padding:20px 10px; }
-.camp-success h3{ font-size:16px; margin-bottom:6px; }
-.camp-success p{ color:var(--ink-soft); font-size:13px; }
+  <section id="programs">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="programs.eyebrow">Programs</p>
+        <h2 data-i18n="programs.h2">Pick your build</h2>
+        <p data-i18n="programs.p">Three ways in — from a single custom routine to a full 1:1 system with weekly check-ins. All prices in USD. Coaching plans are billed monthly through PayPal; the button below pays the first month, and I'll set up the recurring charge with you directly.</p>
+      </div>
+      <div class="programs-grid">
+        <div class="plan">
+          <p class="p-name" data-i18n="plan1.name">Solo Program</p>
+          <p class="p-price">$50<sup data-i18n="plan1.sup">/ one-time</sup></p>
+          <p class="p-desc" data-i18n="plan1.desc">A single, fully custom training routine — for people who just need the plan and can run it themselves.</p>
+          <ul class="p-features">
+            <li data-i18n="plan1.f1">One custom routine, built around your goal</li>
+            <li data-i18n="plan1.f2">Written progression, no guesswork</li>
+            <li data-i18n="plan1.f3">Self-guided from there</li>
+          </ul>
+          <a class="btn btn-outline" href="https://www.paypal.com/ncp/payment/PLB-25WLU4M5TDAQ" target="_blank" rel="noopener" data-i18n="plan1.btn">Pay with PayPal</a>
+        </div>
+        <div class="plan featured">
+          <span class="badge" data-i18n="plan2.badge">Most committed</span>
+          <p class="p-name" data-i18n="plan2.name">1:1 Coaching · 12 months</p>
+          <p class="p-price">$115<sup data-i18n="plan2.sup">/mo</sup></p>
+          <p class="p-desc" data-i18n="plan2.desc">The full system, for a year. Training, nutrition and mindset run together with direct access to me.</p>
+          <ul class="p-features">
+            <li data-i18n="plan2.f1">Training + nutrition + mindset, as one plan</li>
+            <li data-i18n="plan2.f2">Weekly check-ins and adjustments</li>
+            <li data-i18n="plan2.f3">Direct access between sessions</li>
+            <li data-i18n="plan2.f4">Lowest monthly rate of the three plans</li>
+          </ul>
+          <a class="btn btn-accent" href="https://www.paypal.com/ncp/payment/PLB-MJPHUA2E9KX8" target="_blank" rel="noopener" data-i18n="plan2.btn">Pay first month</a>
+          <p class="plan-note" data-i18n="plan.note">Recurring months arranged directly after your first payment.</p>
+        </div>
+        <div class="plan">
+          <p class="p-name" data-i18n="plan3.name">1:1 Coaching · 6 months</p>
+          <p class="p-price">$140<sup data-i18n="plan3.sup">/mo</sup></p>
+          <p class="p-desc" data-i18n="plan3.desc">The full system on a shorter commitment — same training, nutrition and mindset coaching.</p>
+          <ul class="p-features">
+            <li data-i18n="plan3.f1">Training + nutrition + mindset, as one plan</li>
+            <li data-i18n="plan3.f2">Weekly check-ins and adjustments</li>
+            <li data-i18n="plan3.f3">Direct access between sessions</li>
+          </ul>
+          <a class="btn btn-outline" href="https://www.paypal.com/ncp/payment/PLB-7LZW34SXQWZ3" target="_blank" rel="noopener" data-i18n="plan3.btn">Pay first month</a>
+          <p class="plan-note" data-i18n="plan.note">Recurring months arranged directly after your first payment.</p>
+        </div>
+      </div>
 
-/* ---------- RUNNING CLUB ---------- */
-.running-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start; margin-top:6px; }
-@media (max-width:820px){ .running-grid{ grid-template-columns:1fr; } }
+      <div class="extra-plans" id="run-plan">
+        <div class="extra-plans-slides">
+          <div class="extra-plan-slide active" data-index="0">
+            <span class="badge run-plan-bar-badge" data-i18n="runplan.badge">Running Club</span>
+            <div class="run-plan-bar-info">
+              <p class="run-plan-bar-name" data-i18n="runplan.name">Running Program · 6 months</p>
+              <p class="run-plan-bar-desc" data-i18n="runplan.desc">For beginners building their first real base, or runners chasing a faster VAM — a full online 1:1 program built around your number.</p>
+            </div>
+            <p class="run-plan-bar-price">$75<span data-i18n="runplan.sup">/mo</span></p>
+            <a class="btn btn-accent" href="#REPLACE-WITH-PAYPAL-LINK-RUNNING" target="_blank" rel="noopener" data-i18n="runplan.btn">Pay first month</a>
+          </div>
 
-.running-visual{ display:flex; flex-direction:column; gap:16px; }
-.running-photo{
-  position:relative; isolation:isolate; overflow:hidden;
-  border-radius:16px; aspect-ratio:4/5; max-height:260px;
-  background:var(--ink);
-  box-shadow:0 20px 36px -22px rgba(41,41,41,0.42), 0 3px 8px rgba(41,41,41,0.08);
-}
-.running-photo img{ width:100%; height:100%; object-fit:cover; object-position:50% 22%; display:block; filter:grayscale(1) contrast(1.08); }
-.running-photo::after{
-  content:""; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(180deg, rgba(20,20,19,0) 55%, rgba(15,15,14,0.55) 100%);
-}
-.running-points{ display:flex; flex-direction:column; gap:14px; }
-.running-point{ display:flex; gap:12px; align-items:flex-start; }
-.running-point-dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-deep); margin-top:6px; flex-shrink:0; }
-.running-point h3{ font-weight:700; font-size:14px; margin-bottom:2px; }
-.running-point p{ color:var(--muted); font-size:12.5px; }
+          <div class="extra-plan-slide" data-index="1">
+            <span class="badge run-plan-bar-badge" data-i18n="ptplan.badge">In-Person · Local</span>
+            <div class="run-plan-bar-info">
+              <p class="run-plan-bar-name" data-i18n="ptplan.name">Daily Personal Training</p>
+              <p class="run-plan-bar-desc" data-i18n="ptplan.desc">Every session, every day, in person at your gym — the highest level of accountability there is.</p>
+            </div>
+            <p class="run-plan-bar-price">$450<span data-i18n="ptplan.sup">/mo</span></p>
+            <a class="btn btn-accent" href="#REPLACE-WITH-PAYPAL-LINK-PT" target="_blank" rel="noopener" data-i18n="ptplan.btn">Pay first month</a>
+          </div>
 
-.vam-card{
-  position:relative; isolation:isolate; overflow:hidden;
-  background:linear-gradient(180deg,#F4F3EF 0%, #E8E6DF 100%);
-  border:1px solid var(--line-strong); border-radius:16px;
-  padding:22px 24px 20px;
-  box-shadow:0 22px 40px -26px rgba(41,41,41,0.35), 0 2px 6px rgba(41,41,41,0.06);
-  display:flex; flex-direction:column;
-}
-.vam-card .eyebrow{ margin-bottom:2px; }
-.vam-card h3{ font-size:19px; margin-bottom:8px; }
-.vam-intro{ color:var(--ink-soft); font-size:13px; margin-bottom:16px; }
-.vam-form .field{ margin-bottom:12px; }
-.vam-form .field label{ font-size:11.5px; }
-.vam-form .field input{ border-radius:8px; background:var(--paper); padding:11px 13px; font-size:15px; border:1px solid var(--line-strong); }
-.vam-form .field input:focus{ border-color:var(--accent-deep); outline:none; box-shadow:0 0 0 3px rgba(195,216,46,0.35); }
-.vam-form button[type="submit"]{ width:100%; justify-content:center; }
-.vam-disclaimer{ font-size:11px; color:var(--muted); margin-top:10px; }
-.vam-result{
-  margin-top:16px; padding-top:16px; border-top:1px solid var(--line-strong);
-  opacity:0; transform:translateY(6px);
-  transition:opacity .35s ease, transform .35s ease;
-}
-.vam-result.show{ opacity:1; transform:translateY(0); }
-.vam-result-label{ font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); }
-.vam-result-value{ font-size:32px; font-weight:800; line-height:1; margin-top:4px; color:var(--ink); }
-.vam-result-value .vam-unit{ font-size:13px; font-weight:600; color:var(--muted); }
-.vam-result-tag{ font-size:12.5px; color:var(--ink-soft); margin-top:6px; margin-bottom:14px; }
-.vam-result .btn{ width:100%; justify-content:center; }
+          <div class="extra-plan-slide" data-index="2">
+            <span class="badge run-plan-bar-badge" data-i18n="hyroxplan.badge">Hyrox</span>
+            <div class="run-plan-bar-info">
+              <p class="run-plan-bar-name" data-i18n="hyroxplan.name">Hyrox Race Prep</p>
+              <p class="run-plan-bar-desc" data-i18n="hyroxplan.desc">A periodized block built for your exact race day — from someone who's actually raced Hyrox, not just programmed it on paper.</p>
+            </div>
+            <p class="run-plan-bar-price">$299<span data-i18n="hyroxplan.sup">/ one-time</span></p>
+            <a class="btn btn-outline" href="#REPLACE-WITH-PAYPAL-LINK-HYROX" target="_blank" rel="noopener" data-i18n="hyroxplan.btn">Pay with PayPal</a>
+          </div>
+        </div>
 
-/* ---------- PROGRAMS ---------- */
-/* Four plans now live here (three coaching plans + the Running Club bar),
-   so this section gets tighter vertical spacing than the others to still
-   land within one screen. */
-#programs{ padding-block:4px; }
-#programs .section-head{ margin-bottom:2px; }
-.programs-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:center; padding-block:16px 4px; }
-@media (max-width:900px){ .programs-grid{ grid-template-columns:1fr; } }
-.plan{
-  position:relative; isolation:isolate; overflow:hidden;
-  background:linear-gradient(180deg,#F4F3EF 0%, #E8E6DF 100%);
-  border:1px solid var(--line-strong); border-radius:16px;
-  padding:14px 22px 12px; display:flex; flex-direction:column; gap:8px;
-  box-shadow:0 22px 40px -26px rgba(41,41,41,0.35), 0 2px 6px rgba(41,41,41,0.06);
-  transition:transform .35s ease, box-shadow .35s ease;
-}
-.plan::before{
-  content:""; position:absolute; top:-70px; left:50%; transform:translateX(-50%);
-  width:280px; height:170px; border-radius:50%;
-  background:radial-gradient(circle, rgba(255,255,255,0.95), rgba(255,255,255,0) 70%);
-  filter:blur(4px); pointer-events:none; z-index:0;
-}
-.plan::after{
-  content:""; position:absolute; inset:0; opacity:.045; mix-blend-mode:multiply; pointer-events:none; z-index:0;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
-.plan > *{ position:relative; z-index:1; }
-@media (min-width:901px){
-  .programs-grid{ perspective:1600px; }
-  .plan:nth-child(1){ transform:translateY(16px) rotateY(5deg); }
-  .plan:nth-child(3){ transform:translateY(16px) rotateY(-5deg); }
-  .plan.featured{ transform:translateY(-8px) scale(1.06); z-index:2; }
-  .plan:hover{ transform:translateY(4px) rotateY(0deg) scale(1.01); }
-  .plan.featured:hover{ transform:translateY(-12px) scale(1.07); }
-}
-.plan.featured{ border-color:var(--accent); box-shadow:0 30px 55px -22px rgba(195,216,46,0.45), 0 10px 26px -16px rgba(41,41,41,0.35); }
-.badge{ align-self:flex-start; background:var(--accent); color:var(--ink); font-size:10.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:6px 12px; border-radius:999px; margin-bottom:-6px; }
-.plan .p-name{ font-size:12px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--muted); }
-.plan .p-price{ font-size:38px; font-weight:800; line-height:1; color:var(--ink); }
-.plan .p-price sup{ font-size:14px; font-weight:600; color:var(--muted); }
-.plan .p-desc{ font-size:13.5px; color:var(--muted); }
-.p-features{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px; font-size:13px; color:var(--ink-soft); }
-.p-features li{ display:flex; gap:10px; align-items:flex-start; }
-.p-features li::before{ content:"—"; color:var(--muted); }
-.plan .btn{ margin-top:auto; justify-content:center; }
-.btn-accent{ background:var(--accent); color:var(--ink); border-color:var(--accent); }
-.btn-accent:hover{ background:var(--accent-deep); border-color:var(--accent-deep); }
-.plan-note{ font-size:12px; color:var(--muted); }
+        <div class="extra-plans-nav">
+          <button class="extra-plans-arrow" data-dir="-1" type="button" aria-label="Previous option">‹</button>
+          <div class="extra-plans-dots">
+            <button class="extra-plans-dot active" data-index="0" type="button" aria-label="Running Club"></button>
+            <button class="extra-plans-dot" data-index="1" type="button" aria-label="Personal Training"></button>
+            <button class="extra-plans-dot" data-index="2" type="button" aria-label="Hyrox Race Prep"></button>
+          </div>
+          <button class="extra-plans-arrow" data-dir="1" type="button" aria-label="Next option">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.extra-plans{ margin-top:4px; }
-.extra-plan-slide{
-  display:none; align-items:center; gap:18px; flex-wrap:wrap;
-  padding:8px 20px;
-  background:linear-gradient(180deg,#F4F3EF 0%, #E8E6DF 100%);
-  border:1px solid var(--accent); border-radius:14px;
-  box-shadow:0 18px 34px -26px rgba(41,41,41,0.35), 0 2px 6px rgba(41,41,41,0.05);
-}
-.extra-plan-slide.active{ display:flex; animation:extraFade .35s ease; }
-@keyframes extraFade{ from{ opacity:0; transform:translateX(8px); } to{ opacity:1; transform:translateX(0); } }
-.run-plan-bar-badge{ margin-bottom:0; flex-shrink:0; }
-.run-plan-bar-info{ flex:1 1 220px; min-width:200px; }
-.run-plan-bar-name{ font-weight:700; font-size:14.5px; color:var(--ink); }
-.run-plan-bar-desc{ font-size:12px; color:var(--muted); margin-top:2px; }
-.run-plan-bar-price{ font-size:24px; font-weight:800; color:var(--ink); white-space:nowrap; flex-shrink:0; }
-.run-plan-bar-price span{ font-size:12px; font-weight:600; color:var(--muted); }
-@media (max-width:700px){
-  .extra-plan-slide{ flex-direction:column; align-items:flex-start; padding:18px 20px; }
-  .run-plan-bar-info{ flex:1 1 auto; }
-  .extra-plan-slide .btn{ width:100%; justify-content:center; }
-}
-.extra-plans-nav{ display:flex; align-items:center; justify-content:center; gap:14px; margin-top:6px; }
-.extra-plans-arrow{
-  width:26px; height:26px; border-radius:50%; border:1.5px solid var(--line-strong);
-  background:var(--paper); color:var(--ink); display:flex; align-items:center; justify-content:center;
-  cursor:pointer; font-size:15px; line-height:1; padding:0;
-}
-.extra-plans-arrow:hover{ border-color:var(--ink); }
-.extra-plans-dots{ display:flex; gap:8px; }
-.extra-plans-dot{ width:8px; height:8px; border-radius:50%; background:var(--line-strong); border:none; cursor:pointer; padding:0; }
-.extra-plans-dot.active{ background:var(--accent-deep); }
+  <section id="apply">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pilot program — limited spots</p>
+        <h2>Coaching 1:1 application</h2>
+        <p>Fill this out and I'll reach out to see if you're a fit for the next group.</p>
+      </div>
+      <div class="apply-wrap">
+        <form id="form-apply" class="apply-form" novalidate>
+          <h3 class="apply-section-title">Your details</h3>
 
-/* ---------- RESULTS ---------- */
-/* Multiple case studies rotate through this one slot — dots + arrows,
-   same pattern as the Programs carousel — instead of stacking cases
-   underneath each other, which would break the one-screen budget. */
-.results-slides{ position:relative; }
-.results-slide{ display:none; }
-.results-slide.active{ display:block; animation:resultsSlideIn .4s ease; }
-@keyframes resultsSlideIn{ from{ opacity:0; transform:translateX(36px); } to{ opacity:1; transform:translateX(0); } }
-.results-nav{ display:flex; align-items:center; justify-content:center; gap:14px; margin-top:14px; }
-.results-arrow{
-  width:26px; height:26px; border-radius:50%; border:1.5px solid var(--line-strong);
-  background:var(--paper); color:var(--ink); display:flex; align-items:center; justify-content:center;
-  cursor:pointer; font-size:15px; line-height:1; padding:0;
-}
-.results-arrow:hover{ border-color:var(--ink); }
-.results-dots{ display:flex; gap:8px; }
-.results-dot{ width:8px; height:8px; border-radius:50%; background:var(--line-strong); border:none; cursor:pointer; padding:0; }
-.results-dot.active{ background:var(--accent-deep); }
+          <div class="field">
+            <label for="ap-firstname">First name</label>
+            <input type="text" id="ap-firstname" autocomplete="given-name">
+          </div>
 
-.results-card{ display:grid; grid-template-columns:0.85fr 1.15fr; background:var(--paper); border:1px solid var(--line); }
-@media (max-width:760px){ .results-card{ grid-template-columns:1fr; } }
-.photo-slot{
-  position:relative; aspect-ratio:4/5; max-height:420px; min-height:240px; overflow:hidden;
-  background:var(--paper-dim);
-  border-right:1px solid var(--line);
-}
-@media (max-width:760px){ .photo-slot{ border-right:none; border-bottom:1px solid var(--line); max-height:none; } }
-.results-body{ padding:20px 26px; display:flex; flex-direction:column; gap:10px; justify-content:center; }
-.results-body h3{ font-weight:700; font-size:20px; }
-.results-body p{ color:var(--ink-soft); font-size:14px; }
-.results-stats{ display:flex; flex-wrap:wrap; gap:18px; margin-top:2px; }
-.results-stats .n{ font-size:28px; font-weight:800; }
-.results-stats .l{ font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); font-weight:700; }
-.note{ font-size:12.5px; color:var(--muted); font-style:italic; }
+          <div class="field">
+            <label for="ap-email">Email</label>
+            <input type="email" id="ap-email" autocomplete="email">
+          </div>
 
-/* Before/after compare pair — used instead of a single .photo-slot when
-   a case has two photos to show progress side by side. */
-.compare-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2px; height:100%; min-height:240px; max-height:420px; background:var(--line); border-right:1px solid var(--line); }
-@media (max-width:760px){ .compare-grid{ border-right:none; border-bottom:1px solid var(--line); min-height:280px; max-height:none; } }
-.compare-photo{ position:relative; height:100%; overflow:hidden; background:var(--paper-dim); }
-.compare-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
-.compare-tag{
-  position:absolute; left:8px; bottom:8px;
-  background:var(--ink); color:var(--paper);
-  font-size:9.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
-  padding:5px 9px; border-radius:999px; white-space:nowrap;
-}
+          <div class="field">
+            <label for="ap-phone">Phone</label>
+            <input type="tel" id="ap-phone" placeholder="+54 9 11 1234 5678" autocomplete="tel">
+          </div>
 
-/* ---------- FINAL CTA ---------- */
-.final{ background:var(--ink); color:var(--paper); }
-.final-grid{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:28px; }
-.final h2{ font-size:clamp(32px,5.2vw,54px); color:var(--paper); }
-.final p{ color:rgba(253,253,252,0.72); margin-top:10px; max-width:44ch; }
+          <div class="field">
+            <label for="ap-birthday">Birthday</label>
+            <input type="date" id="ap-birthday">
+          </div>
 
-/* ---------- FOOTER ---------- */
-footer{ background:var(--paper); color:var(--muted); padding-block:40px; border-top:1px solid var(--line); }
-.footer-grid{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; font-size:13px; max-width:1120px; margin-inline:auto; padding-inline:24px; }
-.footer-grid .wordmark{ font-size:15px; }
-.foot-links{ display:flex; gap:20px; }
-.foot-links a{ text-decoration:none; color:var(--muted); }
-.foot-links a:hover{ color:var(--ink); }
+          <div class="field field-wide">
+            <label>How soon are you ready to start?</label>
+            <div class="pill-group">
+              <label class="pill"><input type="radio" name="timeline" value="ASAP"><span>ASAP</span></label>
+              <label class="pill"><input type="radio" name="timeline" value="1-2 weeks"><span>1-2 weeks</span></label>
+              <label class="pill"><input type="radio" name="timeline" value="Just looking"><span>Just looking</span></label>
+            </div>
+          </div>
 
-/* ---------- AUTH PAGES ---------- */
-.auth-wrap{ min-height:calc(100vh - 64px); display:flex; align-items:center; justify-content:center; padding:40px 20px; }
-.auth-card{ width:100%; max-width:400px; border:1px solid var(--line); padding:40px 34px; }
-.auth-card h1{ font-size:26px; margin-bottom:8px; }
-.auth-card p.sub{ color:var(--muted); font-size:14px; margin-bottom:28px; }
-.tabs{ display:flex; border:1px solid var(--line); margin-bottom:28px; }
-.tab{ flex:1; text-align:center; padding:12px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; cursor:pointer; color:var(--muted); background:var(--paper); border:none; }
-.tab.active{ background:var(--ink); color:var(--paper); }
-.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:18px; }
-.field label{ font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); }
-.field input{ font-family:var(--font); font-size:15px; padding:12px 14px; border:1px solid var(--line-strong); border-radius:1px; background:var(--paper); color:var(--ink); }
-.field input:focus{ outline:2px solid var(--ink); outline-offset:1px; }
-.auth-msg{ font-size:13px; padding:10px 12px; border:1px solid var(--line-strong); margin-bottom:18px; display:none; }
-.auth-msg.show{ display:block; }
-.auth-msg.error{ border-color:#b23b2e; color:#b23b2e; }
-.auth-msg.ok{ border-color:var(--ink); }
-.auth-panel{ display:none; }
-.auth-panel.active{ display:block; }
-.back-link{ display:inline-block; margin-top:22px; font-size:13px; color:var(--muted); text-decoration:none; }
-.back-link:hover{ color:var(--ink); }
+          <div class="field field-wide">
+            <label>What is your main goal right now?</label>
+            <div class="pill-group">
+              <label class="pill"><input type="checkbox" name="goal" value="Athletic performance"><span>Athletic performance</span></label>
+              <label class="pill"><input type="checkbox" name="goal" value="Body recomposition (fat loss)"><span>Body recomposition (fat loss)</span></label>
+              <label class="pill"><input type="checkbox" name="goal" value="Endurance"><span>Endurance</span></label>
+              <label class="pill"><input type="checkbox" name="goal" value="Hypertrophy (build muscle)"><span>Hypertrophy (build muscle)</span></label>
+              <label class="pill"><input type="checkbox" name="goal" value="Elite sport"><span>Elite sport</span></label>
+            </div>
+          </div>
 
-/* ---------- ACCOUNT ---------- */
-.account-hero{ position:relative; isolation:isolate; overflow:hidden; background:var(--ink); color:var(--paper); padding-block:48px 44px; }
-.account-hero::before{
-  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
-  background-image:radial-gradient(rgba(253,253,252,0.09) 1px, transparent 1px);
-  background-size:22px 22px;
-  mask-image:radial-gradient(ellipse 75% 90% at 20% 50%, #000 35%, transparent 88%);
-  -webkit-mask-image:radial-gradient(ellipse 75% 90% at 20% 50%, #000 35%, transparent 88%);
-}
-.account-hero-inner{ position:relative; z-index:1; display:flex; align-items:center; gap:22px; max-width:720px; margin:0 auto; padding-inline:24px; }
-.account-hero-text .eyebrow{ color:rgba(253,253,252,0.55); }
-.account-hero-text h1{ font-size:clamp(22px,4vw,30px); color:var(--paper); margin-top:6px; }
-.account-hero-email{ color:rgba(253,253,252,0.6); font-size:13.5px; margin-top:6px; }
-.account-hero-msg{ color:var(--accent); font-size:12px; margin-top:6px; min-height:1em; }
-@media (max-width:560px){ .account-hero-inner{ gap:16px; } }
+          <div class="field" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+            <label for="ap-website">Leave this field empty</label>
+            <input type="text" id="ap-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
 
-.account-wrap{ max-width:720px; margin:0 auto; padding:44px 24px 100px; }
+          <div id="apply-error" class="auth-msg" style="margin-top:4px;"></div>
+          <button class="btn btn-primary" type="submit">Submit application</button>
+        </form>
 
-.account-card{
-  position:relative; isolation:isolate; overflow:hidden;
-  background:linear-gradient(180deg, #FEFEFD 0%, #F6F5F1 100%);
-  border:1px solid var(--line-strong);
-  border-radius:16px;
-  padding:28px 30px; margin-bottom:20px;
-  box-shadow:0 18px 34px -26px rgba(41,41,41,0.35), 0 2px 6px rgba(41,41,41,0.05);
-  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
-}
-.account-card::after{
-  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
-  opacity:.05; mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
-.account-card > *{ position:relative; z-index:1; }
-.account-card:hover{
-  transform:translateY(-5px) scale(1.01);
-  box-shadow:0 26px 46px -22px rgba(41,41,41,0.4), 0 8px 16px -6px rgba(41,41,41,0.12);
-}
-.account-card-head{ display:flex; align-items:center; gap:11px; margin-bottom:18px; }
-.account-card-head .icon{ width:20px; height:20px; color:var(--ink); flex-shrink:0; }
-.account-card h3{ font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink); margin:0; }
-.muted{ color:var(--muted); font-size:14px; }
-.program-name{ font-weight:700; font-size:18px; color:var(--ink); margin-bottom:6px; }
-.program-note{ color:var(--ink-soft); font-size:14px; margin-bottom:18px; }
-#program-box .btn{ margin-top:16px; }
-#next-checkin-box p{ font-size:16px; font-weight:700; color:var(--ink); }
+        <div id="apply-success" class="apply-success" style="display:none;">
+          <h3>Got it</h3>
+          <p>I'll reach out soon to set up a call and see if you're a fit for the next group.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.checkin-stat{ align-items:baseline; gap:18px; flex-wrap:wrap; padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid var(--line-strong); }
-.checkin-stat-num .n{ font-size:40px; font-weight:800; line-height:1; color:var(--ink); }
-.checkin-stat-num .n span{ font-size:16px; font-weight:700; color:var(--muted); margin-left:2px; }
-.checkin-stat-num .l{ font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-top:4px; }
-.checkin-stat-delta{ font-size:13px; font-weight:700; color:var(--muted); }
-.checkin-stat-delta.down{ color:var(--accent-deep); }
-.checkin-stat-delta.up{ color:#b23b2e; }
+  <section id="results">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="results.eyebrow">Client spotlight</p>
+        <h2 data-i18n="results.h2">Coached, not just sold a plan</h2>
+      </div>
+      <div class="results-slides" id="results-slider">
+        <div class="results-slide active" data-index="0">
+          <div class="results-card">
+            <div class="photo-slot">
+              <img src="media/yesenia-camp.jpg" alt="Yesenia training in Bali" style="width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block;">
+            </div>
+            <div class="results-body">
+              <p class="eyebrow" data-i18n="results1.tag">Yesenia · 1:1 client</p>
+              <h3 data-i18n="results1.h3">An 18-day in-person camp in Bali, built into a 6-week program</h3>
+              <p data-i18n="results1.p">Yesenia brought the idea herself: instead of a remote plan, hire a personal trainer for a dedicated block. So we built an 18-day in-person camp in Bali — three phases of strength, cardio and recovery, planned day by day — as the opening stretch of a 6-week program built around her goal.</p>
+              <div class="results-stats">
+                <div><p class="n">18</p><p class="l" data-i18n="results1.stat1">Days in Bali</p></div>
+                <div><p class="n">3</p><p class="l" data-i18n="results1.stat2">Training phases</p></div>
+                <div><p class="n">−30kg</p><p class="l" data-i18n="results1.stat3">Program goal</p></div>
+                <div><p class="n">−7kg</p><p class="l" data-i18n="results1.stat4">Lost in the first 3 weeks</p></div>
+              </div>
+              <p class="note" data-i18n="results1.note">Case study in progress — quote and after photos to be added once the program wraps.</p>
+            </div>
+          </div>
+        </div>
 
-.checkin-list{ display:flex; flex-direction:column; gap:0; margin-bottom:26px; }
-.checkin-row{ display:grid; grid-template-columns:96px 64px 84px 1fr; gap:12px; font-size:13px; padding:12px 0; border-bottom:1px solid var(--line); align-items:baseline; }
-.checkin-row:first-child{ border-top:1px solid var(--line); }
-.ci-date{ color:var(--muted); }
-.ci-weight{ font-weight:700; color:var(--ink); }
-.ci-energy{ letter-spacing:2px; color:var(--accent-deep); font-size:11px; }
-.ci-notes{ color:var(--ink-soft); }
-@media (max-width:600px){ .checkin-row{ grid-template-columns:1fr 1fr; row-gap:4px; } .ci-notes{ grid-column:1/-1; } }
+        <div class="results-slide" data-index="1">
+          <div class="results-card">
+            <div class="compare-grid">
+              <div class="compare-photo">
+                <img src="media/estanislao-before.jpg" alt="Estanislao antes, 63kg">
+                <span class="compare-tag"><span data-i18n="results2.before">Before</span> · 63kg</span>
+              </div>
+              <div class="compare-photo">
+                <img src="media/estanislao-after.jpg" alt="Estanislao después, 66kg">
+                <span class="compare-tag"><span data-i18n="results2.after">After</span> · 66kg</span>
+              </div>
+            </div>
+            <div class="results-body">
+              <p class="eyebrow" data-i18n="results2.tag">Estanislao · 1:1 client</p>
+              <h3 data-i18n="results2.h3">6 months of strength training and running</h3>
+              <p data-i18n="results2.p">Estanislao plays rugby and came in wanting to add muscle without losing his engine. Three months of strength training paired with running took him from 63kg to 66kg — the opening stretch of a 6-month program built to keep adding mass while he keeps playing.</p>
+              <div class="results-stats">
+                <div><p class="n">+3kg</p><p class="l" data-i18n="results2.stat1">Gained in 3 months</p></div>
+                <div><p class="n">3</p><p class="l" data-i18n="results2.stat2">Months of strength + running</p></div>
+                <div><p class="n">6 mo</p><p class="l" data-i18n="results2.stat3">Muscle-gain program goal</p></div>
+                <div><p class="n">Rugby</p><p class="l" data-i18n="results2.stat4">Sport he's training for</p></div>
+              </div>
+              <p class="note" data-i18n="results2.note">Case study in progress — continuing the program to keep adding mass over the next 6 months.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-.checkin-form{ display:flex; flex-direction:column; gap:22px; padding-top:22px; border-top:1px solid var(--line-strong); }
-.checkin-form textarea{ font-family:var(--font); font-size:15px; padding:12px 14px; border:1px solid var(--line-strong); border-radius:1px; background:var(--paper); color:var(--ink); resize:vertical; }
-.checkin-form button{ align-self:flex-start; }
+      <div class="results-nav">
+        <button class="results-arrow" data-dir="-1" type="button" aria-label="Previous case">‹</button>
+        <div class="results-dots">
+          <button class="results-dot active" data-index="0" type="button" aria-label="Yesenia"></button>
+          <button class="results-dot" data-index="1" type="button" aria-label="Estanislao"></button>
+        </div>
+        <button class="results-arrow" data-dir="1" type="button" aria-label="Next case">›</button>
+      </div>
+    </div>
+  </section>
 
-.documents-list{ display:flex; flex-direction:column; }
-.doc-row{ display:flex; align-items:center; gap:10px; padding:12px 0; border-bottom:1px solid var(--line); color:var(--ink); text-decoration:none; font-size:14px; font-weight:700; }
-.documents-list .doc-row:first-child{ border-top:1px solid var(--line); }
-.doc-row:hover{ color:var(--accent-deep); }
-.doc-row svg{ width:16px; height:16px; flex-shrink:0; color:var(--muted); }
+  <section class="final" id="contact">
+    <div class="wrap final-grid">
+      <div>
+        <h2 data-i18n="final.h2">Ready to build?</h2>
+        <p data-i18n="final.p">Tell me where you're starting from and what you're training for. I'll reply myself — no team, no bots.</p>
+      </div>
+      <div class="hero-ctas" style="margin:0;">
+        <a class="btn btn-solid-white" href="mailto:info.tomasmartinez@gmail.com">Email info.tomasmartinez@gmail.com</a>
+        <a class="btn btn-outline-white" href="https://www.tiktok.com/@tomasmarttinez" target="_blank" rel="noopener">@tomasmarttinez</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-.photos-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(112px,1fr)); gap:14px; }
-.photo-cell{ display:flex; flex-direction:column; gap:8px; }
-.photo-cell-media{ position:relative; aspect-ratio:1; overflow:hidden; border-radius:10px; background:var(--paper-dim); border:1px solid var(--line-strong); }
-.photo-cell-media img{ width:100%; height:100%; object-fit:cover; display:block; }
-.photo-slot-empty{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:var(--muted); }
-.photo-slot-empty svg{ width:26px; height:26px; }
-.photo-cell-edit{ position:absolute; bottom:6px; right:6px; width:26px; height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:flex; align-items:center; justify-content:center; cursor:pointer; border:2px solid var(--paper); }
-.photo-cell-edit svg{ width:13px; height:13px; }
-.photo-cell-label{ font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); text-align:center; }
+<footer>
+  <div class="footer-grid">
+    <a href="#top" class="wordmark">the<b>build</b>system</a>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/tomasmarttinez" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@tomasmarttinez" target="_blank" rel="noopener">TikTok</a>
+      <a href="auth.html" data-i18n="nav.login">Client Login</a>
+      <a href="mailto:info.tomasmartinez@gmail.com">Email</a>
+    </div>
+    <span>© 2026 thebuildsystem</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/apply.js"></script>
+<script src="js/nav-auth.js"></script>
+<script src="js/scroll-nav.js"></script>
+<script src="js/vam-calc.js"></script>
+<script src="js/extra-plans.js"></script>
+<script src="js/results-carousel.js"></script>
+<script src="js/camp-contact.js"></script>
+<script>
+(function(){
+  var ES = {
+    'nav.method':'Método','nav.story':'Historia','nav.programs':'Programas','nav.results':'Resultados',
+    'nav.contact':'Contacto','nav.login':'Acceso Clientes','nav.application':'Aplicación','nav.running':'Running','nav.camp':'Camp',
+    'camp.eyebrow':'Camp',
+    'camp.h2':'Parte del entrenamiento pasa en otro lugar',
+    'camp.p':'Un par de veces al año llevo esto a la ruta — elijo un lugar, aparto tiempo real, y hago sesiones presenciales intensivas ahí. El mismo sistema, armado en un bloque fijo, en otro lugar por un tiempo.',
+    'camp.map1':'Buenos Aires','camp.map2':'Bali','camp.map3':'Sydney',
+    'camp.contact.tag':'Contactame',
+    'camp.contact.h3':'¿Dónde querés entrenar?',
+    'camp.contact.p':'Contame el lugar y más o menos cuándo — te respondo para ver si tiene sentido armar un camp ahí.',
+    'camp.contact.name':'Nombre',
+    'camp.contact.email':'Email',
+    'camp.contact.message':'¿Dónde (y cuándo)?',
+    'camp.contact.placeholder':'ej. Bali, 2 semanas, en marzo',
+    'camp.contact.btn':'Contactame',
+    'camp.contact.successh3':'Listo',
+    'camp.contact.successp':'Te respondo pronto para hablarlo.',
+    'hero.eyebrow':'Coaching para quienes ya no quieren ir a la deriva',
+    'hero.lede':'thebuildsystem es un sistema de coaching físico y mental creado por alguien que primero se reconstruyó a sí mismo — desde un momento bajo en 2020 hasta un valle remoto en Australia y Hyrox. Entrenamiento, alimentación y cabeza, como un solo sistema, para cualquiera que ronde los 25 y esté cansado de ir en piloto automático.',
+    'hero.cta1':'Aplicá al coaching 1:1',
+    'hero.cta2':'Conseguí el Programa Solo',
+    'hero.cta3':'Empezá',
+    'hero.trust1':'80K en TikTok e Instagram',
+    'hero.trust2':'3 años entrenando en Australia',
+    'hero.trust3':'Finisher de Hyrox',
+    'method.eyebrow':'El método',
+    'method.h2':'Tres sistemas. Un solo engranaje.',
+    'method.p':'La mayoría de los programas te dan un PDF y desaparecen. thebuildsystem une entrenamiento, alimentación y mentalidad en un solo ciclo — porque una rutina que ignora tu cabeza y tu plato no aguanta más de tres semanas.',
+    'pillar.training.h3':'Entrenamiento',
+    'pillar.training.p':'Bloques de fuerza y acondicionamiento progresivos, armados según tu equipo y tu agenda — no una plantilla genérica de 12 semanas.',
+    'pillar.nutrition.h3':'Alimentación',
+    'pillar.nutrition.p':'Objetivos calóricos comida por comida en tres niveles de intensidad, estilo nutrición deportiva — con una comida libre cada fin de semana.',
+    'pillar.mind.h3':'Mente',
+    'pillar.mind.p':'La parte que la mayoría de los coaches se salta. Estructura diaria, journaling y check-ins para los días de miedo al fracaso y cero motivación — los que realmente definen el resultado.',
+    'story.eyebrow':'El fundador',
+    'story.caption':'Tomi — Fundador y coach',
+    'story.h2':'De un momento bajo a la largada de Hyrox',
+    'story.p':'Empecé a entrenar en 2020 para salir de un pozo mental — no para armar una marca. Desde entonces es el mismo sistema, aplicado primero en mí.',
+    'stat.1.l':'Empezó a entrenar',
+    'stat.2.l':'Viviendo y trabajando en Australia',
+    'stat.3.l':'Primer training camp presencial',
+    'stat.4.l':'Seguidores construidos en el proceso',
+    't1.h3':'Entrenar como salida',
+    't1.p':'Empecé a entrenar para salir de un pozo mental — sin plan, sin coach, solo constancia y prestar atención a lo que realmente funcionaba.',
+    't2.h3':'Me mudé a Australia',
+    't2.p':'Tres años de trabajo físico — bar, mudanzas, jardinería, framing, mantenimiento de hotel, eventos — mientras el entrenamiento seguía corriendo por debajo de todo, viviendo en Manly.',
+    't3.h3':'La transformación más fuerte',
+    't3.p':'Un tiempo en un valle aislado, trabajando con caballos, escribiendo todos los días y entrenando casi a diario produjo el cambio físico y mental más grande de todo el proceso — y se convirtió en el modelo del sistema.',
+    't4.h3':'Hyrox, y de vuelta a casa',
+    't4.p':'Cerré el capítulo de Australia corriendo Hyrox, y volví a Argentina a construir thebuildsystem a tiempo completo — convirtiendo el proceso en un sistema que otros pudieran seguir.',
+    'running.eyebrow':'Running Club',
+    'running.h2':'Correr despeja la cabeza. Después construye el motor.',
+    'running.p':'Cada sesión arranca igual — piernas en movimiento, cabeza en silencio. Es la prueba de disciplina más barata que conozco, y la base aeróbica sobre la que se apoya todo lo demás en el entrenamiento.',
+    'running.mental.h3':'Despeja la cabeza',
+    'running.mental.p':'Sin atajos, sin nadie para quien actuar — solo el ritmo y si lo sostenés.',
+    'running.perf.h3':'Construye el motor',
+    'running.perf.p':'Una base aeróbica más fuerte significa recuperación más rápida y más capacidad en cada otra sesión.',
+    'running.calc.tag':'Herramienta gratis',
+    'running.calc.h3':'Calculá tu VAM',
+    'running.calc.p':'Hacé una entrada en calor y después corré 5 minutos al ritmo más duro que puedas sostener — firme, no un sprint. Cargá cuánto recorriste y obtené tu número al instante.',
+    'running.calc.label':'Distancia en 5 minutos (metros)',
+    'running.calc.btn':'Calcular mi VAM',
+    'running.calc.disclaimer':'Test a máximo esfuerzo — si sos nuevo en el running o tenés alguna condición de salud, consultá antes con un médico.',
+    'running.calc.resultlabel':'Tu VAM',
+    'running.calc.cta':'Ver el Programa de Running',
+    'runplan.badge':'Running Club',
+    'runplan.name':'Programa de Running · 6 meses','runplan.sup':'/mes',
+    'runplan.desc':'Para quienes arrancan de cero o corredores que buscan mejorar su VAM — un programa 1:1 completo, 100% online, armado alrededor de tu número.',
+    'runplan.btn':'Pagar el primer mes',
+    'ptplan.badge':'Presencial · Local',
+    'ptplan.name':'Personal Training diario',
+    'ptplan.desc':'Todas las sesiones, todos los días, presencial en tu gimnasio — el nivel de acompañamiento más alto que existe.',
+    'ptplan.sup':'/mes',
+    'ptplan.btn':'Pagar el primer mes',
+    'hyroxplan.badge':'Hyrox',
+    'hyroxplan.name':'Hyrox Race Prep',
+    'hyroxplan.desc':'Un bloque periodizado armado para tu fecha de carrera exacta — de alguien que corrió Hyrox de verdad, no que solo lo programó en papel.',
+    'hyroxplan.sup':'/ pago único',
+    'hyroxplan.btn':'Pagar con PayPal',
+    'programs.eyebrow':'Programas',
+    'programs.h2':'Elegí tu plan',
+    'programs.p':'Tres formas de empezar — desde una rutina personalizada hasta un sistema 1:1 completo con seguimiento semanal. Precios en USD. Los planes de coaching se cobran mensualmente por PayPal; el botón paga el primer mes, y el cobro recurrente lo coordinamos directo.',
+    'plan1.name':'Programa Solo','plan1.sup':'/ pago único',
+    'plan1.desc':'Una rutina de entrenamiento totalmente personalizada — para quienes solo necesitan el plan y pueden seguirlo por su cuenta.',
+    'plan1.f1':'Una rutina personalizada, armada según tu objetivo',
+    'plan1.f2':'Progresión escrita, sin adivinar',
+    'plan1.f3':'De ahí en más, por tu cuenta',
+    'plan1.btn':'Pagar con PayPal',
+    'plan2.badge':'El más elegido','plan2.name':'Coaching 1:1 · 12 meses','plan2.sup':'/mes',
+    'plan2.desc':'El sistema completo, por un año. Entrenamiento, alimentación y mentalidad juntos, con acceso directo a mí.',
+    'plan2.f1':'Entrenamiento + alimentación + mentalidad, en un solo plan',
+    'plan2.f2':'Check-ins semanales y ajustes',
+    'plan2.f3':'Acceso directo entre sesiones',
+    'plan2.f4':'La cuota mensual más baja de los tres planes',
+    'plan2.btn':'Pagar el primer mes',
+    'plan.note':'Los meses siguientes se coordinan directo después de tu primer pago.',
+    'plan3.name':'Coaching 1:1 · 6 meses','plan3.sup':'/mes',
+    'plan3.desc':'El sistema completo con un compromiso más corto — mismo coaching de entrenamiento, alimentación y mentalidad.',
+    'plan3.f1':'Entrenamiento + alimentación + mentalidad, en un solo plan',
+    'plan3.f2':'Check-ins semanales y ajustes',
+    'plan3.f3':'Acceso directo entre sesiones',
+    'plan3.btn':'Pagar el primer mes',
+    'results.eyebrow':'Casos de clientes',
+    'results.h2':'Acompañamiento real, no solo un plan',
+    'results1.tag':'Yesenia · clienta 1:1',
+    'results1.h3':'Un camp presencial de 18 días en Bali, dentro de un programa de 6 semanas',
+    'results1.p':'La idea fue de Yesenia: en vez de un plan a distancia, contratar un entrenador personal para un bloque dedicado. Así armamos un camp presencial de 18 días en Bali — tres fases de fuerza, cardio y recuperación, planificadas día por día — como el tramo inicial de un programa de 6 semanas armado según su objetivo.',
+    'results1.stat1':'Días en Bali','results1.stat2':'Fases de entrenamiento','results1.stat3':'Objetivo del programa','results1.stat4':'Perdidos en las primeras 3 semanas',
+    'results1.note':'Caso en progreso — testimonio y fotos del después se suman cuando termine el programa.',
+    'results2.before':'Antes','results2.after':'Después',
+    'results2.tag':'Estanislao · cliente 1:1',
+    'results2.h3':'6 meses de fuerza y running',
+    'results2.p':'Estanislao juega al rugby y llegó con el objetivo de sumar masa sin perder motor. Tres meses de fuerza combinados con running lo llevaron de 63kg a 66kg — el tramo inicial de un programa de 6 meses armado para seguir sumando masa mientras sigue jugando.',
+    'results2.stat1':'Ganados en 3 meses','results2.stat2':'Meses de fuerza y running','results2.stat3':'Objetivo: sumar masa','results2.stat4':'Deporte para el que entrena',
+    'results2.note':'Caso en progreso — sigue el programa para seguir sumando masa en los próximos 6 meses.',
+    'final.h2':'¿Empezamos a construir?',
+    'final.p':'Contame de dónde partís y para qué estás entrenando. Te respondo yo mismo — sin equipo, sin bots.'
+  };
+  var ES_HTML = { 'hero.h1': "El cuerpo no se logra<br>a la deriva. <em>Se construye.</em>" };
+
+  var current = 'en';
+
+  var textEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+  var htmlEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-html]'));
+  var origText = textEls.map(function(el){ return el.textContent; });
+  var origHtml = htmlEls.map(function(el){ return el.innerHTML; });
+
+  function apply(lang){
+    textEls.forEach(function(el, i){
+      var k = el.getAttribute('data-i18n');
+      el.textContent = (lang === 'en') ? origText[i] : (ES[k] || origText[i]);
+    });
+    htmlEls.forEach(function(el, i){
+      var k = el.getAttribute('data-i18n-html');
+      el.innerHTML = (lang === 'en') ? origHtml[i] : (ES_HTML[k] || origHtml[i]);
+    });
+    current = lang;
+    var btn = document.getElementById('lang-toggle');
+    if(btn) btn.textContent = (lang === 'en') ? 'ES' : 'EN';
+    try{ document.documentElement.lang = lang; }catch(e){}
+    try{ localStorage.setItem('tbs-lang', lang); }catch(e){}
+  }
+
+  var startLang = 'en';
+  try{ var saved = localStorage.getItem('tbs-lang'); if(saved === 'es') startLang = 'es'; }catch(e){}
+  if(startLang !== 'en') apply(startLang);
+
+  var toggleBtn = document.getElementById('lang-toggle');
+  if(toggleBtn){
+    toggleBtn.addEventListener('click', function(){
+      apply(current === 'en' ? 'es' : 'en');
+    });
+  }
+})();
+</script>
+</body>
+</html>
