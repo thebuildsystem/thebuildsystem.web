@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1:1 Coaching Application — thebuildsystem</title>
+<meta name="description" content="Apply for 1:1 coaching with thebuildsystem — pilot program, limited spots.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="wordmark">the<b>build</b>system</a>
+    <nav class="links"></nav>
+    <div class="nav-right"></div>
+  </div>
+</header>
+
+<div class="apply-wrap">
+  <div class="apply-head">
+    <p class="eyebrow">Pilot program — limited spots</p>
+    <h1>Coaching 1:1</h1>
+    <p class="apply-lede">Fill this out and I'll reach out to see if you're a fit for the next group.</p>
+  </div>
+
+  <form id="form-apply" class="apply-form" novalidate>
+    <h3 class="apply-section-title">Your details</h3>
+
+    <div class="field">
+      <label for="ap-firstname">First name</label>
+      <input type="text" id="ap-firstname" autocomplete="given-name">
+    </div>
+
+    <div class="field">
+      <label for="ap-email">Email</label>
+      <input type="email" id="ap-email" autocomplete="email">
+    </div>
+
+    <div class="field">
+      <label for="ap-phone">Phone</label>
+      <input type="tel" id="ap-phone" placeholder="+54 9 11 1234 5678" autocomplete="tel">
+    </div>
+
+    <div class="field">
+      <label for="ap-birthday">Birthday</label>
+      <input type="date" id="ap-birthday">
+    </div>
+
+    <div class="field">
+      <label>How soon are you ready to start?</label>
+      <div class="pill-group">
+        <label class="pill"><input type="radio" name="timeline" value="ASAP"><span>ASAP</span></label>
+        <label class="pill"><input type="radio" name="timeline" value="1-2 weeks"><span>1-2 weeks</span></label>
+        <label class="pill"><input type="radio" name="timeline" value="Just looking"><span>Just looking</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>What is your main goal right now?</label>
+      <div class="pill-group">
+        <label class="pill"><input type="checkbox" name="goal" value="Athletic performance"><span>Athletic performance</span></label>
+        <label class="pill"><input type="checkbox" name="goal" value="Body recomposition (fat loss)"><span>Body recomposition (fat loss)</span></label>
+        <label class="pill"><input type="checkbox" name="goal" value="Endurance"><span>Endurance</span></label>
+        <label class="pill"><input type="checkbox" name="goal" value="Hypertrophy (build muscle)"><span>Hypertrophy (build muscle)</span></label>
+        <label class="pill"><input type="checkbox" name="goal" value="Elite sport"><span>Elite sport</span></label>
+      </div>
+    </div>
+
+    <div id="apply-error" class="auth-msg" style="margin-top:4px;"></div>
+    <button class="btn btn-primary" type="submit">Submit application</button>
+  </form>
+
+  <div id="apply-success" class="apply-success" style="display:none;">
+    <h3>Got it</h3>
+    <p>I'll reach out soon to set up a call and see if you're a fit for the next group.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/apply.js"></script>
+</body>
+</html>
