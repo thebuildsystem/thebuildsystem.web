@@ -22,5 +22,5 @@ const SUPABASE_ANON_KEY = "sb_publishable_MiKbEsz4Wv3wLj4YqtB98g_MfVFDKwd";
 // both services are free.
 
 const WEB3FORMS_ACCESS_KEY = "fb862cfd-f59e-49d3-b15a-fa6bd99673df";
-const CALLMEBOT_PHONE = "";      // your WhatsApp number, e.g. "+5491112345678"
-const CALLMEBOT_APIKEY = "";     // from https://www.callmebot.com (WhatsApp)
+const CALLMEBOT_PHONE = "+61411099730";
+const CALLMEBOT_APIKEY = "1042454";
