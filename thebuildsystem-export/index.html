@@ -16,6 +16,7 @@
       <a href="#method" data-i18n="nav.method">Method</a>
       <a href="#story" data-i18n="nav.story">Story</a>
       <a href="#programs" data-i18n="nav.programs">Programs</a>
+      <a href="#apply" data-i18n="nav.application">Application</a>
       <a href="#results" data-i18n="nav.results">Results</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
@@ -43,7 +44,8 @@
         <p class="lede" data-i18n="hero.lede">thebuildsystem is a physique &amp; mindset coaching system built by a guy who rebuilt himself first — from a mental low in 2020 to a remote valley in Australia to Hyrox. Training, food and head-space, run as one system, for anyone in their mid-20s who's done coasting.</p>
         <div class="hero-ctas">
           <a class="btn btn-solid-white" href="apply.html" data-i18n="hero.cta1">Apply for 1:1 Coaching</a>
-          <a class="btn btn-outline-white" href="#programs" data-i18n="hero.cta2">Get the Solo Program — $50</a>
+          <a class="btn btn-outline-white" href="#programs" data-i18n="hero.cta2">Get the Solo Program</a>
+          <a class="btn btn-outline-white" href="#apply" data-i18n="hero.cta3">Let's start</a>
         </div>
         <div class="trust-row">
           <span data-i18n="hero.trust1">80K on TikTok &amp; Instagram</span>
@@ -185,6 +187,69 @@
     </div>
   </section>
 
+  <section id="apply">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pilot program — limited spots</p>
+        <h2>Coaching 1:1 application</h2>
+        <p>Fill this out and I'll reach out to see if you're a fit for the next group.</p>
+      </div>
+      <div class="apply-wrap" style="padding:0;">
+        <form id="form-apply" class="apply-form" novalidate>
+          <h3 class="apply-section-title">Your details</h3>
+
+          <div class="field">
+            <label for="ap-firstname">First name</label>
+            <input type="text" id="ap-firstname" autocomplete="given-name">
+          </div>
+
+          <div class="field">
+            <label for="ap-email">Email</label>
+            <input type="email" id="ap-email" autocomplete="email">
+          </div>
+
+          <div class="field">
+            <label for="ap-phone">Phone</label>
+            <input type="tel" id="ap-phone" placeholder="+54 9 11 1234 5678" autocomplete="tel">
+          </div>
+
+          <div class="field">
+            <label for="ap-birthday">Birthday</label>
+            <input type="date" id="ap-birthday">
+          </div>
+
+          <div class="field">
+            <label>How soon are you ready to start?</label>
+            <div class="pill-group">
+              <label class="pill"><input type="radio" name="timeline" value="ASAP"><span>ASAP</span></label>
+              <label class="pill"><input type="radio" name="timeline" value="1-2 weeks"><span>1-2 weeks</span></label>
+              <label class="pill"><input type="radio" name="timeline" value="Just looking"><span>Just looking</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>What is your main goal right now?</label>
+            <div class="pill-group">
+              <label class="pill"><input type="checkbox" name="goal" value="Athletic performance"><span>Athletic performance</span></label>
+              <label class="pill"><input type="checkbox" name="goal" value="Body recomposition (fat loss)"><span>Body recomposition (fat loss)</span></label>
+              <label class="pill"><input type="checkbox" name="goal" value="Endurance"><span>Endurance</span></label>
+              <label class="pill"><input type="checkbox" name="goal" value="Hypertrophy (build muscle)"><span>Hypertrophy (build muscle)</span></label>
+              <label class="pill"><input type="checkbox" name="goal" value="Elite sport"><span>Elite sport</span></label>
+            </div>
+          </div>
+
+          <div id="apply-error" class="auth-msg" style="margin-top:4px;"></div>
+          <button class="btn btn-primary" type="submit">Submit application</button>
+        </form>
+
+        <div id="apply-success" class="apply-success" style="display:none;">
+          <h3>Got it</h3>
+          <p>I'll reach out soon to set up a call and see if you're a fit for the next group.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="results">
     <div class="wrap">
       <div class="section-head">
@@ -238,15 +303,20 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/apply.js"></script>
 <script>
 (function(){
   var ES = {
     'nav.method':'Método','nav.story':'Historia','nav.programs':'Programas','nav.results':'Resultados',
-    'nav.contact':'Contacto','nav.login':'Acceso Clientes',
+    'nav.contact':'Contacto','nav.login':'Acceso Clientes','nav.application':'Aplicación',
     'hero.eyebrow':'Coaching para quienes ya no quieren ir a la deriva',
     'hero.lede':'thebuildsystem es un sistema de coaching físico y mental creado por alguien que primero se reconstruyó a sí mismo — desde un momento bajo en 2020 hasta un valle remoto en Australia y Hyrox. Entrenamiento, alimentación y cabeza, como un solo sistema, para cualquiera que ronde los 25 y esté cansado de ir en piloto automático.',
     'hero.cta1':'Aplicá al coaching 1:1',
-    'hero.cta2':'Conseguí el Programa Solo — $50',
+    'hero.cta2':'Conseguí el Programa Solo',
+    'hero.cta3':'Empezá',
     'hero.trust1':'80K en TikTok e Instagram',
     'hero.trust2':'3 años entrenando en Australia',
     'hero.trust3':'Finisher de Hyrox',
