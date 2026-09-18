@@ -28,7 +28,6 @@
       </a>
     </div>
   </div>
-<br>
 </header>
 
 <main id="top">
@@ -68,8 +67,10 @@
         <div class="pillar">
           <div class="pillar-photo"><img src="media/pillar-training.jpg" alt="Training — cable machine"></div>
           <div class="pillar-body">
-          <p class="num">01</p>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8v8M2 10v4M22 10v4M20 8v8M7 12h10M7 9v6M17 9v6"/></svg>
+          <div class="pillar-meta">
+            <span class="num">01</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.8"/><circle cx="19" cy="12" r="2.8"/><line x1="7.8" y1="12" x2="16.2" y2="12"/></svg>
+          </div>
           <h3 data-i18n="pillar.training.h3">Training</h3>
           <p data-i18n="pillar.training.p">Progressive strength and conditioning blocks, built around your equipment and schedule — not a generic 12-week template.</p>
           </div>
@@ -77,8 +78,10 @@
         <div class="pillar">
           <div class="pillar-photo"><img src="media/pillar-nutrition.jpg" alt="Nutrition — the physique it builds"></div>
           <div class="pillar-body">
-          <p class="num">02</p>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 9c-4.5 0-7 3.1-7 6.8C5 19.5 7.8 22 10.3 22c.7 0 1.2-.3 1.7-.3s1 .3 1.7.3c2.5 0 5.3-2.5 5.3-6.2C19 12.1 16.5 9 12 9Z"/><path d="M12 6.5c-.7-1.3-2.2-2-3.7-1.6M12 6.5c.7-1.3 2.2-2 3.7-1.6M12 6.5V9"/></svg>
+          <div class="pillar-meta">
+            <span class="num">02</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5h16"/><path d="M4.5 11.5a7.5 7.5 0 0 0 15 0"/><path d="M12 11V6.2c0-1 .8-1.8 1.8-1.8"/></svg>
+          </div>
           <h3 data-i18n="pillar.nutrition.h3">Nutrition</h3>
           <p data-i18n="pillar.nutrition.p">Meal-by-meal calorie targets across three intensity levels, sport-nutrition style — with one guilt-free meal built in every weekend.</p>
           </div>
@@ -86,8 +89,10 @@
         <div class="pillar">
           <div class="pillar-photo"><img src="media/pillar-mind.jpg" alt="Mind — focus"></div>
           <div class="pillar-body">
-          <p class="num">03</p>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4c-2 0-3.5 1.2-4 2.8-1.7.3-3 1.8-3 3.6 0 .9.3 1.7.9 2.3-.6.6-.9 1.4-.9 2.3 0 2 1.6 3.6 3.6 3.6.3 0 .6 0 .9-.1.5 1.2 1.7 2 3.1 2h.4"/><path d="M12 4c2 0 3.5 1.2 4 2.8 1.7.3 3 1.8 3 3.6 0 .9-.3 1.7-.9 2.3.6.6.9 1.4.9 2.3 0 2-1.6 3.6-3.6 3.6-.3 0-.6 0-.9-.1-.5 1.2-1.7 2-3.1 2h-.4"/><path d="M12 4v16.5"/></svg>
+          <div class="pillar-meta">
+            <span class="num">03</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/></svg>
+          </div>
           <h3 data-i18n="pillar.mind.h3">Mind</h3>
           <p data-i18n="pillar.mind.p">The part most coaches skip. Daily structure, journaling and check-ins for the fear-of-failure and no-motivation days — the ones that actually decide the outcome.</p>
           </div>
@@ -104,7 +109,12 @@
           <h2 data-i18n="story.h2">From a low point to the Hyrox start line</h2>
           <p data-i18n="story.p">I started training in 2020 to climb out of a mental low point — not to build a brand. Everything since has been the same system, applied to myself first.</p>
         </div>
-        <div class="founder-photo"><img src="media/founder.jpg" alt="Tomi running"></div>
+        <div class="founder-photo-block">
+          <div class="founder-photo">
+            <img src="media/founder.jpg" alt="Tomi running">
+          </div>
+          <span class="founder-photo-tag" data-i18n="story.caption">Tomi — Founder &amp; Coach</span>
+        </div>
       </div>
 
       <div class="stat-row">
@@ -195,7 +205,7 @@
         <h2>Coaching 1:1 application</h2>
         <p>Fill this out and I'll reach out to see if you're a fit for the next group.</p>
       </div>
-      <div class="apply-wrap" style="padding:0;">
+      <div class="apply-wrap">
         <form id="form-apply" class="apply-form" novalidate>
           <h3 class="apply-section-title">Your details</h3>
 
@@ -219,7 +229,7 @@
             <input type="date" id="ap-birthday">
           </div>
 
-          <div class="field">
+          <div class="field field-wide">
             <label>How soon are you ready to start?</label>
             <div class="pill-group">
               <label class="pill"><input type="radio" name="timeline" value="ASAP"><span>ASAP</span></label>
@@ -228,7 +238,7 @@
             </div>
           </div>
 
-          <div class="field">
+          <div class="field field-wide">
             <label>What is your main goal right now?</label>
             <div class="pill-group">
               <label class="pill"><input type="checkbox" name="goal" value="Athletic performance"><span>Athletic performance</span></label>
@@ -309,6 +319,7 @@
 <script src="js/supabase-client.js"></script>
 <script src="js/apply.js"></script>
 <script src="js/nav-auth.js"></script>
+<script src="js/scroll-nav.js"></script>
 <script>
 (function(){
   var ES = {
@@ -332,6 +343,7 @@
     'pillar.mind.h3':'Mente',
     'pillar.mind.p':'La parte que la mayoría de los coaches se salta. Estructura diaria, journaling y check-ins para los días de miedo al fracaso y cero motivación — los que realmente definen el resultado.',
     'story.eyebrow':'El fundador',
+    'story.caption':'Tomi — Fundador y coach',
     'story.h2':'De un momento bajo a la largada de Hyrox',
     'story.p':'Empecé a entrenar en 2020 para salir de un pozo mental — no para armar una marca. Desde entonces es el mismo sistema, aplicado primero en mí.',
     'stat.1.l':'Empezó a entrenar',
