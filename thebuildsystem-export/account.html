@@ -18,55 +18,69 @@
   </div>
 </header>
 
-<div class="account-wrap">
-  <div class="account-head">
-    <div class="account-head-info">
-      <div class="avatar-wrap">
-        <img id="avatar-img" class="avatar-img" alt="Profile photo" style="display:none;">
-        <div id="avatar-placeholder" class="avatar-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        </div>
-        <label for="avatar-input" class="avatar-edit-btn" title="Change photo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-        </label>
-        <input type="file" id="avatar-input" accept="image/*" style="display:none;">
+<div class="account-hero">
+  <div class="account-hero-inner">
+    <div class="avatar-wrap">
+      <img id="avatar-img" class="avatar-img" alt="Profile photo" style="display:none;">
+      <div id="avatar-placeholder" class="avatar-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
       </div>
-      <div>
-        <h1>Welcome back</h1>
-        <p id="account-email">Loading your account…</p>
-        <p id="avatar-msg" class="muted" style="font-size:12px;margin-top:4px;"></p>
-      </div>
+      <label for="avatar-input" class="avatar-edit-btn" title="Change photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+      </label>
+      <input type="file" id="avatar-input" accept="image/*" style="display:none;">
+    </div>
+    <div class="account-hero-text">
+      <p class="eyebrow">Welcome back</p>
+      <h1 id="account-name">thebuildsystem</h1>
+      <p id="account-email" class="account-hero-email">Loading your account…</p>
+      <p id="avatar-msg" class="account-hero-msg"></p>
     </div>
   </div>
+</div>
+
+<div class="account-wrap">
 
   <div class="account-card">
-    <h3>Your program</h3>
+    <div class="account-card-head">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8v8M2 10v4M22 10v4M20 8v8M7 12h10M7 9v6M17 9v6"/></svg>
+      <h3>Your program</h3>
+    </div>
     <div id="program-box"><p class="muted">Loading…</p></div>
   </div>
 
   <div class="account-card">
-    <h3>Next check-in</h3>
+    <div class="account-card-head">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+      <h3>Next check-in</h3>
+    </div>
     <div id="next-checkin-box"><p class="muted">Loading…</p></div>
   </div>
 
   <div class="account-card">
-    <h3>Weekly check-in</h3>
+    <div class="account-card-head">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l5-5 4 4 8-8"/><path d="M15 8h5v5"/></svg>
+      <h3>Weekly check-in</h3>
+    </div>
+
+    <div id="checkin-stat" class="checkin-stat" style="display:none;"></div>
+
     <div id="checkin-list" class="checkin-list"><p class="muted">Loading…</p></div>
+
     <form id="form-checkin" class="checkin-form">
       <div class="field">
         <label for="ci-weight">Weight (kg)</label>
         <input type="number" step="0.1" id="ci-weight" inputmode="decimal">
       </div>
-      <div class="field">
-        <label for="ci-energy">Energy this week</label>
-        <select id="ci-energy">
-          <option value="">—</option>
-          <option value="1">1 — Rough</option>
-          <option value="2">2</option>
-          <option value="3">3 — Okay</option>
-          <option value="4">4</option>
-          <option value="5">5 — Great</option>
-        </select>
+      <div class="field field-notes">
+        <label>Energy this week</label>
+        <div class="pill-group" id="ci-energy-group">
+          <label class="pill"><input type="radio" name="ci-energy" value="1"><span>1</span></label>
+          <label class="pill"><input type="radio" name="ci-energy" value="2"><span>2</span></label>
+          <label class="pill"><input type="radio" name="ci-energy" value="3"><span>3</span></label>
+          <label class="pill"><input type="radio" name="ci-energy" value="4"><span>4</span></label>
+          <label class="pill"><input type="radio" name="ci-energy" value="5"><span>5</span></label>
+        </div>
       </div>
       <div class="field field-notes">
         <label for="ci-notes">Notes for your coach</label>
@@ -78,17 +92,21 @@
   </div>
 
   <div class="account-card">
-    <h3>Your documents</h3>
+    <div class="account-card-head">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></svg>
+      <h3>Your documents</h3>
+    </div>
     <div id="documents-list" class="documents-list"><p class="muted">Loading…</p></div>
   </div>
 
   <div class="account-card">
-    <h3>Progress photos</h3>
-    <div id="photos-grid" class="photos-grid"><p class="muted">Loading…</p></div>
-    <div class="upload-row">
-      <input type="file" id="photo-input" accept="image/*">
-      <span id="photo-msg"></span>
+    <div class="account-card-head">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"/><circle cx="12" cy="13" r="3.6"/></svg>
+      <h3>Progress photos</h3>
     </div>
+    <p class="muted" style="margin-bottom:16px;">Tap a slot to add that photo — Day 1, then one per month.</p>
+    <div id="photos-grid" class="photos-grid"><p class="muted">Loading…</p></div>
+    <p id="photo-msg" class="muted" style="margin-top:14px;font-size:12.5px;"></p>
   </div>
 </div>
 
