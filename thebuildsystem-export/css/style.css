@@ -67,6 +67,20 @@ section{ padding-block:96px; }
 .avatar-placeholder svg{ width:32px; height:32px; }
 .avatar-edit-btn{ position:absolute; bottom:-2px; right:-2px; width:26px; height:26px; border-radius:50%; background:var(--ink); color:var(--paper); display:flex; align-items:center; justify-content:center; cursor:pointer; border:2px solid var(--paper); }
 .avatar-edit-btn svg{ width:14px; height:14px; }
+.apply-wrap{ max-width:640px; margin:0 auto; padding:60px 24px 100px; }
+.apply-head{ margin-bottom:36px; border-bottom:1px solid var(--line); padding-bottom:28px; }
+.apply-head h1{ font-size:32px; margin-top:8px; }
+.apply-lede{ color:var(--ink-soft); font-size:15px; margin-top:10px; }
+.apply-section-title{ font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); margin-bottom:18px; }
+.apply-form .field{ margin-bottom:22px; }
+.pill-group{ display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
+.pill{ position:relative; display:inline-flex; align-items:center; gap:8px; border:1.5px solid var(--line-strong); padding:10px 16px; border-radius:999px; font-size:14px; cursor:pointer; transition:border-color .15s ease, background-color .15s ease, color .15s ease; }
+.pill input{ position:absolute; opacity:0; width:0; height:0; }
+.pill:has(input:checked){ border-color:var(--ink); background:var(--ink); color:var(--paper); }
+.apply-form button[type="submit"]{ margin-top:8px; }
+.apply-success{ text-align:center; padding:60px 20px; border:1px solid var(--line); }
+.apply-success h3{ font-size:22px; margin-bottom:10px; }
+.apply-success p{ color:var(--ink-soft); }
 
 /* ---------- NAV ---------- */
 header.site{
