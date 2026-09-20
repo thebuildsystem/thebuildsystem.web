@@ -467,7 +467,7 @@ nav.links a:hover{ color:var(--ink); }
 .plan .p-desc{ font-size:13.5px; color:var(--muted); }
 .p-features{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px; font-size:13px; color:var(--ink-soft); }
 .p-features li{ display:flex; gap:10px; align-items:flex-start; }
-.p-features li::before{ content:"—"; color:var(--muted); }
+.p-features li::before{ content:"â€”"; color:var(--muted); }
 .plan .btn{ margin-top:auto; justify-content:center; }
 .btn-accent{ background:var(--accent); color:var(--ink); border-color:var(--accent); }
 .btn-accent:hover{ background:var(--accent-deep); border-color:var(--accent-deep); }
@@ -506,8 +506,8 @@ nav.links a:hover{ color:var(--ink); }
 .extra-plans-dot.active{ background:var(--accent-deep); }
 
 /* ---------- RESULTS ---------- */
-/* Multiple case studies rotate through this one slot — dots + arrows,
-   same pattern as the Programs carousel — instead of stacking cases
+/* Multiple case studies rotate through this one slot â€” dots + arrows,
+   same pattern as the Programs carousel â€” instead of stacking cases
    underneath each other, which would break the one-screen budget. */
 .results-slides{ position:relative; }
 .results-slide{ display:none; }
@@ -540,7 +540,7 @@ nav.links a:hover{ color:var(--ink); }
 .results-stats .l{ font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); font-weight:700; }
 .note{ font-size:12.5px; color:var(--muted); font-style:italic; }
 
-/* Before/after compare pair — used instead of a single .photo-slot when
+/* Before/after compare pair â€” used instead of a single .photo-slot when
    a case has two photos to show progress side by side. */
 .compare-grid{ display:grid; grid-template-columns:1fr 1fr; gap:2px; height:100%; min-height:240px; max-height:420px; background:var(--line); border-right:1px solid var(--line); }
 @media (max-width:760px){ .compare-grid{ border-right:none; border-bottom:1px solid var(--line); min-height:280px; max-height:none; } }
