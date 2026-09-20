@@ -1,82 +1,131 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Client Login — thebuildsystem</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K87QC9CB');</script>
-<!-- End Google Tag Manager -->
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K87QC9CB"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<header class="site">
-  <div class="nav">
-    <a href="index.html" class="wordmark">the<b>build</b>system</a>
-    <nav class="links"></nav>
-    <div class="nav-right"></div>
-  </div>
-</header>
+// Sign up / sign in logic for auth.html.
+// Requires supabase-client.js (and config.js before it) to already be
+// loaded on the page.
 
-<div class="auth-wrap">
-  <div class="auth-card">
-    <h1>Client area</h1>
-    <p class="sub">Sign in or create an account to access your program.</p>
+function showMessage(el, text, kind) {
+  el.textContent = text;
+  el.className = "auth-msg show " + (kind || "");
+}
 
-    <div class="tabs">
-      <button class="tab active" id="tab-signin" type="button">Sign In</button>
-      <button class="tab" id="tab-signup" type="button">Create Account</button>
-    </div>
+function hideMessage(el) {
+  el.className = "auth-msg";
+}
 
-    <div id="auth-msg" class="auth-msg"></div>
+// Best-effort ping to the coach's own WhatsApp + email when someone creates
+// a new client account — never blocks or fails the sign-up. Skipped silently
+// if WEB3FORMS_ACCESS_KEY / CALLMEBOT_PHONE / CALLMEBOT_APIKEY are left
+// unconfigured in js/config.js. Same pattern as js/apply.js and
+// js/camp-contact.js.
+function notifyNewSignup(data) {
+  var summary =
+    "New client account on thebuildsystem.club\n" +
+    "Name: " + (data.name || "(no name given)") + "\n" +
+    "Email: " + data.email;
 
-    <div class="auth-panel active" id="panel-signin">
-      <form id="form-signin">
-        <div class="field">
-          <label for="signin-email">Email</label>
-          <input type="email" id="signin-email" required autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="signin-password">Password</label>
-          <input type="password" id="signin-password" required autocomplete="current-password">
-        </div>
-        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Sign In</button>
-      </form>
-    </div>
+  if (typeof WEB3FORMS_ACCESS_KEY !== "undefined" && WEB3FORMS_ACCESS_KEY) {
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: "New client account — " + (data.name || data.email),
+        from_name: "thebuildsystem website",
+        message: summary,
+      }),
+    }).catch(function () {});
+  }
 
-    <div class="auth-panel" id="panel-signup">
-      <form id="form-signup">
-        <div class="field">
-          <label for="signup-name">Full name</label>
-          <input type="text" id="signup-name" required autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="signup-email">Email</label>
-          <input type="email" id="signup-email" required autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="signup-password">Password</label>
-          <input type="password" id="signup-password" required minlength="6" autocomplete="new-password">
-        </div>
-        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;">Create Account</button>
-      </form>
-    </div>
+  if (
+    typeof CALLMEBOT_PHONE !== "undefined" && CALLMEBOT_PHONE &&
+    typeof CALLMEBOT_APIKEY !== "undefined" && CALLMEBOT_APIKEY
+  ) {
+    var url =
+      "https://api.callmebot.com/whatsapp.php?phone=" + encodeURIComponent(CALLMEBOT_PHONE) +
+      "&text=" + encodeURIComponent(summary) +
+      "&apikey=" + encodeURIComponent(CALLMEBOT_APIKEY);
+    new Image().src = url; // fire-and-forget GET, sidesteps CORS on the response
+  }
+}
 
-    <a class="back-link" href="index.html">← Back to thebuildsystem</a>
-  </div>
-</div>
+document.addEventListener("DOMContentLoaded", () => {
+  const tabSignIn = document.getElementById("tab-signin");
+  const tabSignUp = document.getElementById("tab-signup");
+  const panelSignIn = document.getElementById("panel-signin");
+  const panelSignUp = document.getElementById("panel-signup");
+  const msg = document.getElementById("auth-msg");
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/config.js"></script>
-<script src="js/supabase-client.js"></script>
-<script src="js/auth.js"></script>
-</body>
-</html>
+  function setActive(which) {
+    hideMessage(msg);
+    const signIn = which === "signin";
+    tabSignIn.classList.toggle("active", signIn);
+    tabSignUp.classList.toggle("active", !signIn);
+    panelSignIn.classList.toggle("active", signIn);
+    panelSignUp.classList.toggle("active", !signIn);
+  }
+  tabSignIn.addEventListener("click", () => setActive("signin"));
+  tabSignUp.addEventListener("click", () => setActive("signup"));
+
+  if (!supabaseClient) {
+    showMessage(
+      msg,
+      "Supabase isn't configured yet — edit js/config.js with your project's URL and anon key.",
+      "error"
+    );
+    return;
+  }
+
+  // If already signed in, skip straight to the account page.
+  supabaseClient.auth.getSession().then(({ data }) => {
+    if (data.session) window.location.href = "account.html";
+  });
+
+  const signInForm = document.getElementById("form-signin");
+  signInForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    hideMessage(msg);
+    const email = document.getElementById("signin-email").value.trim();
+    const password = document.getElementById("signin-password").value;
+    const btn = signInForm.querySelector("button");
+    btn.disabled = true;
+    const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    btn.disabled = false;
+    if (error) {
+      showMessage(msg, error.message, "error");
+      return;
+    }
+    window.location.href = "account.html";
+  });
+
+  const signUpForm = document.getElementById("form-signup");
+  signUpForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    hideMessage(msg);
+    const name = document.getElementById("signup-name").value.trim();
+    const email = document.getElementById("signup-email").value.trim();
+    const password = document.getElementById("signup-password").value;
+    const btn = signUpForm.querySelector("button");
+    btn.disabled = true;
+    const { data, error } = await supabaseClient.auth.signUp({
+      email,
+      password,
+      options: { data: { full_name: name } },
+    });
+    btn.disabled = false;
+    if (error) {
+      showMessage(msg, error.message, "error");
+      return;
+    }
+
+    notifyNewSignup({ name: name, email: email });
+
+    if (data.session) {
+      window.location.href = "account.html";
+    } else {
+      showMessage(
+        msg,
+        "Account created — check your email to confirm before signing in.",
+        "ok"
+      );
+    }
+  });
+});
