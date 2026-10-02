@@ -7,6 +7,7 @@
   var ES = {
     'nav.method':'Método','nav.story':'Historia','nav.programs':'Programas','nav.results':'Resultados',
     'nav.contact':'Contacto','nav.login':'Acceso Clientes','nav.application':'Aplicación','nav.running':'Running','nav.camp':'Camp','nav.shop':'Shop',
+    'nav.apply_cta':'Aplicá ahora',
     'nav.visitsite':'Visita la web',
     'camp.eyebrow':'Camp',
     'camp.h2':'Parte del entrenamiento pasa en otro lugar',
@@ -73,6 +74,7 @@
     'runplan.name':'Programa de Running · 6 meses','runplan.sup':'/mes',
     'runplan.desc':'Para quienes arrancan de cero o corredores que buscan mejorar su VAM — un programa 1:1 completo, 100% online, armado alrededor de tu número.',
     'runplan.btn':'Pagar el primer mes',
+    'runplan.btn_mp':'Pagar con Mercado Pago (ARS)',
     'ptplan.badge':'Presencial · Mendoza, Argentina',
     'ptplan.name':'Personal Training diario',
     'ptplan.desc':'Todas las sesiones, todos los días, presencial en tu gimnasio en Mendoza, Argentina — el nivel de acompañamiento más alto que existe.',
@@ -92,6 +94,7 @@
     'plan1.f2':'Progresión escrita, sin adivinar',
     'plan1.f3':'De ahí en más, por tu cuenta',
     'plan1.btn':'Pagar con PayPal',
+    'plan1.btn_mp':'Pagar con Mercado Pago (ARS)',
     'plan2.badge':'El más elegido','plan2.name':'Coaching 1:1 · 12 meses','plan2.sup':'/mes',
     'plan2.desc':'El sistema completo, por un año. Entrenamiento, alimentación y mentalidad juntos, con acceso directo a mí.',
     'plan2.f1':'Entrenamiento + alimentación + mentalidad, en un solo plan',
