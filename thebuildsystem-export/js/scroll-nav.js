@@ -3,12 +3,13 @@
 // Only active on desktop-sized screens (touch/mobile scroll stays native).
 
 (function () {
-  var SECTION_SELECTOR = ".hero, #method, #story, #running, #programs, #apply, #results, #shop, #camp, .final";
+  var SECTION_SELECTOR = ".hero, #method, #story, #running, #programs, #nutrition, #nutrition-apply, #apply, #results, #shop, #camp, .final";
   var DOT_SECTIONS = [
     { id: "method", label: "Method" },
     { id: "story", label: "Story" },
     { id: "running", label: "Running" },
     { id: "programs", label: "Programs" },
+    { id: "nutrition", label: "Nutrition" },
     { id: "results", label: "Results" },
     { id: "shop", label: "Shop" },
     { id: "camp", label: "Camp" },
