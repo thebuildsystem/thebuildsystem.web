@@ -171,28 +171,32 @@ section{ padding-block:52px; }
 @media (max-width:560px){ #apply .apply-wrap, #nutrition-apply .apply-wrap{ padding:24px 22px 24px; border-radius:16px; } }
 
 /* ---------- NUTRITION ---------- */
-#nutrition{ padding-block:40px; }
+/* Tighter than the other sections' default padding on purpose — the
+   spotlight card below is already tall, so the top gap is trimmed to
+   pull the whole first screenful up and keep it feeling centered
+   under the header instead of landing low when the wheel-nav jumps here. */
+#nutrition{ padding-top:18px; padding-bottom:40px; }
 
-#nutrition .section-head{ margin-bottom:16px; }
+#nutrition .section-head{ margin-bottom:10px; }
 
 /* Bianca gets a real, large presentation — same idea as the founder
    photo in #story, sized up so the photo is the obvious focal point. */
 .nutrition-team{
-  display:grid; grid-template-columns:260px 1fr; gap:30px; align-items:center;
+  display:grid; grid-template-columns:230px 1fr; gap:30px; align-items:center;
   margin-bottom:28px;
 }
 @media (max-width:760px){
   .nutrition-team{ grid-template-columns:1fr; justify-items:center; text-align:center; gap:14px; }
 }
-.nutrition-team-photo-block{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+.nutrition-team-photo-block{ display:flex; flex-direction:column; align-items:center; gap:8px; }
 .nutrition-team-photo{
   position:relative; isolation:isolate; flex-shrink:0;
-  aspect-ratio:3/4; height:360px; width:auto;
+  aspect-ratio:3/4; height:300px; width:auto;
   overflow:hidden; border-radius:16px; background:var(--paper-dim);
   box-shadow:0 24px 42px -24px rgba(41,41,41,0.45), 0 3px 10px rgba(41,41,41,0.08);
 }
 .nutrition-team-photo img{ width:100%; height:100%; object-fit:cover; object-position:50% 22%; display:block; filter:grayscale(1) contrast(1.05); }
-@media (max-width:600px){ .nutrition-team-photo{ height:300px; } }
+@media (max-width:600px){ .nutrition-team-photo{ height:260px; } }
 .nutrition-team-tag{
   display:inline-flex; align-items:center; gap:7px;
   padding:7px 16px; border-radius:999px;
@@ -213,10 +217,10 @@ section{ padding-block:52px; }
    moment rather than a half-empty strip next to the pricing tiers. */
 .nutrition-spotlight{
   background:var(--ink); border-radius:20px;
-  padding:34px clamp(20px,4vw,40px) 28px;
-  margin-bottom:28px;
+  padding:22px clamp(20px,4vw,40px) 18px;
+  margin-bottom:22px;
 }
-.nutrition-spotlight .nutrition-team{ margin-bottom:24px; }
+.nutrition-spotlight .nutrition-team{ margin-bottom:16px; }
 .nutrition-spotlight .nutrition-team-photo{ box-shadow:0 24px 50px -20px rgba(0,0,0,0.6); }
 .nutrition-spotlight .nutrition-team-photo img{ filter:grayscale(1) contrast(1.1) brightness(1.03); }
 .nutrition-spotlight .nutrition-team-tag{ background:rgba(253,253,252,0.12); color:var(--paper); }
@@ -224,7 +228,7 @@ section{ padding-block:52px; }
 .nutrition-spotlight .nutrition-team-body h3{ color:var(--paper); }
 .nutrition-spotlight .nutrition-team-body > p:not(.eyebrow){ color:rgba(253,253,252,0.72); }
 
-.nutrition-specialty-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.nutrition-specialty-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
 .nutrition-specialty-chips span{
   display:inline-flex; align-items:center; gap:6px;
   padding:7px 14px; border-radius:999px; border:1.5px solid rgba(253,253,252,0.28);
@@ -239,8 +243,8 @@ section{ padding-block:52px; }
 }
 @media (max-width:900px){ .nutrition-lines-grid{ grid-template-columns:1fr 1fr; } }
 @media (max-width:560px){ .nutrition-lines-grid{ grid-template-columns:1fr; } }
-.nutrition-line{ background:var(--paper); padding:13px 16px 12px; }
-.nutrition-line .icon{ width:19px; height:19px; color:var(--accent-deep); margin-bottom:7px; }
+.nutrition-line{ background:var(--paper); padding:10px 16px 9px; }
+.nutrition-line .icon{ width:19px; height:19px; color:var(--accent-deep); margin-bottom:5px; }
 .nutrition-line h3{ font-weight:700; font-size:14px; margin-bottom:3px; }
 .nutrition-line p{ color:var(--muted); font-size:12px; }
 
