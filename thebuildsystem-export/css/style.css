@@ -177,7 +177,12 @@ section{ padding-block:52px; }
    under the header instead of landing low when the wheel-nav jumps here. */
 #nutrition{ padding-top:18px; padding-bottom:40px; }
 
-#nutrition .section-head{ margin-bottom:10px; }
+/* Wider than the default .section-head cap — the one-line heading
+   doesn't need it, but the intro paragraph was wrapping to 3 short
+   lines and leaving the right half of the row empty. Letting it run
+   out to ~900px also trims it to 2 lines, which pulls the dark card
+   up a bit on top of the smaller margin below. */
+#nutrition .section-head{ max-width:900px; margin-bottom:6px; }
 
 /* Bianca gets a real, large presentation — same idea as the founder
    photo in #story, sized up so the photo is the obvious focal point. */
