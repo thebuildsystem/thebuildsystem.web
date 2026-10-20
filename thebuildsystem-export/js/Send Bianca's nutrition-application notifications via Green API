@@ -35,14 +35,25 @@ function notifyNewNutritionApplication(data) {
   }
 
   if (
-    typeof BIANCA_CALLMEBOT_PHONE !== "undefined" && BIANCA_CALLMEBOT_PHONE &&
-    typeof BIANCA_CALLMEBOT_APIKEY !== "undefined" && BIANCA_CALLMEBOT_APIKEY
+    typeof BIANCA_GREEN_API_ID_INSTANCE !== "undefined" && BIANCA_GREEN_API_ID_INSTANCE &&
+    typeof BIANCA_GREEN_API_TOKEN_INSTANCE !== "undefined" && BIANCA_GREEN_API_TOKEN_INSTANCE &&
+    typeof BIANCA_GREEN_API_CHAT_ID !== "undefined" && BIANCA_GREEN_API_CHAT_ID
   ) {
-    const url =
-      "https://api.callmebot.com/whatsapp.php?phone=" + encodeURIComponent(BIANCA_CALLMEBOT_PHONE) +
-      "&text=" + encodeURIComponent(summary) +
-      "&apikey=" + encodeURIComponent(BIANCA_CALLMEBOT_APIKEY);
-    new Image().src = url; // fire-and-forget GET, sidesteps CORS on the response
+    // Green API needs a POST with a JSON body (unlike CallMeBot's plain GET),
+    // so this can't use the new Image() trick — a real fetch it is. Still
+    // fire-and-forget: a failure here never blocks the form.
+    fetch(
+      "https://api.green-api.com/waInstance" + BIANCA_GREEN_API_ID_INSTANCE +
+      "/sendMessage/" + BIANCA_GREEN_API_TOKEN_INSTANCE,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chatId: BIANCA_GREEN_API_CHAT_ID,
+          message: summary,
+        }),
+      }
+    ).catch(() => {});
   }
 }
 
