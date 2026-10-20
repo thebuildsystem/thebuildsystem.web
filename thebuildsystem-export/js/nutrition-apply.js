@@ -4,8 +4,8 @@
 // only readable from the Supabase dashboard.
 
 function showNutritionApplyError(el, text) {
-    el.textContent = text;
-    el.className = "auth-msg show error";
+  el.textContent = text;
+  el.className = "auth-msg show error";
 }
 
 // Best-effort ping to Bianca's own WhatsApp + email — never blocks or
@@ -13,48 +13,48 @@ function showNutritionApplyError(el, text) {
 // in js/config.js (she needs to generate her own keys — see the comments
 // there).
 function notifyNewNutritionApplication(data) {
-    const summary =
-          "New nutrition application\n" +
-          "Name: " + data.name + "\n" +
-          "Email: " + data.email + "\n" +
-          "Phone: " + data.phone + "\n" +
-          "Sport: " + data.sport + "\n" +
-          "Timeline: " + data.timeline;
+  const summary =
+    "New nutrition application\n" +
+    "Name: " + data.name + "\n" +
+    "Email: " + data.email + "\n" +
+    "Phone: " + data.phone + "\n" +
+    "Sport: " + data.sport + "\n" +
+    "Timeline: " + data.timeline;
 
-    if (typeof BIANCA_WEB3FORMS_ACCESS_KEY !== "undefined" && BIANCA_WEB3FORMS_ACCESS_KEY) {
-          fetch("https://api.web3forms.com/submit", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json", Accept: "application/json" },
-                  body: JSON.stringify({
-                            access_key: BIANCA_WEB3FORMS_ACCESS_KEY,
-                            subject: "New nutrition application — " + data.name,
-                            from_name: "thebuildsystem website",
-                            message: summary,
-                  }),
-          }).catch(() => {});
-    }
+  if (typeof BIANCA_WEB3FORMS_ACCESS_KEY !== "undefined" && BIANCA_WEB3FORMS_ACCESS_KEY) {
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: BIANCA_WEB3FORMS_ACCESS_KEY,
+        subject: "New nutrition application — " + data.name,
+        from_name: "thebuildsystem website",
+        message: summary,
+      }),
+    }).catch(() => {});
+  }
 
-    if (
-          typeof BIANCA_GREEN_API_ID_INSTANCE !== "undefined" && BIANCA_GREEN_API_ID_INSTANCE &&
-          typeof BIANCA_GREEN_API_TOKEN_INSTANCE !== "undefined" && BIANCA_GREEN_API_TOKEN_INSTANCE &&
-          typeof BIANCA_GREEN_API_CHAT_ID !== "undefined" && BIANCA_GREEN_API_CHAT_ID
-        ) {
-          // Green API needs a POST with a JSON body (unlike CallMeBot's plain GET),
-          // so this can't use the new Image() trick — a real fetch it is. Still
-          // fire-and-forget: a failure here never blocks the form.
-          fetch(
-                  "https://api.green-api.com/waInstance" + BIANCA_GREEN_API_ID_INSTANCE +
-                  "/sendMessage/" + BIANCA_GREEN_API_TOKEN_INSTANCE,
-            {
-                      method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify({
-                                  chatId: BIANCA_GREEN_API_CHAT_ID,
-                                  message: summary,
-                      }),
-            }
-                ).catch(() => {});
-    }
+  if (
+    typeof BIANCA_GREEN_API_ID_INSTANCE !== "undefined" && BIANCA_GREEN_API_ID_INSTANCE &&
+    typeof BIANCA_GREEN_API_TOKEN_INSTANCE !== "undefined" && BIANCA_GREEN_API_TOKEN_INSTANCE &&
+    typeof BIANCA_GREEN_API_CHAT_ID !== "undefined" && BIANCA_GREEN_API_CHAT_ID
+  ) {
+    // Green API needs a POST with a JSON body (unlike CallMeBot's plain GET),
+    // so this can't use the new Image() trick — a real fetch it is. Still
+    // fire-and-forget: a failure here never blocks the form.
+    fetch(
+      "https://api.green-api.com/waInstance" + BIANCA_GREEN_API_ID_INSTANCE +
+      "/sendMessage/" + BIANCA_GREEN_API_TOKEN_INSTANCE,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chatId: BIANCA_GREEN_API_CHAT_ID,
+          message: summary,
+        }),
+      }
+    ).catch(() => {});
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
