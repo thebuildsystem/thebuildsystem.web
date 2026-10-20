@@ -30,14 +30,27 @@ const CALLMEBOT_APIKEY = "1042454";
 // Tomi, every time someone submits the new nutrition application form.
 // Leave blank to skip — nutrition applications still get saved to Supabase
 // either way. Bianca needs to generate her OWN keys (they're tied to her
-// phone/email, not Tomi's) — same steps as README.md "Paso 8":
+// own email/WhatsApp, not Tomi's):
 //   1. WEB3FORMS: go to https://web3forms.com, enter her email
 //      (Biancadominguezal3@gmail.com), and copy the Access Key it gives
 //      her into BIANCA_WEB3FORMS_ACCESS_KEY below.
-//   2. CALLMEBOT: from her own WhatsApp (+5492617780784), message "I allow
-//      callmebot to send me messages" to +34 644 59 71 67, wait for the
-//      reply with her API key, and paste it into BIANCA_CALLMEBOT_APIKEY
-//      below. Her phone number is already filled in.
-const BIANCA_WEB3FORMS_ACCESS_KEY = "";
-const BIANCA_CALLMEBOT_PHONE = "+5492617780784";
-const BIANCA_CALLMEBOT_APIKEY = "";
+//   2. GREEN API (replaces CallMeBot, which gets overloaded and stops
+//      working once it has too many free users — Tomi's own notification
+//      above stays on CallMeBot for now): to keep this one on WhatsApp,
+//      her phone has to stay charged and online for notifications to
+//      arrive (messages route through her linked phone, like WhatsApp Web).
+//      a. Go to https://console.green-api.com, register with her email
+//         and a password, confirm the emailed code.
+//      b. Click "Create an instance" and choose the free Developer plan.
+//      c. Open the instance, click "Get QR", and scan it from her phone:
+//         WhatsApp → Settings → Linked Devices → Link a device.
+//      d. The instance page shows "idInstance" and "apiTokenInstance" —
+//         copy those into BIANCA_GREEN_API_ID_INSTANCE and
+//         BIANCA_GREEN_API_TOKEN_INSTANCE below.
+//      Her chat ID is already filled in below — Green API sends the
+//      message to her own "Message Yourself" chat (WhatsApp's note-to-
+//      self), so nothing else needs to change on her phone.
+const BIANCA_WEB3FORMS_ACCESS_KEY = "574cdeac-9240-479c-a3e3-e4ed8db5507d";
+const BIANCA_GREEN_API_ID_INSTANCE = "";
+const BIANCA_GREEN_API_TOKEN_INSTANCE = "";
+const BIANCA_GREEN_API_CHAT_ID = "5492617780784@c.us";
