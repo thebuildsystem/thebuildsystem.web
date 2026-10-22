@@ -79,7 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const name = document.getElementById("nu-name").value.trim();
     const email = document.getElementById("nu-email").value.trim();
-    const phone = document.getElementById("nu-phone").value.trim();
+    const phone = getFullPhoneValue(
+      document.getElementById("nu-phone-country"),
+      document.getElementById("nu-phone")
+    );
     const sportEl = form.querySelector('input[name="sport"]:checked');
     const timelineEl = form.querySelector('input[name="timeline"]:checked');
 
