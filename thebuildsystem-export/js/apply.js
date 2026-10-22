@@ -56,7 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const firstName = document.getElementById("ap-firstname").value.trim();
     const email = document.getElementById("ap-email").value.trim();
-    const phone = document.getElementById("ap-phone").value.trim();
+    const phone = getFullPhoneValue(
+      document.getElementById("ap-phone-country"),
+      document.getElementById("ap-phone")
+    );
     const birthday = document.getElementById("ap-birthday").value;
     const timelineEl = form.querySelector('input[name="timeline"]:checked');
     const goals = Array.from(form.querySelectorAll('input[name="goal"]:checked')).map((el) => el.value);
