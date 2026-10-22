@@ -75,7 +75,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="field">
       <label for="ap-phone" data-i18n="apply.phone">Phone</label>
-      <input type="tel" id="ap-phone" placeholder="+54 9 11 1234 5678" autocomplete="tel">
+      <div class="phone-row">
+        <select class="phone-country" id="ap-phone-country" aria-label="Country code"></select>
+        <input type="tel" id="ap-phone" placeholder="9 11 1234 5678" autocomplete="tel">
+      </div>
     </div>
 
     <div class="field">
@@ -121,6 +124,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/config.js"></script>
 <script src="js/supabase-client.js"></script>
+<script src="js/phone-country.js"></script>
 <script src="js/apply.js"></script>
 <script src="js/i18n.js"></script>
 </body>
