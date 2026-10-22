@@ -156,6 +156,12 @@ section{ padding-block:52px; }
 #apply .field label, #nutrition-apply .field label{ color:var(--ink-soft); }
 #apply .field input, #nutrition-apply .field input{ border-radius:8px; background:var(--paper); padding:10px 12px; transition:border-color .15s ease, box-shadow .15s ease; }
 #apply .field input:focus, #nutrition-apply .field input:focus{ border-color:var(--accent-deep); outline:none; box-shadow:0 0 0 3px rgba(195,216,46,0.35); }
+#apply .phone-row .phone-country, #nutrition-apply .phone-row .phone-country{
+  border-radius:8px; background:var(--paper); padding:10px 8px; transition:border-color .15s ease, box-shadow .15s ease;
+}
+#apply .phone-row .phone-country:focus, #nutrition-apply .phone-row .phone-country:focus{
+  border-color:var(--accent-deep); outline:none; box-shadow:0 0 0 3px rgba(195,216,46,0.35);
+}
 #apply .pill-group, #nutrition-apply .pill-group{ gap:6px; margin-top:4px; }
 #apply .pill, #nutrition-apply .pill{ padding:6px 11px; font-size:12px; background:var(--paper); }
 #apply .pill:hover, #nutrition-apply .pill:hover{ border-color:var(--accent-deep); }
@@ -703,6 +709,16 @@ footer{ background:var(--paper); color:var(--muted); padding-block:40px; border-
 .field label{ font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); }
 .field input{ font-family:var(--font); font-size:15px; padding:12px 14px; border:1px solid var(--line-strong); border-radius:1px; background:var(--paper); color:var(--ink); }
 .field input:focus{ outline:2px solid var(--ink); outline-offset:1px; }
+/* Country-code select next to the phone number input (apply.html + the
+   #apply/#nutrition-apply sections on index.html — see js/phone-country.js) */
+.phone-row{ display:flex; gap:8px; }
+.phone-row .phone-country{
+  font-family:var(--font); font-size:13px; padding:12px 8px; border:1px solid var(--line-strong);
+  border-radius:1px; background:var(--paper); color:var(--ink); flex:0 0 auto; max-width:132px;
+}
+.phone-row input{ flex:1 1 auto; min-width:0; }
+.phone-row .phone-country:focus{ outline:2px solid var(--ink); outline-offset:1px; }
+@media (max-width:420px){ .phone-row .phone-country{ max-width:92px; font-size:12px; padding-inline:6px; } }
 .auth-msg{ font-size:13px; padding:10px 12px; border:1px solid var(--line-strong); margin-bottom:18px; display:none; }
 .auth-msg.show{ display:block; }
 .auth-msg.error{ border-color:#b23b2e; color:#b23b2e; }
