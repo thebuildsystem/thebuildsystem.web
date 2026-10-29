@@ -119,6 +119,25 @@
       { passive: false }
     );
 
+    // ---------- Transparent header over the hero ----------
+    // The header floats transparent (white text) over the hero photo only
+    // while the page is at the very top, and turns into the normal solid
+    // white bar as soon as the user starts scrolling — not only once the
+    // whole hero has passed, since the header is position:fixed (out of
+    // flow) and would otherwise sit on top of the hero's own copy as it
+    // scrolls underneath it, overlapping and making both unreadable.
+    var siteHeader = document.querySelector("header.site");
+    var heroSection = document.querySelector(".hero");
+    var mobileMenuOpen = false;
+    if (siteHeader && heroSection) {
+      var updateHeaderSolid = function () {
+        siteHeader.classList.toggle("is-solid", window.scrollY > 24 || mobileMenuOpen);
+      };
+      updateHeaderSolid();
+      window.addEventListener("scroll", updateHeaderSolid, { passive: true });
+      window.addEventListener("resize", updateHeaderSolid);
+    }
+
     // ---------- Mobile hamburger menu ----------
     var menuToggle = document.getElementById("menu-toggle");
     var mobileMenu = document.getElementById("mobile-menu");
@@ -126,10 +145,14 @@
       function closeMobileMenu() {
         mobileMenu.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
+        mobileMenuOpen = false;
+        if (siteHeader && heroSection) siteHeader.classList.toggle("is-solid", window.scrollY > 24);
       }
       function openMobileMenu() {
         mobileMenu.classList.add("open");
         menuToggle.setAttribute("aria-expanded", "true");
+        mobileMenuOpen = true;
+        if (siteHeader) siteHeader.classList.add("is-solid");
       }
       menuToggle.addEventListener("click", function () {
         if (mobileMenu.classList.contains("open")) {
