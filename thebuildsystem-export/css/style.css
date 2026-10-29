@@ -559,7 +559,7 @@ nav.links a:hover{ color:var(--ink); }
   background:var(--ink);
   box-shadow:0 20px 36px -22px rgba(41,41,41,0.42), 0 3px 8px rgba(41,41,41,0.08);
 }
-.running-photo img{ width:100%; height:100%; object-fit:cover; object-position:50% 22%; display:block; filter:grayscale(1) contrast(1.08); }
+.running-photo img{ width:100%; height:100%; object-fit:cover; object-position:50% 85%; display:block; filter:grayscale(1) contrast(1.08); }
 .running-photo::after{
   content:""; position:absolute; inset:0; pointer-events:none;
   background:linear-gradient(180deg, rgba(20,20,19,0) 55%, rgba(15,15,14,0.55) 100%);
