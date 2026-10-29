@@ -301,16 +301,27 @@ body:has(.hero) header.site:not(.is-solid) .login-link{ color:var(--paper); bord
 body:has(.hero) header.site:not(.is-solid) .login-link:hover{ border-color:var(--paper); }
 body:has(.hero) header.site:not(.is-solid) .menu-toggle{ border-color:rgba(253,253,252,0.45); }
 body:has(.hero) header.site:not(.is-solid) .menu-toggle span{ background:var(--paper); }
+/* Logo + links are kept as one tight left-hand cluster (fixed gap, not an
+   elastic one) and the actions group is pushed to the far right via its
+   own auto margin — so on very wide screens the row doesn't thin out into
+   three evenly-spaced islands; it reads as "brand+nav left / actions
+   right" the way the reference layout does. */
 .nav{
-  display:flex; align-items:center; justify-content:space-between;
-  padding-block:18px; max-width:1120px; margin-inline:auto; padding-inline:24px;
+  display:flex; align-items:center; gap:40px;
+  padding-block:18px; max-width:1320px; margin-inline:auto; padding-inline:128px 28px;
+}
+/* Below this, fall back to the plain centered/evenly-padded row — the
+   asymmetric padding above is only meant to balance things out on very
+   wide windows, not to shove the logo inward on a laptop screen. */
+@media (max-width:1100px){
+  .nav{ max-width:1120px; padding-inline:24px; }
 }
 .wordmark{ font-weight:700; font-size:18px; letter-spacing:-0.01em; color:var(--ink); text-decoration:none; flex-shrink:0; }
 .wordmark b{ font-weight:700; }
 nav.links{ display:flex; align-items:center; gap:30px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
 nav.links a{ color:var(--ink-soft); text-decoration:none; }
 nav.links a:hover{ color:var(--ink); }
-.nav-right{ display:flex; align-items:center; gap:18px; flex-shrink:0; }
+.nav-right{ display:flex; align-items:center; gap:18px; flex-shrink:0; margin-left:auto; }
 .nav-apply-cta{
   display:flex; align-items:center; text-decoration:none; color:var(--ink);
   font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
@@ -395,7 +406,15 @@ nav.links a:hover{ color:var(--ink); }
   transform:translateY(-50%); pointer-events:none;
 }
 @media (max-width:760px){ .hero-ring{ display:none; } }
-.hero-content{ position:relative; z-index:2; margin-top:auto; padding:calc(var(--header-h) + 20px) 0 40px; }
+/* width:100% is load-bearing here: as a column-flex child with auto
+   cross-axis margins (from .wrap's margin-inline:auto), this box would
+   otherwise shrink-wrap to its content's preferred width instead of
+   filling out to max-width, leaving it narrower and further right than
+   the header's identically-configured .nav above it. Side padding is set
+   explicitly (rather than inherited from .wrap) since that shrink-wrap
+   bug was quietly standing in for it on narrow screens — without it,
+   width:100% would run the headline edge-to-edge on mobile. */
+.hero-content{ position:relative; z-index:2; width:100%; margin-top:auto; padding:calc(var(--header-h) + 20px) 24px 40px; }
 .hero .eyebrow{ color:rgba(253,253,252,0.72); }
 .hero h1{ font-size:clamp(38px,6vw,68px); line-height:1.0; margin-block:14px 26px; color:var(--paper); text-shadow:0 2px 28px rgba(0,0,0,0.3); }
 .hero h1 em{ font-style:normal; color:rgba(253,253,252,0.6); }
@@ -433,7 +452,7 @@ nav.links a:hover{ color:var(--ink); }
   .hero-ctas, .hero-stats{ flex-wrap:wrap; }
 }
 @media (max-width:560px){ .hero-stats{ gap:14px 24px; } }
-@media (max-width:640px){ .hero-media{ min-height:560px; } .hero-content{ padding:calc(var(--header-h) + 16px) 0 32px; } }
+@media (max-width:640px){ .hero-media{ min-height:560px; } .hero-content{ padding:calc(var(--header-h) + 16px) 20px 32px; } }
 
 /* ---------- METHOD ---------- */
 .section-head{ max-width:640px; margin-bottom:16px; }
