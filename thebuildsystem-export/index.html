@@ -77,27 +77,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <source src="media/hero-video.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay"></div>
+      <div class="grain-overlay" aria-hidden="true"></div>
       <div class="hero-ring" aria-hidden="true"></div>
       <div class="wrap hero-content">
         <p class="eyebrow" data-i18n="hero.eyebrow">Coaching for anyone done drifting</p>
         <h1 data-i18n-html="hero.h1">You don't drift<br>into shape. <em>You build it.</em></h1>
-        <p class="lede" data-i18n="hero.lede">thebuildsystem is a physique &amp; mindset coaching system built by a guy who rebuilt himself first — from a mental low in 2020 to a remote valley in Australia to Hyrox. Training, food and head-space, run as one system, for anyone in their mid-20s who's done coasting.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-solid-white" href="apply.html" data-i18n="hero.cta1">Apply for 1:1 Coaching</a>
-          <a class="btn btn-outline-white" href="#programs" data-i18n="hero.cta2">Get the Solo Program</a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <p class="hero-stat-num">80K</p>
-            <p class="hero-stat-label" data-i18n="hero.stat1.label">On TikTok &amp; Instagram</p>
+        <div class="hero-glasscard">
+          <p class="lede" data-i18n="hero.lede">thebuildsystem is a physique &amp; mindset coaching system built by a guy who rebuilt himself first — from a mental low in 2020 to a remote valley in Australia to Hyrox. Training, food and head-space, run as one system, for anyone in their mid-20s who's done coasting.</p>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <p class="hero-stat-num">80K</p>
+              <p class="hero-stat-label" data-i18n="hero.stat1.label">On TikTok &amp; Instagram</p>
+            </div>
+            <div class="hero-stat">
+              <p class="hero-stat-num">3</p>
+              <p class="hero-stat-label" data-i18n="hero.stat2.label">Years training in Australia</p>
+            </div>
+            <div class="hero-stat">
+              <p class="hero-stat-num">1</p>
+              <p class="hero-stat-label" data-i18n="hero.stat3.label">Hyrox race finished</p>
+            </div>
           </div>
-          <div class="hero-stat">
-            <p class="hero-stat-num">3</p>
-            <p class="hero-stat-label" data-i18n="hero.stat2.label">Years training in Australia</p>
-          </div>
-          <div class="hero-stat">
-            <p class="hero-stat-num">1</p>
-            <p class="hero-stat-label" data-i18n="hero.stat3.label">Hyrox race finished</p>
+          <div class="hero-ctas">
+            <a class="btn btn-accent" href="apply.html" data-i18n="hero.cta1">Apply for 1:1 Coaching</a>
+            <a class="btn btn-glass" href="#programs" data-i18n="hero.cta2">Get the Solo Program</a>
           </div>
         </div>
       </div>
@@ -155,6 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        directly to clients he wants a rating from; new submissions sit as
        approved=false until he approves them from the Supabase dashboard. -->
   <section id="reviews" style="display:none;">
+    <div class="grain-overlay" aria-hidden="true"></div>
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow" data-i18n="reviews.eyebrow">Client reviews</p>
@@ -169,8 +173,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="reviews-row-wrap">
-        <button class="reviews-arrow reviews-arrow-prev" type="button" aria-label="Previous reviews">‹</button>
         <div class="reviews-track" id="reviews-track"></div>
+      </div>
+
+      <div class="reviews-nav">
+        <button class="reviews-arrow reviews-arrow-prev" type="button" aria-label="Previous reviews">‹</button>
         <button class="reviews-arrow reviews-arrow-next" type="button" aria-label="Next reviews">›</button>
       </div>
     </div>
@@ -236,6 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="running-visual">
           <div class="running-photo">
             <img src="media/running-club.jpg" alt="Runner mid-stride, close on the feet">
+            <span class="running-photo-tag" data-i18n="running.eyebrow">Running Club</span>
           </div>
           <div class="running-points">
             <div class="running-point">
@@ -383,6 +391,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="nutrition-spotlight">
+        <div class="grain-overlay" aria-hidden="true"></div>
         <div class="nutrition-team">
           <div class="nutrition-team-photo-block">
             <div class="nutrition-team-photo">
@@ -669,15 +678,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="shop-hero">
         <img src="media/shop-hero.jpg" alt="Tomi wearing a cap from the upcoming collection">
         <div class="shop-hero-overlay"></div>
+        <div class="grain-overlay" aria-hidden="true"></div>
         <div class="shop-hero-content">
-          <div class="shop-hero-title">
-            <p class="shop-hero-eyebrow">thebuildsystem</p>
-            <h2 data-i18n="shop.hero.title">The cap capsule</h2>
-            <p class="shop-hero-season" data-i18n="shop.hero.season">Coming soon</p>
-          </div>
-          <div class="shop-hero-cta">
-            <p data-i18n="shop.hero.p">The first physical drop — caps, made with the same no-shortcuts approach as the coaching.</p>
-            <a href="#" class="btn btn-outline-white js-shop-notify-open" data-i18n="shop.intro.btn">Notify me when ready</a>
+          <div class="shop-hero-glasscard">
+            <div class="shop-hero-title">
+              <p class="shop-hero-eyebrow">thebuildsystem</p>
+              <h2 data-i18n="shop.hero.title">The cap capsule</h2>
+              <p class="shop-hero-season" data-i18n="shop.hero.season">Coming soon</p>
+            </div>
+            <div class="shop-hero-cta">
+              <p data-i18n="shop.hero.p">The first physical drop — caps, made with the same no-shortcuts approach as the coaching.</p>
+              <a href="#" class="btn btn-glass js-shop-notify-open" data-i18n="shop.intro.btn">Notify me when ready</a>
+            </div>
           </div>
         </div>
       </div>
@@ -770,6 +782,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <section class="final" id="contact">
+    <div class="grain-overlay" aria-hidden="true"></div>
     <div class="wrap final-grid">
       <div>
         <h2 data-i18n="final.h2">Ready to build?</h2>
