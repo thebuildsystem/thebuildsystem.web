@@ -139,6 +139,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- Hidden by default; js/reviews.js unhides it only once at least one
+       approved review comes back from Supabase. Reviews are submitted from
+       the separate, unlisted review.html page — Tomi sends that link
+       directly to clients he wants a rating from; new submissions sit as
+       approved=false until he approves them from the Supabase dashboard. -->
+  <section id="reviews" style="display:none;">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="reviews.eyebrow">Client reviews</p>
+        <h2 data-i18n="reviews.h2">Read reviews, train with confidence</h2>
+        <p data-i18n="reviews.p">Real feedback from real clients — posted by the people who went through the program.</p>
+      </div>
+
+      <div class="reviews-summary">
+        <span class="reviews-score" id="reviews-score">–</span>
+        <span class="reviews-stars" id="reviews-stars" aria-hidden="true"></span>
+        <span class="reviews-count" id="reviews-count"></span>
+      </div>
+
+      <div class="reviews-row-wrap">
+        <button class="reviews-arrow reviews-arrow-prev" type="button" aria-label="Previous reviews">‹</button>
+        <div class="reviews-track" id="reviews-track"></div>
+        <button class="reviews-arrow reviews-arrow-next" type="button" aria-label="Next reviews">›</button>
+      </div>
+    </div>
+  </section>
+
   <section id="story">
     <div class="wrap">
       <div class="story-head-grid">
@@ -778,6 +805,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="js/vam-calc.js"></script>
 <script src="js/extra-plans.js"></script>
 <script src="js/results-carousel.js"></script>
+<script src="js/reviews.js"></script>
 <script src="js/camp-contact.js"></script>
 <script src="js/shop-waitlist.js"></script>
 <script src="js/i18n.js"></script>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave a Review — thebuildsystem</title>
+<meta name="description" content="Leave a review for thebuildsystem.">
+<!-- Unlisted on purpose: this page is never linked from the site nav or
+     sitemap. Tomi shares the URL directly with clients he wants a rating
+     from, so this noindex keeps it out of search results too. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="media/favicon-192.png">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K87QC9CB');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K87QC9CB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="wordmark">the<b>build</b>system</a>
+    <nav class="links"></nav>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">ES</button>
+    </div>
+  </div>
+</header>
+
+<div class="apply-wrap">
+  <div class="apply-head">
+    <p class="eyebrow" data-i18n="review.eyebrow">Client review</p>
+    <h1 data-i18n="review.h1">Leave your review</h1>
+    <p class="apply-lede" data-i18n="review.p">Thanks for taking a minute — it helps me a lot and shows others what it's like to train with me.</p>
+  </div>
+
+  <form id="form-review" class="apply-form" novalidate>
+    <div class="field">
+      <label for="rv-name" data-i18n="review.name">Your name</label>
+      <input type="text" id="rv-name" autocomplete="name">
+    </div>
+
+    <div class="field">
+      <label data-i18n="review.rating">Your rating</label>
+      <div class="star-rating">
+        <input type="radio" id="rv-star5" name="rv-rating" value="5"><label for="rv-star5" aria-label="5 stars">★</label>
+        <input type="radio" id="rv-star4" name="rv-rating" value="4"><label for="rv-star4" aria-label="4 stars">★</label>
+        <input type="radio" id="rv-star3" name="rv-rating" value="3"><label for="rv-star3" aria-label="3 stars">★</label>
+        <input type="radio" id="rv-star2" name="rv-rating" value="2"><label for="rv-star2" aria-label="2 stars">★</label>
+        <input type="radio" id="rv-star1" name="rv-rating" value="1"><label for="rv-star1" aria-label="1 star">★</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="rv-text" data-i18n="review.text">Your review</label>
+      <textarea id="rv-text" rows="5" data-i18n-placeholder="review.text.placeholder" placeholder="Tell me how your experience training with me was..."></textarea>
+    </div>
+
+    <div class="field" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+      <label for="rv-website">Leave this field empty</label>
+      <input type="text" id="rv-website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div id="review-error" class="auth-msg" style="margin-top:4px;"></div>
+    <button class="btn btn-primary" type="submit" data-i18n="review.submit">Submit review</button>
+  </form>
+
+  <div id="review-success" class="apply-success" style="display:none;">
+    <h3 data-i18n="review.success.h3">Thank you!</h3>
+    <p data-i18n="review.success.p">Your review has been submitted. I'll review it and publish it on the site soon.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/review-submit.js"></script>
+<script src="js/i18n.js"></script>
+</body>
+</html>
