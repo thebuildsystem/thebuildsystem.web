@@ -284,8 +284,8 @@ header.site{
   display:flex; align-items:center; justify-content:space-between;
   padding-block:18px; max-width:1120px; margin-inline:auto; padding-inline:24px;
 }
-.wordmark{ font-weight:800; font-size:18px; letter-spacing:-0.01em; color:var(--ink); text-decoration:none; flex-shrink:0; }
-.wordmark b{ font-weight:400; }
+.wordmark{ font-weight:700; font-size:18px; letter-spacing:-0.01em; color:var(--ink); text-decoration:none; flex-shrink:0; }
+.wordmark b{ font-weight:700; }
 nav.links{ display:flex; align-items:center; gap:30px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
 nav.links a{ color:var(--ink-soft); text-decoration:none; }
 nav.links a:hover{ color:var(--ink); }
