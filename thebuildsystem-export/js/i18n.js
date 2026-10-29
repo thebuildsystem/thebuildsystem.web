@@ -29,7 +29,7 @@
     'hero.cta2':'Conseguí el Programa Solo',
     'hero.stat1.label':'En TikTok e Instagram',
     'hero.stat2.label':'Años entrenando en Australia',
-    'hero.stat3.label':'Carrera Hyrox finalizada',
+    'hero.stat3.label':'Carreras Hyrox finalizadas',
     'method.eyebrow':'El método',
     'method.h2':'Tres sistemas. Un solo engranaje.',
     'method.p':'La mayoría de los programas te dan un PDF y desaparecen. thebuildsystem une entrenamiento, alimentación y mentalidad en un solo ciclo — porque una rutina que ignora tu cabeza y tu plato no aguanta más de tres semanas.',
