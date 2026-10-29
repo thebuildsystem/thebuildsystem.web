@@ -210,7 +210,23 @@
     'apply.goal.elite':'Deporte de alto rendimiento',
     'apply.submit':'Enviar aplicación',
     'apply.success.h3':'Listo',
-    'apply.success.p':'Te contacto pronto para coordinar una llamada y ver si encajás en el próximo grupo.'
+    'apply.success.p':'Te contacto pronto para coordinar una llamada y ver si encajás en el próximo grupo.',
+    // Reviews — #reviews section on index.html (shown once there's at least
+    // one approved review) and the standalone, unlisted review.html form.
+    'reviews.eyebrow':'Reseñas de clientes',
+    'reviews.h2':'Leé las reseñas, entrená con confianza',
+    'reviews.p':'Comentarios reales de clientes reales — publicados por quienes hicieron el programa.',
+    'review.eyebrow':'Reseña de cliente',
+    'review.h1':'Dejá tu reseña',
+    'review.p':'Gracias por tomarte un minuto — esto me ayuda muchísimo y le muestra a otros cómo es entrenar conmigo.',
+    'review.name':'Tu nombre',
+    'review.rating':'Tu puntaje',
+    'review.text':'Tu reseña',
+    'review.text.placeholder':'Contame cómo fue tu experiencia entrenando conmigo...',
+    'review.submit':'Enviar reseña',
+    'review.success.h3':'¡Gracias!',
+    'review.success.p':'Tu reseña quedó enviada. La voy a revisar y publicar en la web pronto.',
+    'review.error.fields':'Completá tu nombre, un puntaje y tu reseña antes de enviar.'
   };
   var ES_HTML = { 'hero.h1': "El cuerpo no se logra<br>a la deriva. <em>Se construye.</em>" };
 
@@ -218,8 +234,10 @@
 
   var textEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
   var htmlEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-html]'));
+  var placeholderEls = Array.prototype.slice.call(document.querySelectorAll('[data-i18n-placeholder]'));
   var origText = textEls.map(function(el){ return el.textContent; });
   var origHtml = htmlEls.map(function(el){ return el.innerHTML; });
+  var origPlaceholder = placeholderEls.map(function(el){ return el.getAttribute('placeholder'); });
 
   function apply(lang){
     textEls.forEach(function(el, i){
@@ -229,6 +247,10 @@
     htmlEls.forEach(function(el, i){
       var k = el.getAttribute('data-i18n-html');
       el.innerHTML = (lang === 'en') ? origHtml[i] : (ES_HTML[k] || origHtml[i]);
+    });
+    placeholderEls.forEach(function(el, i){
+      var k = el.getAttribute('data-i18n-placeholder');
+      el.setAttribute('placeholder', (lang === 'en') ? origPlaceholder[i] : (ES[k] || origPlaceholder[i]));
     });
     current = lang;
     var btn = document.getElementById('lang-toggle');
