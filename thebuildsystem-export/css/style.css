@@ -16,7 +16,8 @@
 html{scroll-behavior:smooth;}
 body{
   margin:0;
-  background:var(--paper);
+  background:var(--paper) url("../media/bg-topo.jpg") repeat 0 0;
+  background-size:1000px 1000px;
   color:var(--ink);
   font-family:var(--font);
   font-size:16px;
@@ -266,7 +267,9 @@ section{ padding-block:52px; }
 /* ---------- NAV ---------- */
 header.site{
   position:sticky; top:0; z-index:50;
-  background:var(--paper); border-bottom:1px solid var(--line);
+  background:var(--paper) url("../media/bg-topo.jpg") repeat 0 0;
+  background-size:1000px 1000px;
+  border-bottom:1px solid var(--line);
   /* GPU-composite the sticky header so fast programmatic scrolls
      (the wheel-jump nav) don't tear/flicker it against the section
      scrolling underneath. */
@@ -731,7 +734,7 @@ nav.links a:hover{ color:var(--ink); }
 .final p{ color:rgba(253,253,252,0.72); margin-top:10px; max-width:44ch; }
 
 /* ---------- FOOTER ---------- */
-footer{ background:var(--paper); color:var(--muted); padding-block:40px; border-top:1px solid var(--line); }
+footer{ background:var(--paper) url("../media/bg-topo.jpg") repeat 0 0; background-size:1000px 1000px; color:var(--muted); padding-block:40px; border-top:1px solid var(--line); }
 .footer-grid{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; font-size:13px; max-width:1120px; margin-inline:auto; padding-inline:24px; }
 .footer-grid .wordmark{ font-size:15px; }
 .foot-links{ display:flex; gap:20px; }
