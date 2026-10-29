@@ -267,8 +267,7 @@ section{ padding-block:52px; }
 /* ---------- NAV ---------- */
 header.site{
   position:sticky; top:0; z-index:50;
-  background:var(--paper) url("../media/bg-topo.jpg") repeat 0 0;
-  background-size:1000px 1000px;
+  background:var(--paper);
   border-bottom:1px solid var(--line);
   /* GPU-composite the sticky header so fast programmatic scrolls
      (the wheel-jump nav) don't tear/flicker it against the section
