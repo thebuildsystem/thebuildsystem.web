@@ -42,6 +42,11 @@ function escapeHTML(str) {
   return div.innerHTML;
 }
 
+function initials(name) {
+  const parts = (name || "").trim().split(/\s+/).filter(Boolean).slice(0, 2);
+  return parts.map((p) => p[0].toUpperCase()).join("") || "?";
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const section = document.getElementById("reviews");
   const track = document.getElementById("reviews-track");
@@ -73,12 +78,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     .map(
       (r) =>
         '<div class="review-card">' +
-        '<div class="review-stars">' + starsHTML(r.rating) + "</div>" +
+        '<div class="review-avatar">' + initials(r.name) + "</div>" +
+        '<p class="review-name">' + escapeHTML(r.name) + "</p>" +
+        '<p class="review-time">' + timeAgo(r.created_at) + "</p>" +
         '<p class="review-text">' + escapeHTML(r.review_text) + "</p>" +
-        '<div class="review-foot">' +
-        '<span class="review-name">' + escapeHTML(r.name) + "</span>" +
-        '<span class="review-time">' + timeAgo(r.created_at) + "</span>" +
-        "</div>" +
+        '<div class="review-stars">' + starsHTML(r.rating) + "</div>" +
         "</div>"
     )
     .join("");
