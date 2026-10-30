@@ -895,7 +895,8 @@ nav.links a:hover{ color:var(--ink); }
 footer{ background:var(--paper) url("../media/bg-topo.jpg") repeat 0 0; background-size:1000px 1000px; color:var(--muted); padding-block:40px; border-top:1px solid var(--line); }
 .footer-grid{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; font-size:13px; max-width:1120px; margin-inline:auto; padding-inline:24px; }
 .footer-grid .wordmark{ font-size:15px; }
-.foot-links{ display:flex; gap:20px; }
+.foot-links{ display:flex; flex-wrap:wrap; gap:10px 20px; }
+@media (max-width:640px){ .footer-grid{ justify-content:center; text-align:center; } .foot-links{ justify-content:center; } }
 .foot-links a{ text-decoration:none; color:var(--muted); }
 .foot-links a:hover{ color:var(--ink); }
 
@@ -1104,3 +1105,49 @@ body.shop-notify-modal-lock{ overflow:hidden; }
 /* ---------- "Visit the website" button on standalone pages (apply.html) ---------- */
 .visit-site-btn{ padding:9px 18px; font-size:12.5px; }
 @media (max-width:480px){ .visit-site-btn{ padding:8px 14px; font-size:11px; } }
+
+/* ---------- LEGAL PAGES (privacidad.html, terminos.html, arrepentimiento.html) ---------- */
+.legal-wrap{ max-width:760px; margin:0 auto; padding:56px 24px 100px; }
+.legal-wrap .eyebrow{ margin-bottom:10px; }
+.legal-wrap h1{ font-size:30px; margin-bottom:6px; }
+.legal-updated{ font-size:12.5px; color:var(--muted); margin-bottom:8px; }
+.legal-notice{
+  font-size:13.5px; line-height:1.6; color:var(--ink-soft);
+  background:var(--paper-dim); border:1px solid var(--line);
+  padding:16px 18px; border-radius:2px; margin:24px 0 36px;
+}
+.legal-notice b{ color:var(--ink); }
+.legal-wrap h2{ font-size:18px; margin:36px 0 12px; }
+.legal-wrap h2:first-of-type{ margin-top:8px; }
+.legal-wrap p{ font-size:14.5px; color:var(--ink-soft); margin-bottom:14px; }
+.legal-wrap ul, .legal-wrap ol{ margin:0 0 14px; padding-left:22px; }
+.legal-wrap li{ font-size:14.5px; color:var(--ink-soft); margin-bottom:8px; line-height:1.55; }
+.legal-wrap a{ color:var(--ink); text-decoration:underline; }
+.legal-placeholder{ background:rgba(195,216,46,0.22); padding:1px 5px; border-radius:2px; font-weight:700; }
+.legal-back{ display:inline-block; margin-top:8px; font-size:13px; font-weight:700; text-decoration:none; color:var(--muted); }
+.legal-back:hover{ color:var(--ink); }
+
+/* Revocation ("arrepentimiento") confirmation code, shown immediately on
+   submit per Res. 424/2020 — the consumer must see it right away, through
+   the same channel (the site itself) they used to submit the request. */
+.revocation-code-box{
+  text-align:center; padding:40px 24px; border:1px solid var(--line); margin-top:8px;
+}
+.revocation-code-box h3{ font-size:20px; margin-bottom:14px; }
+.revocation-code-box p{ margin-bottom:0; }
+.revocation-code{
+  display:inline-block; font-family:'Courier New', monospace; font-size:22px; font-weight:700;
+  letter-spacing:0.06em; background:var(--paper-dim); border:1px dashed var(--line-strong);
+  padding:12px 22px; border-radius:2px; margin:18px 0; color:var(--ink);
+}
+
+/* Footer link to the legal revocation mechanism — Res. 424/2020 requires
+   this to sit in a clearly visible, prominent spot on the home page, so it
+   gets its own accent styling rather than blending in with the plain
+   foot-links list. */
+.foot-links a.foot-link-arrepentimiento{
+  color:var(--ink); background:var(--accent); font-weight:700;
+  padding:6px 12px; border-radius:999px; font-size:11.5px;
+  letter-spacing:0.02em; text-transform:uppercase;
+}
+.foot-links a.foot-link-arrepentimiento:hover{ background:var(--accent-deep); color:var(--ink); }
