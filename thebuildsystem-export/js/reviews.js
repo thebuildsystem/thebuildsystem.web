@@ -5,6 +5,17 @@
 // section stays hidden (see its inline display:none in index.html) until
 // at least one approved review comes back — so the section is invisible
 // on day one and simply appears once Tomi approves the first review.
+//
+// `location` and `photo_url` are two extra, optional text columns on
+// public.reviews that review.html's submission form never fills in —
+// they only get set when Tomi edits a row by hand in the Supabase table
+// editor. Both columns must exist (even if empty) or this file's select()
+// call errors out and the whole section stays hidden, so add them before
+// the first review goes live:
+//   - location  (text, nullable) — e.g. "Buenos Aires, Argentina"
+//   - photo_url (text, nullable) — a public image URL (Supabase Storage,
+//     or anywhere else reachable); leave it blank to keep the initials
+//     avatar for that review.
 
 function timeAgo(dateStr) {
   const lang = (() => { try { return localStorage.getItem("tbs-lang"); } catch (e) { return null; } })();
@@ -47,6 +58,29 @@ function initials(name) {
   return parts.map((p) => p[0].toUpperCase()).join("") || "?";
 }
 
+// A review's location and photo are both optional — most reviews coming
+// in through review.html won't have either, and that's fine: the pin/dot
+// and the avatar photo only show up once Tomi fills them in by hand from
+// the Supabase table editor (see js/reviews.js header comment / the
+// `location` and `photo_url` columns on public.reviews).
+const LOCATION_PIN_SVG =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.5 7-12a7 7 0 0 0-14 0c0 4.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>';
+
+function avatarHTML(r) {
+  if (r.photo_url) {
+    return '<img src="' + escapeHTML(r.photo_url) + '" alt="" loading="lazy">';
+  }
+  return initials(r.name);
+}
+
+function metaHTML(r) {
+  const location = r.location
+    ? '<span class="review-location">' + LOCATION_PIN_SVG + escapeHTML(r.location) + "</span>"
+    : "";
+  const dot = r.location ? '<span class="review-meta-dot">&middot;</span>' : "";
+  return location + dot + timeAgo(r.created_at);
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   const section = document.getElementById("reviews");
   const track = document.getElementById("reviews-track");
@@ -54,7 +88,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const { data, error } = await supabaseClient
     .from("reviews")
-    .select("name, rating, review_text, created_at")
+    .select("name, rating, review_text, created_at, location, photo_url")
     .eq("approved", true)
     .order("created_at", { ascending: false })
     .limit(24);
@@ -78,9 +112,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     .map(
       (r) =>
         '<div class="review-card">' +
-        '<div class="review-avatar">' + initials(r.name) + "</div>" +
+        '<div class="review-avatar">' + avatarHTML(r) + "</div>" +
         '<p class="review-name">' + escapeHTML(r.name) + "</p>" +
-        '<p class="review-time">' + timeAgo(r.created_at) + "</p>" +
+        '<p class="review-meta">' + metaHTML(r) + "</p>" +
         '<p class="review-text">' + escapeHTML(r.review_text) + "</p>" +
         '<div class="review-stars">' + starsHTML(r.rating) + "</div>" +
         "</div>"
