@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botón de Arrepentimiento — thebuildsystem</title>
+<meta name="description" content="Solicitá la revocación de una compra o contratación con thebuildsystem.">
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="media/favicon-192.png">
+<link rel="apple-touch-icon" href="media/apple-touch-icon.png">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K87QC9CB');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K87QC9CB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="wordmark">the<b>build</b>system</a>
+    <nav class="links"></nav>
+    <div class="nav-right">
+      <a class="btn btn-outline visit-site-btn" href="index.html">Volver al sitio</a>
+    </div>
+  </div>
+</header>
+
+<div class="legal-wrap">
+  <p class="eyebrow">Derecho del consumidor</p>
+  <h1>Botón de Arrepentimiento</h1>
+  <p class="legal-updated">Última actualización: 30 de octubre de 2026 — borrador para revisión legal, no publicado aún como versión definitiva.</p>
+
+  <div class="legal-notice">
+    <b>Este formulario no requiere registro ni ningún paso previo.</b> Si contrataste un servicio o compraste un producto a través de este sitio, tenés derecho a revocar tu aceptación dentro de los <b>10 días corridos</b> desde la entrega del producto/servicio o desde la contratación (lo que ocurra después), sin necesidad de dar ningún motivo y sin ningún costo (art. 34, Ley 24.240; art. 1110, Código Civil y Comercial; Resolución 424/2020 de la Secretaría de Comercio Interior).
+  </div>
+
+  <h2>¿Cómo funciona?</h2>
+  <p>Completá el formulario de abajo. Al enviarlo vas a ver en esta misma pantalla un <b>código de identificación</b> de tu solicitud — guardalo o hacé una captura, te va a servir como comprobante. Vamos a procesar tu solicitud y, si necesitamos algo más, te vamos a contactar por el medio que nos indiques.</p>
+
+  <form id="form-arrepentimiento" class="apply-form" novalidate style="margin-top:28px;">
+    <div class="field">
+      <label for="ar-name">Nombre y apellido</label>
+      <input type="text" id="ar-name" autocomplete="name">
+    </div>
+
+    <div class="field">
+      <label for="ar-email">Email</label>
+      <input type="email" id="ar-email" autocomplete="email">
+    </div>
+
+    <div class="field">
+      <label for="ar-phone">Teléfono (opcional)</label>
+      <input type="tel" id="ar-phone" autocomplete="tel">
+    </div>
+
+    <div class="field">
+      <label for="ar-order">¿Qué compraste o contrataste? (ej: "Coaching 1:1", "Programa Solo")</label>
+      <input type="text" id="ar-order">
+    </div>
+
+    <div class="field">
+      <label for="ar-reason">Motivo (opcional — no es obligatorio dar un motivo)</label>
+      <textarea id="ar-reason" rows="3"></textarea>
+    </div>
+
+    <div class="field" style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+      <label for="ar-website">Leave this field empty</label>
+      <input type="text" id="ar-website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div id="arrepentimiento-error" class="auth-msg" style="margin-top:4px;"></div>
+    <button class="btn btn-primary" type="submit">Enviar solicitud de revocación</button>
+  </form>
+
+  <div id="arrepentimiento-success" class="revocation-code-box" style="display:none;">
+    <h3>Solicitud recibida</h3>
+    <p>Tu código de identificación es:</p>
+    <div class="revocation-code" id="arrepentimiento-code"></div>
+    <p>Guardá este código. Si necesitás hacer un seguimiento, escribinos a <a href="mailto:info.tomasmartinez@gmail.com">info.tomasmartinez@gmail.com</a> mencionándolo.</p>
+  </div>
+
+  <p style="margin-top:40px;"><a class="legal-back" href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; <a class="legal-back" href="privacidad.html">Política de privacidad</a> &nbsp;·&nbsp; <a class="legal-back" href="terminos.html">Términos y condiciones</a></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/arrepentimiento.js"></script>
+</body>
+</html>
